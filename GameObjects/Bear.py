@@ -7,8 +7,8 @@ class Bear:
         self.x = position[0]
         self.y = position[1]
         self.spritesheet = spritesheet
-        self.width = 800 // 9
-        self.height = 534 // 6
+        self.width = 950 // 9
+        self.height = 534 // 5.8
         self.sleep_anim = ChargeSerieSprites(4, spritesheet, (self.width,self.height),9)
         self.slash_anim = ChargeSerieSprites(2, spritesheet, (self.width,self.height),9)
         self.current_anim = self.sleep_anim # default value

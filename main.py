@@ -22,6 +22,7 @@ LEVELS = ["data/Sprites/tmx/lvl1.tmx"]
 
 #Sprites
 PLAYER_SPRITE = pygame.image.load(os.path.join(assets, "Sprites/player.png"))
+BEAR_SPRITE = pygame.image.load(os.path.join(assets, "Sprites/bear2.png"))
 
 #etat du jeu global
 GAME_STATE = dict()
