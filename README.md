@@ -4,4 +4,5 @@
 
 - Sprites : 
     - Ground tileset : https://stealthix.itch.io/rpg-nature-tileset/download/eyJpZCI6NTMzNzU4LCJleHBpcmVzIjoxNzI2NjQyMzc0fQ%3d%3d.dftdQY2GRz%2fJ5gzSKSYiUgUhAGw%3d 
-    
+    - Main character : https://www.pngegg.com/en/png-nehup 
+    - Skull : https://www.pngegg.com/en/png-nmwhh
