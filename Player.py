@@ -12,10 +12,10 @@ class Player:
         self.height = 261 // 4
         self.cell_width = 25
         self.cell_height = 32
-        self.down_anim = ChargeSerieSprites(0, spritesheet, (self.width,self.height))
-        self.right_anim = ChargeSerieSprites(1, spritesheet, (self.width,self.height))
-        self.left_anim = ChargeSerieSprites(2, spritesheet, (self.width,self.height))
-        self.up_anim = ChargeSerieSprites(3, spritesheet, (self.width,self.height))
+        self.down_anim = ChargeSerieSprites(0, spritesheet, (self.width,self.height), 4)
+        self.right_anim = ChargeSerieSprites(1, spritesheet, (self.width,self.height), 4)
+        self.left_anim = ChargeSerieSprites(2, spritesheet, (self.width,self.height), 4)
+        self.up_anim = ChargeSerieSprites(3, spritesheet, (self.width,self.height), 4)
         self.current_anim = self.down_anim # default value
         self.animation_index = 0         
         self.animation_speed = 10
