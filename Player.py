@@ -19,19 +19,19 @@ class Player:
         self.animation_speed = 10
         self.frame_counter = 0
 
-    def update(self):
+    def update(self, GAME_STATE):
         # initialize KeyPressed
-        KeysPressed = pygame.key.get_pressed()
-        if(KeysPressed[pygame.K_DOWN] and self.y<WINDOW_SIZE[0]):
+        KeysPressed = GAME_STATE["keyPressed"]
+        if(KeysPressed == pygame.K_DOWN and self.y<WINDOW_SIZE[0]):
             self.y += self.vy
             self.current_anim = self.down_anim
-        elif(KeysPressed[pygame.K_UP] and self.y>0):
+        elif(KeysPressed == pygame.K_UP and self.y>0):
             self.y -= self.vy
             self.current_anim = self.up_anim
-        elif(KeysPressed[pygame.K_LEFT] and self.x>0):
+        elif(KeysPressed == pygame.K_LEFT and self.x>0):
             self.x -= self.vx
             self.current_anim = self.left_anim
-        elif(KeysPressed[pygame.K_RIGHT] and self.x<WINDOW_SIZE[1]):
+        elif(KeysPressed == pygame.K_RIGHT and self.x<WINDOW_SIZE[1]):
             self.x += self.vx
             self.current_anim = self.right_anim
 
@@ -42,7 +42,7 @@ class Player:
             if self.animation_index >= len(self.current_anim):
                 self.animation_index = 0
 
-    def draw(self):
+    def draw(self, GAME_STATE):
         screen.blit(self.current_anim[self.animation_index],(self.x,self.y))
 
     

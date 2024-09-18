@@ -1,14 +1,8 @@
 import pygame
 import os, inspect
 from enum import Enum
-
+from Player import Player
 from helpers import *
-
-class Season(Enum):
-    AUTUMN = 1
-    WINTER = 2
-    SPRING = 3
-    SUMMER = 4
 
 # Initialize pygame
 pygame.init()
@@ -24,13 +18,21 @@ WINDOW_SIZE = [800, 400]
 SCREEN = pygame.display.set_mode(WINDOW_SIZE)
 LEVELS = []
 
+#Sprites
+PLAYER_SPRITE = pygame.image.load(os.path.join(assets, "Sprites/player.png"))
+
 #etat du jeu global
-GAMES_OBJECTS = []
+GAMES_OBJECTS = [Player((100,100),PLAYER_SPRITE),SeasonManager()]
 GAME_STATE = dict()
 GAME_STATE["playing"] = True
 GAME_STATE["nextLevel"] = False
 GAME_STATE["keyPressed"] = None
+GAME_STATE["screen"] = SCREEN
 
+#chargement musique
+musicManager = MusicManager()
+musicManager.load_files("autumn", "winter")
+musicManager.play("winter")
  
 #titre de la fenetre
 pygame.display.set_caption("Nom de code  : Vivaldi")
@@ -38,7 +40,7 @@ pygame.display.set_caption("Nom de code  : Vivaldi")
 def loadNextLevel():
     GAMES_OBJECTS = [] #vidange de game object
 
-    objetATraiter = LEVELS.pop()
+    #objetATraiter = LEVELS.pop()
 
     #ajouter les games objects, changer la saison...
 
@@ -46,20 +48,9 @@ def loadNextLevel():
 
 #chargement du premier niveau
 loadNextLevel()
-screen = pygame.display.set_mode(WINDOW_SIZE)
- 
-# Set title of screen
-pygame.display.set_caption("insert game name")
- 
-# Loop until the user clicks the close button.
-done = False
- 
-# Used to manage how fast the screen updates
-clock = pygame.time.Clock()
+for gameObject in GAMES_OBJECTS: #premier draw
+    gameObject.draw(GAME_STATE)
 
-musicManager = MusicManager()
-musicManager.load_files("autumn", "winter")
-musicManager.play("winter")
 
 while GAME_STATE["playing"]:
     
@@ -80,6 +71,7 @@ while GAME_STATE["playing"]:
                 gameObject.update(GAME_STATE)
 
             #draw des objets (seulement si y'a eu des updates du coup)
+            SCREEN.fill((0,0,0)) #ecran noir pour l'instant
             for gameObject in GAMES_OBJECTS:
                 gameObject.draw(GAME_STATE)
         
@@ -92,27 +84,7 @@ while GAME_STATE["playing"]:
         GAME_STATE["nextLevel"] = False
         loadNextLevel()
 
-
-    #Affichage de l'écran
-   
-    time = int( pygame.time.get_ticks() / 100 )
-    
-    # draw background and exit
-    screen.blit(fond,(0,0))
-
-    # gestion des évènements
-   
-    for event in pygame.event.get():  # User did something
-        if event.type == pygame.KEYDOWN:
-            if event.key == pygame.K_s:
-                musicManager.play("autumn")
-        
-        if event.type == pygame.QUIT:  # If user clicked close
-            done = True  # Flag that we are done so we exit this loop
-
-    clock.tick(30)
- 
-    # Go ahead and update the screen with what we've drawn.
+    #affichage de l'ecran
     pygame.display.flip()
  
 
