@@ -1,0 +1,45 @@
+{
+    "Map/SizeTest": {
+        "height": 4300,
+        "width": 2
+    },
+    "activeFile": "lvl1.tmx",
+    "expandedProjectPaths": [
+        "."
+    ],
+    "fileStates": {
+        ":/automap-tiles.tsx": {
+            "scaleInDock": 1
+        },
+        "IceTileset.tsx": {
+            "scaleInDock": 1,
+            "scaleInEditor": 1
+        },
+        "RPG Nature Tileset.tsx": {
+            "scaleInDock": 1,
+            "scaleInEditor": 1
+        },
+        "lvl1.tmx": {
+            "scale": 0.75,
+            "selectedLayer": 2,
+            "viewCenter": {
+                "x": 493.3333333333333,
+                "y": 320.66666666666663
+            }
+        }
+    },
+    "last.imagePath": "/home/sportday/Bureau/school/inge/2024-2025/game-jam-esiee-2k24-gp12/data/Sprites/ground",
+    "map.lastUsedFormat": "tmx",
+    "openFiles": [
+        "RPG Nature Tileset.tsx",
+        "lvl1.tmx",
+        "IceTileset.tsx"
+    ],
+    "project": "LVL1.tiled-project",
+    "recentFiles": [
+        "RPG Nature Tileset.tsx",
+        "IceTileset.tsx",
+        "lvl1.tmx"
+    ],
+    "tileset.lastUsedFormat": "tsx"
+}
