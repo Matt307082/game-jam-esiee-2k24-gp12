@@ -1,7 +1,11 @@
+import pygame
+import random
+pygame.init()
+
 class MusicManager:
     files = dict()
 
-    def loadFiles(this, *args):
+    def load_files(this, *args):
         for musicName in args:
             this.files[musicName] = open(f"soundtrack/{musicName}.mp3")
 

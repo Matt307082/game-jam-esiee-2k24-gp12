@@ -1,5 +1,14 @@
 import pygame
 import os, inspect
+from enum import Enum
+
+from helpers import *
+
+class Season(Enum):
+    AUTUMN = 1
+    WINTER = 2
+    SPRING = 3
+    SUMMER = 4
 
 #recherche du répertoire de travail
 scriptPATH = os.path.abspath(inspect.getsourcefile(lambda:0)) # compatible interactive Python Shell
@@ -24,6 +33,10 @@ done = False
 # Used to manage how fast the screen updates
 clock = pygame.time.Clock()
 
+musicManager = MusicManager()
+musicManager.load_files("autumn", "winter")
+musicManager.play("winter")
+
 while not done:
     event = pygame.event.Event(pygame.USEREVENT)    # Remise à zero de la variable event
    
@@ -35,6 +48,9 @@ while not done:
     # gestion des évènements
    
     for event in pygame.event.get():  # User did something
+        if event.type == pygame.KEYDOWN:
+            if event.key == pygame.K_s:
+                musicManager.play("autumn")
         
         if event.type == pygame.QUIT:  # If user clicked close
             done = True  # Flag that we are done so we exit this loop
