@@ -5,7 +5,6 @@ from Tools.MusicManager import MusicManager
 from Tools.utils import *
 from GameObjects.InGameMenu import InGameMenu
 from GameObjects.Level import Level
-from GameObjects.Bear import Bear
 
 # Initialize pygame
 pygame.init()
@@ -23,7 +22,6 @@ LEVELS = ["data/Sprites/tmx/lvl1.tmx"]
 
 #Sprites
 PLAYER_SPRITE = pygame.image.load(os.path.join(assets, "Sprites/player.png"))
-BEAR_SPRITE = pygame.image.load(os.path.join(assets, "Sprites/bear.jpg"))
 
 #etat du jeu global
 GAME_STATE = dict()
@@ -31,7 +29,6 @@ GAME_STATE["playing"] = True
 GAME_STATE["nextLevel"] = False
 GAME_STATE["keyPressed"] = None
 GAME_STATE["screen"] = SCREEN
-GAME_STATE["player"] = Player((50,50),PLAYER_SPRITE)
 GAMES_OBJECTS = []
  
 #titre de la fenetre
@@ -41,9 +38,8 @@ def loadNextLevel(GAMES_OBJECTS):
     GAMES_OBJECTS.clear() #vidange de game object
 
     pathNextLevel = LEVELS.pop()
-    GAMES_OBJECTS.append(Level(pathNextLevel,GAME_STATE))
-    GAMES_OBJECTS.append(GAME_STATE["player"])
-    GAMES_OBJECTS.append(Bear((250,250),BEAR_SPRITE))
+    GAMES_OBJECTS.append(Level("data/Sprites/tmx/lvl1.tmx",GAME_STATE))
+    GAMES_OBJECTS.append(Player((50,50),PLAYER_SPRITE,GAME_STATE))
     GAMES_OBJECTS.append(InGameMenu())
     return
 

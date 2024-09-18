@@ -2,9 +2,9 @@ import pygame
 from Tools.utils import ChargeSerieSprites, WINDOW_SIZE
 
 class Player:
-    def __init__(self, position, spritesheet):
-        self.x = position[0]
-        self.y = position[1]
+    def __init__(self, position, spritesheet, GAME_STATE):
+        self.x = GAME_STATE["winAndStart"]['start'][0]["rect"].x
+        self.y =GAME_STATE["winAndStart"]['start'][0]["rect"].y
         self.vx = 1
         self.vy = 1
         self.spritesheet = spritesheet
@@ -44,7 +44,7 @@ class Player:
         print(test)
         print(active_layer)
         print(layer_obj)
-        if not self.check_collision(test, active_layer, layer_obj):
+        if not self.check_collision(test, active_layer, layer_obj, GAME_STATE["winAndStart"]):
             self.x = test.x
             self.y = test.y
 
@@ -63,13 +63,26 @@ class Player:
     def getHitbox(self):
         return pygame.Rect(self.x,self.y,self.cell_width,self.cell_height)
     
-    def check_collision(self, new_player_pos, active_layer, layer_obj):
+    def check_collision(self, new_player_pos, active_layer, layer_obj, winAndStart):
+        
+        for obj in winAndStart['win']:
+            if new_player_pos.colliderect(obj["rect"]):
+                print("win")
+                return True
+        
         realActiveLayer = active_layer + "Obj"
         if realActiveLayer in layer_obj:
             collision_rects = layer_obj[realActiveLayer]
             for obj in collision_rects:
                 if new_player_pos.colliderect(obj["rect"]):
                     return True
+                
+        for obj in layer_obj['mapObj']:
+            if new_player_pos.colliderect(obj["rect"]):
+                return True
+        
         return False
+
+
 
     
