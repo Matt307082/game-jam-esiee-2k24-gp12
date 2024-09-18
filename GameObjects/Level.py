@@ -23,8 +23,8 @@ class Level :
     layer_obj = {}
     tmx_data = None
 
-    def __init__(self,GAME_STATE) :
-        self.tmx_data = pytmx.load_pygame("data/Sprites/tmx/lvl1.tmx")
+    def __init__(self,level_path,GAME_STATE) :
+        self.tmx_data = pytmx.load_pygame(level_path)
         self.layer_obj = get_collision_objects_by_layer(self.tmx_data)
         GAME_STATE["active_layer"] = "ete"
         GAME_STATE["layer_obj"] = self.layer_obj

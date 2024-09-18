@@ -5,7 +5,6 @@ from Tools.MusicManager import MusicManager
 from Tools.utils import *
 from GameObjects.InGameMenu import InGameMenu
 from GameObjects.Level import Level
-import pytmx
 
 # Initialize pygame
 pygame.init()
@@ -19,7 +18,7 @@ assets = os.path.join(scriptDIR,"data")
 #FOND = pygame.image.load(os.path.join(assets, "placeholder.png"))
 WINDOW_SIZE = [960, 640]
 SCREEN = pygame.display.set_mode(WINDOW_SIZE)
-LEVELS = []
+LEVELS = ["data/Sprites/tmx/lvl1.tmx"]
 
 #Sprites
 PLAYER_SPRITE = pygame.image.load(os.path.join(assets, "Sprites/player.png"))
@@ -30,38 +29,29 @@ GAME_STATE["playing"] = True
 GAME_STATE["nextLevel"] = False
 GAME_STATE["keyPressed"] = None
 GAME_STATE["screen"] = SCREEN
-GAMES_OBJECTS = [Level(GAME_STATE),Player((50,50),PLAYER_SPRITE),InGameMenu()]
-
-#chargement musique
-musicManager = MusicManager()
-musicManager.load_files("autumn", "winter")
-musicManager.play("winter")
+GAMES_OBJECTS = []
  
 #titre de la fenetre
 pygame.display.set_caption("Nom de code  : Vivaldi")
  
-def loadNextLevel():
-    GAMES_OBJECTS = [] #vidange de game object
+def loadNextLevel(GAMES_OBJECTS):
+    GAMES_OBJECTS.clear() #vidange de game object
 
-    #objetATraiter = LEVELS.pop()
-
-    #ajouter les games objects, changer la saison...
-
-
-
+    pathNextLevel = LEVELS.pop()
+    GAMES_OBJECTS.append(Level(pathNextLevel,GAME_STATE))
+    GAMES_OBJECTS.append(Player((50,50),PLAYER_SPRITE))
+    GAMES_OBJECTS.append(InGameMenu())
     return
 
 #chargement du premier niveau
-loadNextLevel()
+loadNextLevel(GAMES_OBJECTS)
+print(GAMES_OBJECTS)
 for gameObject in GAMES_OBJECTS: #premier draw
     gameObject.draw(GAME_STATE)
 
 
 while GAME_STATE["playing"]:
-    for gameObject in GAMES_OBJECTS:
-        gameObject.update(GAME_STATE)
-        gameObject.draw(GAME_STATE)
-    
+   
     #recupération d'un evenement
     event = pygame.event.Event(pygame.USEREVENT)    # Remise à zero de la variable event
     for event in pygame.event.get():  
@@ -73,19 +63,20 @@ while GAME_STATE["playing"]:
         #recuperation de la key_down (pas d'action continue si on maintien la touche)
         if event.type == pygame.KEYDOWN and GAME_STATE["keyPressed"] != event.key:
             GAME_STATE["keyPressed"] = event.key 
-
-            #update des objets
-            for gameObject in GAMES_OBJECTS:
-                gameObject.update(GAME_STATE)
-
-            #draw des objets (seulement si y'a eu des updates du coup)
-            SCREEN.fill((0,0,0)) #ecran noir pour l'instant
-            for gameObject in GAMES_OBJECTS:
-                gameObject.draw(GAME_STATE)
         
         #vidange de la clef stocké
         if event.type == pygame.KEYUP:
             GAME_STATE["keyPressed"] = None
+
+    #update des objets
+    for gameObject in GAMES_OBJECTS:
+        gameObject.update(GAME_STATE)
+
+    #dessin de la grille 
+    SCREEN.fill((0,0,0)) #ecran noir pour l'instant
+    for gameObject in GAMES_OBJECTS:
+        gameObject.draw(GAME_STATE)
+    
 
     #passage du niveau si besoin
     if GAME_STATE["nextLevel"]:
