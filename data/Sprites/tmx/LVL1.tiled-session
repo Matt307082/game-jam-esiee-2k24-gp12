@@ -23,12 +23,20 @@
             "scale": 0.75,
             "selectedLayer": 2,
             "viewCenter": {
-                "x": 493.3333333333333,
-                "y": 320.66666666666663
+                "x": 432,
+                "y": 397.99999999999994
+            }
+        },
+        "lvl2.tmx": {
+            "scale": 0.9262499999999999,
+            "selectedLayer": 4,
+            "viewCenter": {
+                "x": 472.8744939271256,
+                "y": 320.1079622132254
             }
         }
     },
-    "last.imagePath": "/home/sportday/Bureau/school/inge/2024-2025/game-jam-esiee-2k24-gp12/data/Sprites/ground",
+    "last.imagePath": "C:/Users/zinee/Desktop/E4/cours/gam jam/git/game-jam-esiee-2k24-gp12/data/Sprites/ground",
     "map.lastUsedFormat": "tmx",
     "openFiles": [
         "RPG Nature Tileset.tsx",
@@ -41,5 +49,9 @@
         "IceTileset.tsx",
         "lvl1.tmx"
     ],
-    "tileset.lastUsedFormat": "tsx"
+    "tileset.lastUsedFormat": "tsx",
+    "tileset.tileSize": {
+        "height": 32,
+        "width": 32
+    }
 }
