@@ -1,6 +1,13 @@
 import pygame
+from enum import Enum
 
-WINDOW_SIZE = [800, 400]
+WINDOW_SIZE = [800, 600]
+
+# Etat courant du jeu
+class State(Enum):
+    Menu = 0
+    Play = 1
+    Pause = 2
 
 def ChargeSerieSprites(id, spritesheet, sprite_dimensions, p_range):
    # Taille d'un sprite
