@@ -1,5 +1,5 @@
 import pygame
-from utils import ChargeSerieSprites, WINDOW_SIZE, screen
+from Tools.utils import ChargeSerieSprites, WINDOW_SIZE, screen
 
 class Player:
     def __init__(self, position, spritesheet):

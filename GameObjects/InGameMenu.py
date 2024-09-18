@@ -1,19 +1,6 @@
 import pygame
-import random
-import os, inspect
 from enum import Enum
 pygame.init()
-
-class MusicManager:
-    files = dict()
-
-    def load_files(this, *args):
-        for music_name in args:
-            this.files[music_name] = open(f"soundtrack/{music_name}.mp3")
-
-    def play(this, music_name):
-        pygame.mixer.music.load(this.files[music_name])
-        pygame.mixer.music.play(-1, random.uniform(0, 300))
 
 class Season(Enum):
     WINTER = 0
@@ -21,9 +8,9 @@ class Season(Enum):
     SUMMER = 2
     AUTUMN = 3
 
-class SeasonManager:
+class InGameMenu:
     current_season = Season.SPRING
-    seasons_icons = pygame.transform.scale(pygame.image.load("data/seasons.png"), (100,100))
+    seasons_icons = pygame.transform.scale(pygame.image.load("data/Sprites/seasons.png"), (100,100))
 
     def update(this, GAME_STATE):
         keyPressed = GAME_STATE["keyPressed"]

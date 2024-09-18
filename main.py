@@ -1,8 +1,9 @@
 import pygame
 import os, inspect
-from enum import Enum
 from Player import Player
-from helpers import *
+from Tools.MusicManager import MusicManager
+from Tools.utils import *
+from GameObjects.InGameMenu import InGameMenu
 
 # Initialize pygame
 pygame.init()
@@ -22,7 +23,7 @@ LEVELS = []
 PLAYER_SPRITE = pygame.image.load(os.path.join(assets, "Sprites/player.png"))
 
 #etat du jeu global
-GAMES_OBJECTS = [Player((100,100),PLAYER_SPRITE),SeasonManager()]
+GAMES_OBJECTS = [Player((100,100),PLAYER_SPRITE),InGameMenu()]
 GAME_STATE = dict()
 GAME_STATE["playing"] = True
 GAME_STATE["nextLevel"] = False
