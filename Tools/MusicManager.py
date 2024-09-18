@@ -15,6 +15,7 @@ class MusicManager:
     def play(self, music_name):
         if music_name in self.files and self.current_music != music_name:
             self.current_music = music_name;
+            pygame.mixer.music.unload()
             pygame.mixer.music.load(self.files[music_name])
             pygame.mixer.music.play(-1, random.uniform(0, 300))
-
+            self.load_files(music_name)
