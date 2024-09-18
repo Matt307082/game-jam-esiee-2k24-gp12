@@ -7,11 +7,11 @@ pygame.init()
 class MusicManager:
     files = dict()
 
-    def load_files(this, *args):
+    def load_files(self, *args):
         for music_name in args:
-            this.files[music_name] = open(f"data/soundtrack/{music_name}.mp3")
+            self.files[music_name] = open(f"data/soundtrack/{music_name}.mp3")
 
-    def play(this, music_name):
-        pygame.mixer.music.load(this.files[music_name])
+    def play(self, music_name):
+        pygame.mixer.music.load(self.files[music_name])
         pygame.mixer.music.play(-1, random.uniform(0, 300))
 

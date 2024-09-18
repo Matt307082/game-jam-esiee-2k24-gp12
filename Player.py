@@ -26,7 +26,7 @@ class Player:
         layer_obj = GAME_STATE["layer_obj"]
 
         test = self.getHitbox()
-        if(KeysPressed == pygame.K_DOWN and self.y<WINDOW_SIZE[0]):
+        if(KeysPressed == pygame.K_DOWN and self.y<WINDOW_SIZE[1]-self.height):
             test.y += self.vy
             self.current_anim = self.down_anim
         elif(KeysPressed == pygame.K_UP and self.y>0):
@@ -35,7 +35,7 @@ class Player:
         elif(KeysPressed == pygame.K_LEFT and self.x>0):
             test.x -= self.vx
             self.current_anim = self.left_anim
-        elif(KeysPressed == pygame.K_RIGHT and self.x<WINDOW_SIZE[1]):
+        elif(KeysPressed == pygame.K_RIGHT and self.x<WINDOW_SIZE[0]-self.width):
             test.x += self.vx
             self.current_anim = self.right_anim
         
