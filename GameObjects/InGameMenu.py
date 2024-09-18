@@ -1,5 +1,6 @@
 import pygame
 from enum import Enum
+from Tools.MusicManager import MusicManager
 pygame.init()
 
 class Season(Enum):
@@ -11,29 +12,36 @@ class Season(Enum):
 class InGameMenu:
     current_season = Season.SUMMER
     seasons_icons = pygame.transform.scale(pygame.image.load("data/Sprites/seasons.png"), (100,100))
+    music_manager = MusicManager()
+    music_manager.load_files("autumn", "winter")
+    music_manager.play("summer")
 
-    def update(this, GAME_STATE):
+    def update(self, GAME_STATE):
         keyPressed = GAME_STATE["keyPressed"]
-        GAME_STATE["saison"] = this.current_season
+        GAME_STATE["saison"] = self.current_season
         GAME_STATE["active_layer"] = GAME_STATE["saison"].value
 
         if keyPressed == pygame.K_1 :
-            this.current_season = Season.WINTER
+            self.current_season = Season.WINTER
             GAME_STATE["saison"] = Season.WINTER
+            self.music_manager.play("winter")
         elif keyPressed == pygame.K_2 :
-            this.current_season = Season.SPRING
+            self.current_season = Season.SPRING
             GAME_STATE["saison"] = Season.SPRING
+            self.music_manager.play("spring")
         elif keyPressed == pygame.K_3 :
-            this.current_season = Season.SUMMER
+            self.current_season = Season.SUMMER
             GAME_STATE["saison"] = Season.SUMMER
+            self.music_manager.play("summer")
         elif keyPressed == pygame.K_4 :
-            this.current_season = Season.AUTUMN
+            self.current_season = Season.AUTUMN
             GAME_STATE["saison"] = Season.AUTUMN
+            self.music_manager.play("autumn")
 
         GAME_STATE["active_layer"] = GAME_STATE["saison"].value
 
-    def draw(this, GAME_STATE):
+    def draw(self, GAME_STATE):
         for season in Season:
             index = ["hiver","printemps","ete","automne"].index(season.value)
-            this.seasons_icons.set_alpha(255 if this.current_season.value==season.value else 100)
-            GAME_STATE["screen"].blit(this.seasons_icons, (60 * index + 25, 25), ((index%2) * 52, (index//2) * 52, 50, 50))
+            self.seasons_icons.set_alpha(255 if self.current_season.value==season.value else 100)
+            GAME_STATE["screen"].blit(self.seasons_icons, (60 * index + 25, 25), ((index%2) * 52, (index//2) * 52, 50, 50))
