@@ -58,7 +58,9 @@ for gameObject in GAMES_OBJECTS: #premier draw
 
 
 while GAME_STATE["playing"]:
-    
+    for gameObject in GAMES_OBJECTS:
+        gameObject.update(GAME_STATE)
+        gameObject.draw(GAME_STATE)
     
     #recupération d'un evenement
     event = pygame.event.Event(pygame.USEREVENT)    # Remise à zero de la variable event

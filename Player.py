@@ -10,6 +10,8 @@ class Player:
         self.spritesheet = spritesheet
         self.width = 200 // 4
         self.height = 261 // 4
+        self.cell_width = 25
+        self.cell_height = 32
         self.down_anim = ChargeSerieSprites(0, spritesheet, (self.width,self.height))
         self.right_anim = ChargeSerieSprites(1, spritesheet, (self.width,self.height))
         self.left_anim = ChargeSerieSprites(2, spritesheet, (self.width,self.height))
@@ -26,7 +28,7 @@ class Player:
         layer_obj = GAME_STATE["layer_obj"]
 
         test = self.getHitbox()
-        if(KeysPressed == pygame.K_DOWN and self.y<WINDOW_SIZE[1]-self.height):
+        if(KeysPressed == pygame.K_DOWN and self.y<WINDOW_SIZE[1]-self.cell_height):
             test.y += self.vy
             self.current_anim = self.down_anim
         elif(KeysPressed == pygame.K_UP and self.y>0):
@@ -35,7 +37,7 @@ class Player:
         elif(KeysPressed == pygame.K_LEFT and self.x>0):
             test.x -= self.vx
             self.current_anim = self.left_anim
-        elif(KeysPressed == pygame.K_RIGHT and self.x<WINDOW_SIZE[0]-self.width):
+        elif(KeysPressed == pygame.K_RIGHT and self.x<WINDOW_SIZE[0]-self.cell_width):
             test.x += self.vx
             self.current_anim = self.right_anim
         
@@ -54,10 +56,12 @@ class Player:
                 self.animation_index = 0
 
     def draw(self, GAME_STATE):
-        GAME_STATE["screen"].blit(self.current_anim[self.animation_index],(self.x,self.y))
+        GAME_STATE["screen"].blit(pygame.transform.scale(
+            self.current_anim[self.animation_index if GAME_STATE["keyPressed"] != None else (0 if self.current_anim == self.left_anim else 1)]
+        ,(25,32)),(self.x,self.y))
 
     def getHitbox(self):
-        return pygame.Rect(self.x,self.y,self.width,self.height)
+        return pygame.Rect(self.x,self.y,self.cell_width,self.cell_height)
     
     def check_collision(self, new_player_pos, active_layer, layer_obj):
         realActiveLayer = active_layer + "Obj"

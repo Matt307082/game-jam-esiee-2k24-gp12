@@ -12,6 +12,7 @@ class MusicManager:
             self.files[music_name] = open(f"data/soundtrack/{music_name}.mp3")
 
     def play(self, music_name):
-        pygame.mixer.music.load(self.files[music_name])
-        pygame.mixer.music.play(-1, random.uniform(0, 300))
+        if music_name in self.files:
+            pygame.mixer.music.load(self.files[music_name])
+            pygame.mixer.music.play(-1, random.uniform(0, 300))
 
