@@ -95,15 +95,11 @@ while not done:
                 GAME_STATE["keyPressed"] = event.key
                 if event.key == pygame.K_r:
                     GAME_STATE["player"].reset(GAME_STATE)
-<<<<<<< HEAD
                 if event.key == pygame.K_m:
                     GAME_STATE["click"] = False
                     GAME_STATE["state"] = State.Pause
-=======
-
                 if event.key == pygame.K_d :
                     GAME_STATE["debug"] = not GAME_STATE["debug"]
->>>>>>> 392070bf0ceada7ef97afb3b783ac7dfeb128f80
             
             #vidange de la clef stocké
             if event.type == pygame.KEYUP:
