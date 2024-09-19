@@ -1,5 +1,5 @@
 import pygame
-import os, inspect, ctypes
+import os, inspect, sys
 from GameObjects.Player import Player
 from GameObjects.Bear import Bear
 from Tools.MusicManager import MusicManager
@@ -27,6 +27,7 @@ LEVELS = [{"levelFile": "data/Sprites/tmx/lvl1.tmx", "season": Season.SUMMER, "m
           {"levelFile": "data/Sprites/tmx/lvl2.tmx", "season": Season.SUMMER, "maxSeasons": 3},
           {"levelFile": "data/Sprites/tmx/lvl3.tmx", "season": Season.SUMMER, "maxSeasons": 3},
           {"levelFile": "data/Sprites/tmx/lvl4.tmx", "season": Season.SUMMER, "maxSeasons": 3},
+          {"levelFile": "data/Sprites/tmx/lvl5.tmx", "season": Season.AUTUMN, "maxSeasons": 9},
         ]
 
 #Sprites
@@ -59,7 +60,7 @@ pygame.display.set_icon(ICON)
 def loadNextLevel(GAMES_OBJECTS):
     GAMES_OBJECTS.clear() #vidange de game object
 
-    nextLevel = LEVELS.pop(0)
+    nextLevel = LEVELS.pop()
     GAMES_OBJECTS.append(Level(nextLevel["levelFile"],GAME_STATE))
     GAME_STATE["player"] = Player(PLAYER_SPRITE,GAME_STATE)
     GAMES_OBJECTS.append(GAME_STATE["player"])
@@ -88,6 +89,7 @@ while not done:
         for event in pygame.event.get():  
             if event.type == pygame.QUIT:
                 pygame.quit()
+                sys.exit()
             if event.type == pygame.MOUSEBUTTONDOWN:
                 if event.button == 1:
                     GAME_STATE["click"] = True

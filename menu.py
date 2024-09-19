@@ -1,4 +1,5 @@
 import pygame
+import sys
 from Tools.utils import WINDOW_SIZE, State
 
 # Couleurs
@@ -46,7 +47,7 @@ def main_menu(background_image,GAME_STATE):
     # Afficher l'image de fond
     screen.blit(background_image, (0, 0))
     font = pygame.font.Font(pygame.font.match_font('papyrus'), 70)
-    draw_text('Nom du Jeu', font, DEEP_BLUE, screen, WINDOW_SIZE[0] // 2, WINDOW_SIZE[1] // 9-15)
+    draw_text('Orchestral Seasons', font, DEEP_BLUE, screen, WINDOW_SIZE[0] // 2, WINDOW_SIZE[1] // 9-15)
     font = pygame.font.Font(None, 50)
     mx, my = pygame.mouse.get_pos()
 
@@ -66,7 +67,7 @@ def main_menu(background_image,GAME_STATE):
         pygame.draw.rect(screen, GRAY, button_3)
         if click:
             pygame.quit()
-            exit(0)
+            sys.exit()
     else:
         pygame.draw.rect(screen, MEDIUM_RED, button_3)
 
@@ -109,6 +110,7 @@ def draw_selection_screen(background_image, GAME_STATE):
         pygame.draw.rect(screen, GRAY, button_3)
         if click:
             pygame.quit()
+            sys.exit()
             exit(0)
     else:
         pygame.draw.rect(screen, MEDIUM_RED, button_3)
