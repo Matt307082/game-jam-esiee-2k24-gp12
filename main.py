@@ -1,5 +1,5 @@
 import pygame
-import os, inspect
+import os, inspect, ctypes
 from GameObjects.Player import Player
 from GameObjects.Bear import Bear
 from Tools.MusicManager import MusicManager
@@ -27,6 +27,7 @@ LEVELS = [{"levelFile": "data/Sprites/tmx/lvl1.tmx", "season": Season.SUMMER},
           {"levelFile": "data/Sprites/tmx/lvl2.tmx", "season": Season.SUMMER}]
 
 #Sprites
+ICON = pygame.image.load(os.path.join(assets, "Sprites/menu.png"))
 MENU_SPRITE = pygame.image.load(os.path.join(assets, "Sprites/menu.png"))
 MENU_SPRITE = pygame.transform.scale(MENU_SPRITE, WINDOW_SIZE)
 PLAYER_SPRITE = pygame.image.load(os.path.join(assets, "Sprites/player.png"))
@@ -47,7 +48,10 @@ GAME_STATE["gameObject"] = GAMES_OBJECTS
 
  
 #titre de la fenetre
-pygame.display.set_caption("Nom de code  : Vivaldi")
+pygame.display.set_caption("Orchestral Seasons")
+
+#icone
+pygame.display.set_icon(ICON)
  
 def loadNextLevel(GAMES_OBJECTS):
     GAMES_OBJECTS.clear() #vidange de game object
@@ -57,7 +61,11 @@ def loadNextLevel(GAMES_OBJECTS):
     GAME_STATE["player"] = Player(PLAYER_SPRITE,GAME_STATE)
     GAMES_OBJECTS.append(GAME_STATE["player"])
     GAMES_OBJECTS.append(InGameMenu(nextLevel["season"], GAME_STATE))
-    GAMES_OBJECTS.append(Bear((100,100), BEAR_SPRITE))
+
+    if 'bear' in GAME_STATE['layer_obj']:
+        for bear_position in GAME_STATE['layer_obj']['bear']:
+            print(bear_position)
+            GAMES_OBJECTS.append(Bear((bear_position['rect'].x, bear_position['rect'].y), BEAR_SPRITE))
     LEVELS.append(nextLevel)
 
     return
@@ -102,7 +110,10 @@ while not done:
                     GAME_STATE["debug"] = not GAME_STATE["debug"]
                 if event.key == pygame.K_w :
                     GAME_STATE["nextLevel"] = True
-            
+                if event.key == pygame.K_SPACE :
+                    print(GAME_STATE['layer_obj'])
+                    print(GAME_STATE['layer_obj']['bear'])
+
             #vidange de la clef stocké
             if event.type == pygame.KEYUP:
                 GAME_STATE["keyPressed"] = None

@@ -15,7 +15,6 @@ class InGameMenu:
         self.music_manager.play(self.current_season.value)
 
     def update(self, GAME_STATE):
-        print(self.season_counter)
         keyPressed = GAME_STATE["keyPressed"]
 
         old_counter = self.season_counter

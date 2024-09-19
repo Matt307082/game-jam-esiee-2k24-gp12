@@ -51,134 +51,234 @@
  </tile>
  <tile id="50">
   <objectgroup draworder="index" id="2">
-   <object id="1" template="up_all.tx" x="0" y="0"/>
-   <object id="2" template="demi_up.tx" x="0" y="16"/>
+   <object id="1" x="0" y="0" width="32" height="16">
+    <polygon points="0,0 32,0 32,16 0,16"/>
+   </object>
+   <object id="2" x="0" y="16" width="16" height="16">
+    <polygon points="0,0 16,0 16,16 0,16"/>
+   </object>
   </objectgroup>
  </tile>
  <tile id="51">
   <objectgroup draworder="index" id="2">
-   <object id="1" template="up_all.tx" x="0" y="0"/>
+   <object id="1" x="0" y="0" width="32" height="16">
+    <polygon points="0,0 32,0 32,16 0,16"/>
+   </object>
   </objectgroup>
  </tile>
  <tile id="52">
   <objectgroup draworder="index" id="2">
-   <object id="1" template="up_all.tx" x="0" y="0"/>
-   <object id="2" template="demi_up.tx" x="16" y="16"/>
+   <object id="1" x="0" y="0" width="32" height="16">
+    <polygon points="0,0 32,0 32,16 0,16"/>
+   </object>
+   <object id="2" x="16" y="16" width="16" height="16">
+    <polygon points="0,0 16,0 16,16 0,16"/>
+   </object>
   </objectgroup>
  </tile>
  <tile id="53">
   <objectgroup draworder="index" id="2">
-   <object id="1" template="demi_up.tx" x="16" y="16"/>
+   <object id="1" x="16" y="16" width="16" height="16">
+    <polygon points="0,0 16,0 16,16 0,16"/>
+   </object>
   </objectgroup>
  </tile>
  <tile id="54">
   <objectgroup draworder="index" id="2">
-   <object id="1" template="demi_up.tx" x="0" y="16"/>
+   <object id="1" x="0" y="16" width="16" height="16">
+    <polygon points="0,0 16,0 16,16 0,16"/>
+   </object>
   </objectgroup>
  </tile>
  <tile id="55">
   <objectgroup draworder="index" id="2">
-   <object id="1" template="up_all.tx" x="0" y="0"/>
-   <object id="2" template="demi_up.tx" x="0" y="16"/>
+   <object id="1" x="0" y="0" width="32" height="16">
+    <polygon points="0,0 32,0 32,16 0,16"/>
+   </object>
+   <object id="2" x="0" y="16" width="16" height="16">
+    <polygon points="0,0 16,0 16,16 0,16"/>
+   </object>
   </objectgroup>
  </tile>
  <tile id="56">
   <objectgroup draworder="index" id="2">
-   <object id="1" template="up_all.tx" x="0" y="0"/>
+   <object id="1" x="0" y="0" width="32" height="16">
+    <polygon points="0,0 32,0 32,16 0,16"/>
+   </object>
   </objectgroup>
  </tile>
  <tile id="57">
   <objectgroup draworder="index" id="2">
-   <object id="1" template="up_all.tx" x="0" y="0"/>
-   <object id="3" template="demi_up.tx" x="16" y="16"/>
+   <object id="1" x="0" y="0" width="32" height="16">
+    <polygon points="0,0 32,0 32,16 0,16"/>
+   </object>
+   <object id="3" x="16" y="16" width="16" height="16">
+    <polygon points="0,0 16,0 16,16 0,16"/>
+   </object>
+  </objectgroup>
+ </tile>
+ <tile id="58">
+  <objectgroup draworder="index" id="2">
+   <object id="1" x="16" y="16" width="16" height="16">
+    <polygon points="0,0 16,0 16,16 0,16"/>
+   </object>
+  </objectgroup>
+ </tile>
+ <tile id="59">
+  <objectgroup draworder="index" id="2">
+   <object id="1" x="0" y="16" width="16" height="16">
+    <polygon points="0,0 16,0 16,16 0,16"/>
+   </object>
   </objectgroup>
  </tile>
  <tile id="65">
   <objectgroup draworder="index" id="2">
-   <object id="1" template="cote.tx" x="0" y="0"/>
+   <object id="1" x="0" y="0" width="16" height="32">
+    <polygon points="0,0 16,0 16,32 0,32"/>
+   </object>
   </objectgroup>
  </tile>
  <tile id="67">
   <objectgroup draworder="index" id="2">
-   <object id="1" template="cote.tx" x="16" y="0"/>
+   <object id="1" x="16" y="0" width="16" height="32">
+    <polygon points="0,0 16,0 16,32 0,32"/>
+   </object>
   </objectgroup>
  </tile>
  <tile id="68">
   <objectgroup draworder="index" id="2">
-   <object id="1" template="demi_up.tx" x="16" y="0"/>
+   <object id="1" x="16" y="0" width="16" height="16">
+    <polygon points="0,0 16,0 16,16 0,16"/>
+   </object>
   </objectgroup>
  </tile>
  <tile id="69">
   <objectgroup draworder="index" id="3">
-   <object id="2" template="demi_up.tx" x="0" y="0"/>
+   <object id="2" x="0" y="0" width="16" height="16">
+    <polygon points="0,0 16,0 16,16 0,16"/>
+   </object>
   </objectgroup>
  </tile>
  <tile id="70">
   <objectgroup draworder="index" id="2">
-   <object id="1" template="cote.tx" x="0" y="0"/>
+   <object id="1" x="0" y="0" width="16" height="32">
+    <polygon points="0,0 16,0 16,32 0,32"/>
+   </object>
   </objectgroup>
  </tile>
  <tile id="72">
   <objectgroup draworder="index" id="2">
-   <object id="1" template="cote.tx" x="16" y="0"/>
+   <object id="1" x="16" y="0" width="16" height="32">
+    <polygon points="0,0 16,0 16,32 0,32"/>
+   </object>
+  </objectgroup>
+ </tile>
+ <tile id="73">
+  <objectgroup draworder="index" id="2">
+   <object id="1" x="16" y="0" width="16" height="16">
+    <polygon points="0,0 16,0 16,16 0,16"/>
+   </object>
+  </objectgroup>
+ </tile>
+ <tile id="74">
+  <objectgroup draworder="index" id="2">
+   <object id="1" x="0" y="0" width="16" height="16">
+    <polygon points="0,0 16,0 16,16 0,16"/>
+   </object>
   </objectgroup>
  </tile>
  <tile id="80">
   <objectgroup draworder="index" id="2">
-   <object id="1" template="up_all.tx" x="0" y="16"/>
-   <object id="2" template="demi_up.tx" x="0" y="0"/>
+   <object id="1" x="0" y="16" width="32" height="16">
+    <polygon points="0,0 32,0 32,16 0,16"/>
+   </object>
+   <object id="2" x="0" y="0" width="16" height="16">
+    <polygon points="0,0 16,0 16,16 0,16"/>
+   </object>
   </objectgroup>
  </tile>
  <tile id="81">
   <objectgroup draworder="index" id="2">
-   <object id="1" template="up_all.tx" x="0" y="16"/>
+   <object id="1" x="0" y="16" width="32" height="16">
+    <polygon points="0,0 32,0 32,16 0,16"/>
+   </object>
   </objectgroup>
  </tile>
  <tile id="82">
   <objectgroup draworder="index" id="2">
-   <object id="1" template="up_all.tx" x="0" y="16"/>
-   <object id="2" template="demi_up.tx" x="16" y="0"/>
+   <object id="1" x="0" y="16" width="32" height="16">
+    <polygon points="0,0 32,0 32,16 0,16"/>
+   </object>
+   <object id="2" x="16" y="0" width="16" height="16">
+    <polygon points="0,0 16,0 16,16 0,16"/>
+   </object>
   </objectgroup>
  </tile>
  <tile id="83">
   <objectgroup draworder="index" id="2">
-   <object id="1" template="demi_up.tx" x="16" y="0"/>
-   <object id="2" template="demi_up.tx" x="0" y="16"/>
+   <object id="1" x="16" y="0" width="16" height="16">
+    <polygon points="0,0 16,0 16,16 0,16"/>
+   </object>
+   <object id="2" x="0" y="16" width="16" height="16">
+    <polygon points="0,0 16,0 16,16 0,16"/>
+   </object>
   </objectgroup>
  </tile>
  <tile id="84">
   <objectgroup draworder="index" id="2">
-   <object id="1" template="demi_up.tx" x="0" y="0"/>
-   <object id="2" template="demi_up.tx" x="16" y="16"/>
+   <object id="1" x="0" y="0" width="16" height="16">
+    <polygon points="0,0 16,0 16,16 0,16"/>
+   </object>
+   <object id="2" x="16" y="16" width="16" height="16">
+    <polygon points="0,0 16,0 16,16 0,16"/>
+   </object>
   </objectgroup>
  </tile>
  <tile id="85">
   <objectgroup draworder="index" id="2">
-   <object id="1" template="up_all.tx" x="0" y="16"/>
-   <object id="2" template="demi_up.tx" x="0" y="0"/>
+   <object id="1" x="0" y="16" width="32" height="16">
+    <polygon points="0,0 32,0 32,16 0,16"/>
+   </object>
+   <object id="2" x="0" y="0" width="16" height="16">
+    <polygon points="0,0 16,0 16,16 0,16"/>
+   </object>
   </objectgroup>
  </tile>
  <tile id="86">
   <objectgroup draworder="index" id="2">
-   <object id="1" template="up_all.tx" x="0" y="16"/>
+   <object id="1" x="0" y="16" width="32" height="16">
+    <polygon points="0,0 32,0 32,16 0,16"/>
+   </object>
   </objectgroup>
  </tile>
  <tile id="87">
   <objectgroup draworder="index" id="2">
-   <object id="1" template="up_all.tx" x="0" y="16"/>
-   <object id="2" template="demi_up.tx" x="16" y="0"/>
+   <object id="1" x="0" y="16" width="32" height="16">
+    <polygon points="0,0 32,0 32,16 0,16"/>
+   </object>
+   <object id="2" x="16" y="0" width="16" height="16">
+    <polygon points="0,0 16,0 16,16 0,16"/>
+   </object>
   </objectgroup>
  </tile>
  <tile id="88">
   <objectgroup draworder="index" id="2">
-   <object id="1" template="demi_up.tx" x="16" y="0"/>
-   <object id="2" template="demi_up.tx" x="0" y="16"/>
+   <object id="1" x="16" y="0" width="16" height="16">
+    <polygon points="0,0 16,0 16,16 0,16"/>
+   </object>
+   <object id="2" x="0" y="16" width="16" height="16">
+    <polygon points="0,0 16,0 16,16 0,16"/>
+   </object>
   </objectgroup>
  </tile>
  <tile id="89">
   <objectgroup draworder="index" id="2">
-   <object id="1" template="demi_up.tx" x="0" y="0"/>
-   <object id="2" template="demi_up.tx" x="16" y="16"/>
+   <object id="1" x="0" y="0" width="16" height="16">
+    <polygon points="0,0 16,0 16,16 0,16"/>
+   </object>
+   <object id="2" x="16" y="16" width="16" height="16">
+    <polygon points="0,0 16,0 16,16 0,16"/>
+   </object>
   </objectgroup>
  </tile>
 </tileset>
