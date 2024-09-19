@@ -14,117 +14,65 @@
         ":/automap-tiles.tsx": {
             "scaleInDock": 1
         },
-        "Flowers.tsx": {
+        "IceTileset.tsx": {
             "dynamicWrapping": false,
-            "scaleInDock": 1,
-            "scaleInEditor": 1.5843
-        },
-        "IceTileset.json": {
             "scaleInDock": 1,
             "scaleInEditor": 1
         },
-        "IceTileset.tsx": {
-            "dynamicWrapping": false,
-            "scaleInDock": 0.5295,
-            "scaleInEditor": 3.2108
-        },
         "Other.tsx": {
             "dynamicWrapping": true,
-            "scaleInDock": 1,
-            "scaleInEditor": 0.92
+            "scaleInDock": 1
         },
         "RPG Nature Tileset Autumn.tsx": {
-            "dynamicWrapping": false,
-            "scaleInDock": 0.988,
-            "scaleInEditor": 1.7278
+            "scaleInDock": 1,
+            "scaleInEditor": 1
         },
         "RPG Nature Tileset.tsx": {
             "dynamicWrapping": false,
-            "scaleInDock": 0.7118,
-            "scaleInEditor": 0.92
+            "scaleInDock": 1,
+            "scaleInEditor": 1
+        },
+        "fog.tsx": {
+            "scaleInDock": 1
+        },
+        "lianne.tsx": {
+            "scaleInDock": 1,
+            "scaleInEditor": 1
         },
         "fog.tsx": {
             "scaleInDock": 1,
             "scaleInEditor": 1
         },
         "lvl1.tmx": {
-            "expandedGroupLayers": [
-                12,
-                17,
-                15
-            ],
-            "expandedObjectLayers": [
-                9,
-                17,
-                15,
-                19
-            ],
-            "scale": 0.9311,
-            "selectedLayer": 6,
+            "scale": 0.75,
+            "selectedLayer": -1,
             "viewCenter": {
-                "x": 475.7813339061325,
-                "y": 393.62044893137147
+                "x": 559.3333333333333,
+                "y": 319.33333333333326
             }
         },
         "lvl2.tmx": {
-            "expandedGroupLayers": [
-                18
-            ],
             "expandedObjectLayers": [
                 12
             ],
-            "scale": 1.0961,
-            "selectedLayer": 14,
+            "scale": 0.9262499999999999,
+            "selectedLayer": 11,
             "viewCenter": {
-                "x": 399.59857677219225,
-                "y": 337.1042788066782
+                "x": 491.7678812415655,
+                "y": 304.99325236167346
             }
         },
-        "lvl2.tmx#IceTileset": {
-            "scaleInDock": 1
-        },
-        "lvl2.tmx#Other": {
-            "scaleInDock": 1
-        },
-        "lvl2.tmx#RPG Nature Tileset": {
-            "scaleInDock": 1
-        },
-        "lvl2.tmx#RPG Nature Tileset Autumn": {
-            "scaleInDock": 1
-        },
-        "lvl2.tmx#vines_flowered": {
-            "scaleInDock": 1
-        },
-        "test.tmx": {
-            "expandedObjectLayers": [
-                2
-            ],
-            "scale": 1.2896,
-            "selectedLayer": 0,
+        "lvl3.tmx": {
+            "scale": 1.0034374999999998,
+            "selectedLayer": 8,
             "viewCenter": {
-                "x": 309.39826302729523,
-                "y": 143.84305210918114
+                "x": 486.8265337900967,
+                "y": 320.39862971037076
             }
-        },
-        "test.tmx#IceTileset": {
-            "scaleInDock": 1
-        },
-        "test.tmx#RPG Nature Tileset": {
-            "scaleInDock": 1
-        },
-        "test.tsx": {
-            "dynamicWrapping": true,
-            "scaleInDock": 1,
-            "scaleInEditor": 1
-        },
-        "test24.tsx": {
-            "scaleInDock": 1,
-            "scaleInEditor": 1
         },
         "vines_flowered.tsx": {
-            "dynamicWrapping": false,
             "scaleInDock": 1,
-            "scaleInEditor": 1.7
+            "scaleInEditor": 1
         }
     },
     "last.exportedFilePath": "/home/sportday/Bureau/school/inge/2024-2025/game-jam-esiee-2k24-gp12/data/Sprites/tmx",
