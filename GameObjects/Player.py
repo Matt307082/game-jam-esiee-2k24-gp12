@@ -45,7 +45,7 @@ class Player:
         print(test)
         print(active_layer)
         print(layer_obj)
-        if not self.check_collision(test, active_layer, layer_obj):
+        if not self.check_collision(test, active_layer, layer_obj, GAME_STATE):
             self.x = test.x
             self.y = test.y
 
@@ -71,7 +71,7 @@ class Player:
         return pygame.Rect(self.x,self.y,self.cell_width,self.cell_height)
     
     
-    def check_collision(self,new_player_pos, active_layer, newColide):
+    def check_collision(self,new_player_pos, active_layer, newColide, GAME_STATE):
 
         def collides_with_layer(layer_name):
             return any(new_player_pos.colliderect(obj["rect"]) for obj in newColide.get(layer_name, []))
@@ -85,7 +85,7 @@ class Player:
         if collides_with_layer("mapObj"):
             return True
         if "win" in newColide and new_player_pos.colliderect(newColide["win"]["rect"]):
-            print("win")
+            GAME_STATE["nextLevel"] = True
             return True
         return False
 
