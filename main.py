@@ -6,7 +6,7 @@ from Tools.MusicManager import MusicManager
 from Tools.utils import *
 from GameObjects.InGameMenu import InGameMenu
 from GameObjects.Level import Level
-from menu import main_menu
+from menu import *
 
 # Initialize pygame
 pygame.init()
@@ -71,6 +71,17 @@ while not done:
                     GAME_STATE["click"] = True
         
         main_menu(MENU_SPRITE, GAME_STATE)
+
+    if(GAME_STATE["state"] == State.Pause):
+        event = pygame.event.Event(pygame.USEREVENT)    # Remise à zero de la variable event
+        for event in pygame.event.get():  
+            if event.type == pygame.QUIT:
+                pygame.quit()
+            if event.type == pygame.MOUSEBUTTONDOWN:
+                if event.button == 1:
+                    GAME_STATE["click"] = True
+        
+        draw_selection_screen(MENU_SPRITE, GAME_STATE)
     
     if(GAME_STATE["state"] == State.Play):
         event = pygame.event.Event(pygame.USEREVENT)    # Remise à zero de la variable event
@@ -83,6 +94,9 @@ while not done:
                 GAME_STATE["keyPressed"] = event.key
                 if event.key == pygame.K_r:
                     GAME_STATE["player"].reset(GAME_STATE)
+                if event.key == pygame.K_m:
+                    GAME_STATE["click"] = False
+                    GAME_STATE["state"] = State.Pause
             
             #vidange de la clef stocké
             if event.type == pygame.KEYUP:
