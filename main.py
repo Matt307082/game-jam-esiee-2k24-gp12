@@ -113,7 +113,6 @@ while not done:
                     GAME_STATE["nextLevel"] = True
                 if event.key == pygame.K_SPACE :
                     print(GAME_STATE['layer_obj'])
-                    print(GAME_STATE['layer_obj']['bear'])
 
             #vidange de la clef stocké
             if event.type == pygame.KEYUP:
