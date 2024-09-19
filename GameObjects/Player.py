@@ -69,7 +69,7 @@ class Player:
         return pygame.Rect(self.x,self.y,self.cell_width,self.cell_height)
     
     
-    def check_collision(new_player_pos, active_layer, newColide):
+    def check_collision(self,new_player_pos, active_layer, newColide):
 
         def collides_with_layer(layer_name):
             return any(new_player_pos.colliderect(obj["rect"]) for obj in newColide.get(layer_name, []))

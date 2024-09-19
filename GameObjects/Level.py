@@ -54,11 +54,11 @@ class Level :
         GAME_STATE["active_layer"] = "ete"
         GAME_STATE["layer_obj"] = self.layer_obj
         GAME_STATE["winAndStart"] = {
-            "win" : self.layer_obj.win,
-            "start" : self.layer_obj.start
+            "win" : self.layer_obj["win"],
+            "start" : self.layer_obj["start"]
         }
 
-    def debugColide(active_layer, screen, newColide ,name="COLLISION"):
+    def debugColide(self,active_layer, screen, newColide, player ,name="COLLISION"):
         font = pygame.font.Font(None, 24)
         debugText = {"DEBUG": name, "active_layer": active_layer}
         debugColor = {"Layer": (0, 255, 0), "Decor": (212, 0, 255), "Obj": (0, 0, 255), "Map": (255, 0, 0)}
@@ -97,6 +97,8 @@ class Level :
             screen.blit(textDebug, (25, debugTextY))
             debugTextY += 20
 
+        pygame.draw.rect(screen, (255, 212, 0), player.getHitbox(), 2)
+
     def draw(self,GAME_STATE):
         def blit_tile(layer):
             for x, y, gid in layer:
@@ -109,7 +111,10 @@ class Level :
                 if layer.name in [GAME_STATE["active_layer"], GAME_STATE["active_layer"] + 'Decor', 'mapDecor']:
                     blit_tile(layer)
         
-        self.debugColide(GAME_STATE["active_layer"],GAME_STATE["screen"],self.tmx_data.layers)
+        if(GAME_STATE["debug"]):
+            self.debugColide(GAME_STATE["active_layer"],GAME_STATE["screen"],self.layer_obj,GAME_STATE["player"])
+    
+        
 
     def update(self,GAME_STATE):
         pass

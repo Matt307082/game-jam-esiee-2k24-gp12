@@ -37,6 +37,7 @@ GAME_STATE["nextLevel"] = False
 GAME_STATE["click"] = False
 GAME_STATE["keyPressed"] = None
 GAME_STATE["screen"] = SCREEN
+GAME_STATE["debug"] = False
 GAMES_OBJECTS = []
  
 #titre de la fenetre
@@ -83,6 +84,9 @@ while not done:
                 GAME_STATE["keyPressed"] = event.key
                 if event.key == pygame.K_r:
                     GAME_STATE["player"].reset(GAME_STATE)
+
+                if event.key == pygame.K_d :
+                    GAME_STATE["debug"] = not GAME_STATE["debug"]
             
             #vidange de la clef stocké
             if event.type == pygame.KEYUP:

@@ -1,8 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <map version="1.10" tiledversion="1.11.0" orientation="orthogonal" renderorder="right-down" width="30" height="20" tilewidth="32" tileheight="32" infinite="0" nextlayerid="19" nextobjectid="32">
- <editorsettings>
-  <export target="lvl1" format="tmx"/>
- </editorsettings>
  <tileset firstgid="1" source="RPG Nature Tileset.tsx"/>
  <tileset firstgid="181" source="IceTileset.tsx"/>
  <tileset firstgid="361" source="Other.tsx"/>

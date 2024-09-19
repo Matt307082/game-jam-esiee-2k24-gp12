@@ -11,47 +11,126 @@
         ":/automap-tiles.tsx": {
             "scaleInDock": 1
         },
-        "IceTileset.tsx": {
+        "IceTileset.json": {
             "scaleInDock": 1,
             "scaleInEditor": 1
+        },
+        "IceTileset.tsx": {
+            "dynamicWrapping": false,
+            "scaleInDock": 0.5295,
+            "scaleInEditor": 0.92
+        },
+        "Other.tsx": {
+            "dynamicWrapping": true,
+            "scaleInDock": 1,
+            "scaleInEditor": 0.92
+        },
+        "RPG Nature Tileset Autumn.tsx": {
+            "dynamicWrapping": false,
+            "scaleInDock": 0.988,
+            "scaleInEditor": 1.7
         },
         "RPG Nature Tileset.tsx": {
-            "scaleInDock": 1,
-            "scaleInEditor": 1
+            "dynamicWrapping": false,
+            "scaleInDock": 0.7118,
+            "scaleInEditor": 0.92
         },
         "lvl1.tmx": {
-            "scale": 0.75,
-            "selectedLayer": 2,
+            "expandedGroupLayers": [
+                12,
+                17,
+                15
+            ],
+            "scale": 1.0359,
+            "selectedLayer": 8,
             "viewCenter": {
-                "x": 432,
-                "y": 397.99999999999994
+                "x": 234.09595520803165,
+                "y": 297.8086687904238
             }
         },
         "lvl2.tmx": {
-            "scale": 0.9262499999999999,
-            "selectedLayer": 4,
+            "expandedGroupLayers": [
+                18
+            ],
+            "expandedObjectLayers": [
+                11,
+                15,
+                12,
+                16,
+                14,
+                13,
+                17,
+                18,
+                19
+            ],
+            "scale": 1.0961,
+            "selectedLayer": 13,
             "viewCenter": {
-                "x": 472.8744939271256,
-                "y": 320.1079622132254
+                "x": 405.98485539640535,
+                "y": 337.1042788066782
             }
+        },
+        "test.tmx": {
+            "scale": 1.2896,
+            "selectedLayer": 0,
+            "viewCenter": {
+                "x": 319.8666253101736,
+                "y": 143.84305210918114
+            }
+        },
+        "test.tmx#IceTileset": {
+            "scaleInDock": 1
+        },
+        "test.tmx#RPG Nature Tileset": {
+            "scaleInDock": 1
+        },
+        "test.tsx": {
+            "dynamicWrapping": true,
+            "scaleInDock": 1,
+            "scaleInEditor": 1
+        },
+        "test24.tsx": {
+            "scaleInDock": 1,
+            "scaleInEditor": 1
+        },
+        "vines_flowered.tsx": {
+            "dynamicWrapping": false,
+            "scaleInDock": 1,
+            "scaleInEditor": 1.7
         }
     },
-    "last.imagePath": "C:/Users/zinee/Desktop/E4/cours/gam jam/git/game-jam-esiee-2k24-gp12/data/Sprites/ground",
+    "last.exportedFilePath": "/home/sportday/Bureau/school/inge/2024-2025/game-jam-esiee-2k24-gp12/data/Sprites/tmx",
+    "last.imagePath": "/home/sportday/Bureau/school/inge/2024-2025/game-jam-esiee-2k24-gp12/data/Sprites/ground/Harmonious Seasons - A Seasons Based 2D Pixel Art Pack/Autumn/A_Bushes",
+    "last.objectTemplatePath": "/home/sportday/Bureau/school/inge/2024-2025/game-jam-esiee-2k24-gp12/data/Sprites/tmx",
+    "lastUsedTilesetExportFilter": "Fichiers de jeu de tuiles Tiled (*.tsx *.xml)",
+    "map.lastUsedExportFilter": "Fichiers de carte Tiled (*.tmx *.xml)",
     "map.lastUsedFormat": "tmx",
     "openFiles": [
         "RPG Nature Tileset.tsx",
         "lvl1.tmx",
-        "IceTileset.tsx"
+        "IceTileset.tsx",
+        "Other.tsx",
+        "test.tmx",
+        "RPG Nature Tileset Autumn.tsx"
     ],
     "project": "LVL1.tiled-project",
+    "property.type": "bool",
     "recentFiles": [
         "RPG Nature Tileset.tsx",
+        "RPG Nature Tileset Autumn.tsx",
+        "test.tmx",
+        "Other.tsx",
         "IceTileset.tsx",
-        "lvl1.tmx"
+        "lvl1.tmx",
+        "test24.tsx",
+        "IceTileset.json",
+        "test.tsx",
+        "vines_flowered.tsx"
     ],
     "tileset.lastUsedFormat": "tsx",
     "tileset.tileSize": {
         "height": 32,
         "width": 32
-    }
+    },
+    "tileset.type": 1
 }
