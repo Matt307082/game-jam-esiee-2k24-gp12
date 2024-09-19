@@ -47,7 +47,8 @@ def loadNextLevel(GAMES_OBJECTS):
 
     pathNextLevel = LEVELS.pop()
     GAMES_OBJECTS.append(Level("data/Sprites/tmx/lvl1.tmx",GAME_STATE))
-    GAMES_OBJECTS.append(Player((50,50),PLAYER_SPRITE,GAME_STATE))
+    GAME_STATE["player"] = Player((50,50),PLAYER_SPRITE,GAME_STATE)
+    GAMES_OBJECTS.append(GAME_STATE["player"])
     GAMES_OBJECTS.append(InGameMenu())
     return
 
@@ -78,7 +79,9 @@ while not done:
     
             #recuperation de la key_down (pas d'action continue si on maintien la touche)
             if event.type == pygame.KEYDOWN and GAME_STATE["keyPressed"] != event.key:
-                GAME_STATE["keyPressed"] = event.key 
+                GAME_STATE["keyPressed"] = event.key
+                if event.key == pygame.K_r:
+                    GAME_STATE["player"].reset(GAME_STATE)
             
             #vidange de la clef stocké
             if event.type == pygame.KEYUP:

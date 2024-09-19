@@ -3,8 +3,7 @@ from Tools.utils import ChargeSerieSprites, WINDOW_SIZE
 
 class Player:
     def __init__(self, position, spritesheet, GAME_STATE):
-        self.x = GAME_STATE["winAndStart"]['start'][0]["rect"].x
-        self.y =GAME_STATE["winAndStart"]['start'][0]["rect"].y
+        self.reset(GAME_STATE)
         self.vx = 1
         self.vy = 1
         self.spritesheet = spritesheet
@@ -31,11 +30,9 @@ class Player:
         if(KeysPressed == pygame.K_DOWN and self.y<WINDOW_SIZE[1]-self.cell_height):
             test.y += self.vy
             self.current_anim = self.down_anim
-            self.y += self.vy
         elif(KeysPressed == pygame.K_UP and self.y>0):
             test.y -= self.vy
             self.current_anim = self.up_anim
-            self.y -= self.vy
         elif(KeysPressed == pygame.K_LEFT and self.x>0):
             test.x -= self.vx
             self.current_anim = self.left_anim
@@ -61,6 +58,10 @@ class Player:
         GAME_STATE["screen"].blit(pygame.transform.scale(
             self.current_anim[self.animation_index if GAME_STATE["keyPressed"] != None else (0 if self.current_anim == self.left_anim else 1)]
         ,(25,32)),(self.x,self.y))
+
+    def reset(self, GAME_STATE):
+        self.x = GAME_STATE["winAndStart"]['start'][0]["rect"].x
+        self.y = GAME_STATE["winAndStart"]['start'][0]["rect"].y
 
     def getHitbox(self):
         return pygame.Rect(self.x,self.y,self.cell_width,self.cell_height)
