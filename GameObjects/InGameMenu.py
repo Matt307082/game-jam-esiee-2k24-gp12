@@ -5,6 +5,8 @@ from Tools.utils import Season
 class InGameMenu:
     current_season = Season.SUMMER
     seasons_icons = pygame.transform.scale(pygame.image.load("data/Sprites/seasons.png"), (100,100))
+    keyboard_icons = pygame.transform.scale(pygame.image.load("data/Sprites/keyboard.png"), (512, 162))
+    side_image = pygame.transform.scale(pygame.image.load("data/Sprites/side.png"), (200, 660))
     season_counter = 0
     music_manager = MusicManager()
     music_manager.load_files("hiver","printemps","ete","automne")
@@ -37,14 +39,19 @@ class InGameMenu:
 
     def draw(self, GAME_STATE):
         font = pygame.font.Font(None, 60)
-        pygame.draw.rect(GAME_STATE["screen"], (128, 128, 128), pygame.Rect(960, 0, 178, 640))
+        GAME_STATE["screen"].blit(self.side_image, (950, -10))
         for season in Season:
             index = ["hiver","printemps","ete","automne"].index(season.value)
             self.seasons_icons.set_alpha(255 if self.current_season.value==season.value else 100)
-            GAME_STATE["screen"].blit(self.seasons_icons, (1000, 100 * index + 25), ((index%2) * 52, (index//2) * 52, 50, 50))
-            textobj = font.render(str(index+1), True, (255, 255, 255))
-            textrect = textobj.get_rect(midleft=(1075, 100 * index + 50))
-            GAME_STATE["screen"].blit(textobj, textrect)
-        textobj = font.render(str(self.season_counter), True, (255, 255, 255))
-        textrect = textobj.get_rect(center=(1050, 590))
+            GAME_STATE["screen"].blit(self.seasons_icons, (1030, 100 * index + 25), ((index%2) * 52, (index//2) * 52, 50, 50))
+            GAME_STATE["screen"].blit(self.keyboard_icons, (1080, 100 * index + 37), (index*26 + 118, 26, 24, 24))
+        textobj = font.render(str(self.season_counter) if self.season_counter<100 else "+99", True, (255, 255, 255))
+        textrect = textobj.get_rect(center=(1070, 560))
+        GAME_STATE["screen"].blit(textobj, textrect)
+        font = pygame.font.Font(None, 20)
+        textobj = font.render("changements", True, (255, 255, 255))
+        textrect = textobj.get_rect(center=(1070, 590))
+        GAME_STATE["screen"].blit(textobj, textrect)
+        textobj = font.render("autorisés", True, (255, 255, 255))
+        textrect = textobj.get_rect(center=(1070, 610))
         GAME_STATE["screen"].blit(textobj, textrect)
