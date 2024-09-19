@@ -66,7 +66,7 @@ def loadNextLevel(GAMES_OBJECTS):
     if 'bear' in GAME_STATE['layer_obj']:
         for bear_position in GAME_STATE['layer_obj']['bear']:
             print(bear_position)
-            GAMES_OBJECTS.append(Bear((bear_position['rect'].x, bear_position['rect'].y), BEAR_SPRITE))
+            GAMES_OBJECTS.append(Bear((bear_position['rect'].x-16, bear_position['rect'].y-32), BEAR_SPRITE))
     LEVELS.append(nextLevel)
 
     return
