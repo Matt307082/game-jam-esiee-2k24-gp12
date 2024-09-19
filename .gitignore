@@ -3,4 +3,6 @@ lib/
 .idea
 lib64
 pyvenv.cfg
-*/__pycache__/
+__pycache__/
+GameObjects/__pycache__/
+Tools/__pycache__/
