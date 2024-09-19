@@ -100,6 +100,8 @@ while not done:
                     GAME_STATE["state"] = State.Pause
                 if event.key == pygame.K_d :
                     GAME_STATE["debug"] = not GAME_STATE["debug"]
+                if event.key == pygame.K_SPACE :
+                    print(GAME_STATE['layer_obj'])
             
             #vidange de la clef stocké
             if event.type == pygame.KEYUP:

@@ -4,8 +4,8 @@ from Tools.utils import ChargeSerieSprites, WINDOW_SIZE
 class Player:
     def __init__(self, spritesheet, GAME_STATE):
         self.reset(GAME_STATE)
-        self.x = GAME_STATE["winAndStart"]['start']["rect"].x
-        self.y =GAME_STATE["winAndStart"]['start']["rect"].y
+        self.x = GAME_STATE["winAndStart"]['start'][0]["rect"].x
+        self.y =GAME_STATE["winAndStart"]['start'][0]["rect"].y
         self.vx = 1
         self.vy = 1
         self.spritesheet = spritesheet
@@ -41,10 +41,7 @@ class Player:
         elif(KeysPressed == pygame.K_RIGHT and self.x<WINDOW_SIZE[0]-self.cell_width):
             test.x += self.vx
             self.current_anim = self.right_anim
-        
-        print(test)
-        print(active_layer)
-        print(layer_obj)
+
         if not self.check_collision(test, active_layer, layer_obj):
             self.x = test.x
             self.y = test.y
@@ -62,8 +59,8 @@ class Player:
         ,(25,32)),(self.x,self.y))
 
     def reset(self, GAME_STATE):
-        self.x = GAME_STATE["winAndStart"]['start']["rect"].x
-        self.y = GAME_STATE["winAndStart"]['start']["rect"].y
+        self.x = GAME_STATE["winAndStart"]['start'][0]["rect"].x
+        self.y = GAME_STATE["winAndStart"]['start'][0]["rect"].y
 
     def getHitbox(self):
         return pygame.Rect(self.x,self.y,self.cell_width,self.cell_height)
@@ -82,9 +79,16 @@ class Player:
             return True
         if collides_with_layer("mapObj"):
             return True
-        if "win" in newColide and new_player_pos.colliderect(newColide["win"]["rect"]):
-            print("win")
-            return True
+        if "win" in newColide:
+            for win_rect in newColide["win"]:
+                if new_player_pos.colliderect(win_rect["rect"]):
+                    print("win")
+                    return True
+
+        if collides_with_layer(active_layer + "Decor1"):
+            print("decor")
+            return False
+
         return False
 
 

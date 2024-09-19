@@ -17,8 +17,13 @@
  </tile>
  <tile id="2">
   <objectgroup draworder="index" id="2">
-   <object id="1" x="4.59604" y="2.98122" width="21.9865" height="16.024"/>
+   <object id="1" x="4.59604" y="2.98122" width="22.469" height="16.024"/>
    <object id="2" x="14.4092" y="17.142" width="2.98122" height="8.69522"/>
+  </objectgroup>
+ </tile>
+ <tile id="3">
+  <objectgroup draworder="index" id="2">
+   <object id="1" x="2.99156" y="10.9047" width="26.731" height="13.2207"/>
   </objectgroup>
  </tile>
  <tile id="15">
