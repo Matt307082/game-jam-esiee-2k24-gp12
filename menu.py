@@ -86,6 +86,7 @@ def main_menu(background_image,GAME_STATE):
 def draw_selection_screen(background_image, GAME_STATE):
     screen = GAME_STATE["screen"]
     click = GAME_STATE["click"]
+    GAME_STATE["keyPressed"] = None
     screen.blit(background_image, (0, 0))
     button_1 = pygame.Rect(WINDOW_SIZE[0]//2 - 200, 100, 400, 50)
     button_2 = pygame.Rect(WINDOW_SIZE[0]//2 - 200, 300, 400, 50)
