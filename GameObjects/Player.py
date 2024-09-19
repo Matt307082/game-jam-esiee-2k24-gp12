@@ -33,6 +33,10 @@ class Player:
         active_layer = GAME_STATE["active_layer"]
         layer_obj = GAME_STATE["layer_obj"]
 
+        if self.check_collision(self.getHitbox(),False,active_layer, layer_obj, GAME_STATE) :
+            self.reset(GAME_STATE)
+            return
+
         self.moved = True
         test = self.getHitbox()
         if(KeysPressed[pygame.K_DOWN] and self.y<WINDOW_SIZE[1]-self.cell_height):
@@ -49,7 +53,7 @@ class Player:
             self.current_anim = self.right_anim
         else: self.moved = False
 
-        if not self.check_collision(test, active_layer, layer_obj, GAME_STATE):
+        if not self.check_collision(test, True, active_layer, layer_obj, GAME_STATE):
             self.x = test.x
             self.y = test.y
 
@@ -99,7 +103,7 @@ class Player:
             for img in  anim :
                 img.set_alpha(alpha)
     
-    def check_collision(self,new_player_pos, active_layer, newColide, GAME_STATE):
+    def check_collision(self, new_player_pos, check_fog, active_layer, newColide, GAME_STATE):
         
         inFogNow = False
         collide = False
@@ -124,7 +128,7 @@ class Player:
         if collides_with_layer(active_layer + "Decor1"):
             inFogNow = True
             
-        if self.inFog != inFogNow :
+        if check_fog and self.inFog != inFogNow :
             self.changeAlpha = True
             self.inFog = inFogNow
         
