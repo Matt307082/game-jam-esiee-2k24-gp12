@@ -22,8 +22,7 @@
         },
         "Other.tsx": {
             "dynamicWrapping": true,
-            "scaleInDock": 1,
-            "scaleInEditor": 0.92
+            "scaleInDock": 1
         },
         "RPG Nature Tileset Autumn.tsx": {
             "dynamicWrapping": false,
@@ -36,16 +35,11 @@
             "scaleInEditor": 0.92
         },
         "lvl1.tmx": {
-            "expandedGroupLayers": [
-                12,
-                17,
-                15
-            ],
-            "scale": 1.0359,
-            "selectedLayer": 8,
+            "scale": 0.75,
+            "selectedLayer": -1,
             "viewCenter": {
-                "x": 234.09595520803165,
-                "y": 297.8086687904238
+                "x": 559.3333333333333,
+                "y": 319.33333333333326
             }
         },
         "lvl2.tmx": {
@@ -70,9 +64,9 @@
                 "y": 337.1042788066782
             }
         },
-        "test.tmx": {
-            "scale": 1.2896,
-            "selectedLayer": 0,
+        "lvl3.tmx": {
+            "scale": 1.0034374999999998,
+            "selectedLayer": 8,
             "viewCenter": {
                 "x": 319.8666253101736,
                 "y": 143.84305210918114
