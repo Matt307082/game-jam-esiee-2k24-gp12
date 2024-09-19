@@ -1,11 +1,11 @@
 import pygame
 from Tools.utils import ChargeSerieSprites, WINDOW_SIZE
+from GameObjects.Skull import Skull
 
 class Player:
     def __init__(self, spritesheet, GAME_STATE):
-        self.reset(GAME_STATE)
         self.x = GAME_STATE["winAndStart"]['start']["rect"].x
-        self.y =GAME_STATE["winAndStart"]['start']["rect"].y
+        self.y = GAME_STATE["winAndStart"]['start']["rect"].y
         self.vx = 1
         self.vy = 1
         self.spritesheet = spritesheet
@@ -62,8 +62,10 @@ class Player:
         ,(25,32)),(self.x,self.y))
 
     def reset(self, GAME_STATE):
+        GAME_STATE["gameObject"].append(Skull((self.x,self.y),GAME_STATE["skullSprite"]))
         self.x = GAME_STATE["winAndStart"]['start']["rect"].x
         self.y = GAME_STATE["winAndStart"]['start']["rect"].y
+        
 
     def getHitbox(self):
         return pygame.Rect(self.x,self.y,self.cell_width,self.cell_height)

@@ -6,6 +6,7 @@ from Tools.MusicManager import MusicManager
 from Tools.utils import *
 from GameObjects.InGameMenu import InGameMenu
 from GameObjects.Level import Level
+from GameObjects.Skull import Skull
 from menu import *
 
 # Initialize pygame
@@ -30,8 +31,10 @@ MENU_SPRITE = pygame.image.load(os.path.join(assets, "Sprites/menu.png"))
 MENU_SPRITE = pygame.transform.scale(MENU_SPRITE, WINDOW_SIZE)
 PLAYER_SPRITE = pygame.image.load(os.path.join(assets, "Sprites/player.png"))
 BEAR_SPRITE = pygame.image.load(os.path.join(assets, "Sprites/bear.png"))
+SKULL_SPRITE = pygame.image.load(os.path.join(assets,"Sprites/skull.png"))
 
 #etat du jeu global
+GAMES_OBJECTS = []
 GAME_STATE = dict()
 GAME_STATE["state"] = State.Menu
 GAME_STATE["nextLevel"] = False
@@ -39,7 +42,9 @@ GAME_STATE["click"] = False
 GAME_STATE["keyPressed"] = None
 GAME_STATE["screen"] = SCREEN
 GAME_STATE["debug"] = False
-GAMES_OBJECTS = []
+GAME_STATE["skullSprite"] = SKULL_SPRITE
+GAME_STATE["gameObject"] = GAMES_OBJECTS
+
  
 #titre de la fenetre
 pygame.display.set_caption("Nom de code  : Vivaldi")
@@ -54,6 +59,8 @@ def loadNextLevel(GAMES_OBJECTS):
     GAMES_OBJECTS.append(InGameMenu(nextLevel["season"], GAME_STATE))
     GAMES_OBJECTS.append(Bear((100,100), BEAR_SPRITE))
     LEVELS.append(nextLevel)
+
+    return
 
 #chargement du premier niveau
 loadNextLevel(GAMES_OBJECTS)
