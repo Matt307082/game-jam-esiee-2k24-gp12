@@ -3,7 +3,7 @@
         "height": 4300,
         "width": 2
     },
-    "activeFile": "lvl1.tmx",
+    "activeFile": "lvl2.tmx",
     "expandedProjectPaths": [
         "."
     ],
@@ -43,27 +43,32 @@
             "scaleInDock": 0.7118,
             "scaleInEditor": 0.92
         },
+        "Spring.tsx": {
+            "dynamicWrapping": false,
+            "scaleInDock": 0.9394,
+            "scaleInEditor": 0.92
+        },
         "fog.tsx": {
             "scaleInDock": 1,
-            "scaleInEditor": 1
+            "scaleInEditor": 0.92
         },
         "lvl1.tmx": {
             "expandedGroupLayers": [
+                15,
                 12,
-                17,
-                15
+                17
             ],
             "expandedObjectLayers": [
                 9,
-                17,
                 15,
-                19
+                19,
+                17
             ],
             "scale": 0.9311,
             "selectedLayer": 6,
             "viewCenter": {
                 "x": 475.7813339061325,
-                "y": 393.62044893137147
+                "y": 394.15744817957255
             }
         },
         "lvl2.tmx": {
@@ -71,26 +76,36 @@
                 18
             ],
             "expandedObjectLayers": [
-                12
+                16,
+                15,
+                12,
+                14,
+                13,
+                11,
+                17
             ],
-            "scale": 1.0961,
-            "selectedLayer": 14,
+            "scale": 0.8078,
+            "selectedLayer": 16,
             "viewCenter": {
-                "x": 399.59857677219225,
-                "y": 337.1042788066782
+                "x": 488.9824213914336,
+                "y": 303.2928942807626
             }
         },
         "lvl2.tmx#IceTileset": {
+            "dynamicWrapping": false,
             "scaleInDock": 1
         },
         "lvl2.tmx#Other": {
-            "scaleInDock": 1
+            "dynamicWrapping": true,
+            "scaleInDock": 1,
+            "scaleInEditor": 1
         },
         "lvl2.tmx#RPG Nature Tileset": {
             "scaleInDock": 1
         },
         "lvl2.tmx#RPG Nature Tileset Autumn": {
-            "scaleInDock": 1
+            "scaleInDock": 1,
+            "scaleInEditor": 1
         },
         "lvl2.tmx#vines_flowered": {
             "scaleInDock": 1
@@ -124,7 +139,11 @@
         "vines_flowered.tsx": {
             "dynamicWrapping": false,
             "scaleInDock": 1,
-            "scaleInEditor": 1.7
+            "scaleInEditor": 0.92
+        },
+        "vines_flowered_wall.tsx": {
+            "scaleInDock": 1,
+            "scaleInEditor": 1
         }
     },
     "last.exportedFilePath": "/home/sportday/Bureau/school/inge/2024-2025/game-jam-esiee-2k24-gp12/data/Sprites/tmx",
@@ -136,27 +155,24 @@
     "openFiles": [
         "RPG Nature Tileset.tsx",
         "lvl1.tmx",
-        "IceTileset.tsx",
-        "Other.tsx",
-        "test.tmx",
-        "RPG Nature Tileset Autumn.tsx",
-        "lvl2.tmx"
+        "lvl2.tmx",
+        "Spring.tsx"
     ],
     "project": "LVL1.tiled-project",
     "property.type": "bool",
     "recentFiles": [
-        "test.tmx",
+        "Spring.tsx",
+        "RPG Nature Tileset.tsx",
+        "lvl1.tmx",
+        "lvl2.tmx",
+        "vines_flowered_wall.tsx",
         "fog.tsx",
+        "vines_flowered.tsx",
+        "test.tmx",
         "Flowers.tsx",
         "Other.tsx",
         "IceTileset.tsx",
-        "lvl2.tmx",
-        "RPG Nature Tileset Autumn.tsx",
-        "RPG Nature Tileset.tsx",
-        "lvl1.tmx",
-        "test24.tsx",
-        "IceTileset.json",
-        "test.tsx"
+        "RPG Nature Tileset Autumn.tsx"
     ],
     "tileset.lastUsedFormat": "tsx",
     "tileset.tileSize": {
