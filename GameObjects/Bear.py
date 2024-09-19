@@ -20,7 +20,7 @@ class Bear:
     def update(self, GAME_STATE):
         if(GAME_STATE["saison"] != Season.WINTER):
             player = GAME_STATE["player"]
-            if (sqrt((self.x+self.width//2 - (player.x+player.cell_width//2))**2 + (self.y+self.height//2 - (player.y+player.cell_height//2))**2) <= 70):
+            if (sqrt((self.x+self.width//2 - (player.x+player.cell_width//2))**2 + (self.y+self.height//2 - (player.y+player.cell_height//2))**2) <= 50):
                 self.current_anim = self.slash_anim
                 self.animation_started = True
 
@@ -40,6 +40,6 @@ class Bear:
         if(GAME_STATE["saison"] != Season.WINTER):
             screen = GAME_STATE["screen"]
             if(self.current_anim == self.sleep_anim):
-                screen.blit(self.current_anim[7],(self.x,self.y))
+                screen.blit(pygame.transform.scale(self.current_anim[7],(50,64)),(self.x,self.y))
             else:
-                screen.blit(self.current_anim[self.animation_index],(self.x,self.y))
+                screen.blit(pygame.transform.scale(self.current_anim[self.animation_index], (50,64)),(self.x,self.y))
