@@ -1114,7 +1114,7 @@
   <object id="50" name="arbre" type="block" x="703.602" y="2.43602" width="32" height="58.6889"/>
   <object id="51" name="arbre" type="block" x="608.087" y="98.4094" width="32" height="58.6889"/>
   <object id="33" name="roche" type="block" x="708.438" y="136.455" width="22.6152" height="21.1801"/>
-  <object id="49" name="start" type="start" x="352.062" y="575.943" width="32" height="32"/>
+  <object id="49" name="start" type="other" x="352.062" y="575.943" width="32" height="32"/>
   <object id="94" name="win" type="other" x="608.079" y="31.9425" width="32" height="32"/>
   <object id="52" name="arbre" type="block" x="160.011" y="130.536" width="32" height="58.6889"/>
   <object id="53" name="arbre" type="block" x="287.709" y="418.516" width="32" height="58.6889"/>

@@ -49,4 +49,136 @@
    <object id="1" x="8.81944" y="17.0178" width="14.0366" height="11.0554"/>
   </objectgroup>
  </tile>
+ <tile id="50">
+  <objectgroup draworder="index" id="2">
+   <object id="1" template="up_all.tx" x="0" y="0"/>
+   <object id="2" template="demi_up.tx" x="0" y="16"/>
+  </objectgroup>
+ </tile>
+ <tile id="51">
+  <objectgroup draworder="index" id="2">
+   <object id="1" template="up_all.tx" x="0" y="0"/>
+  </objectgroup>
+ </tile>
+ <tile id="52">
+  <objectgroup draworder="index" id="2">
+   <object id="1" template="up_all.tx" x="0" y="0"/>
+   <object id="2" template="demi_up.tx" x="16" y="16"/>
+  </objectgroup>
+ </tile>
+ <tile id="53">
+  <objectgroup draworder="index" id="2">
+   <object id="1" template="demi_up.tx" x="16" y="16"/>
+  </objectgroup>
+ </tile>
+ <tile id="54">
+  <objectgroup draworder="index" id="2">
+   <object id="1" template="demi_up.tx" x="0" y="16"/>
+  </objectgroup>
+ </tile>
+ <tile id="55">
+  <objectgroup draworder="index" id="2">
+   <object id="1" template="up_all.tx" x="0" y="0"/>
+   <object id="2" template="demi_up.tx" x="0" y="16"/>
+  </objectgroup>
+ </tile>
+ <tile id="56">
+  <objectgroup draworder="index" id="2">
+   <object id="1" template="up_all.tx" x="0" y="0"/>
+  </objectgroup>
+ </tile>
+ <tile id="57">
+  <objectgroup draworder="index" id="2">
+   <object id="1" template="up_all.tx" x="0" y="0"/>
+   <object id="3" template="demi_up.tx" x="16" y="16"/>
+  </objectgroup>
+ </tile>
+ <tile id="65">
+  <objectgroup draworder="index" id="2">
+   <object id="1" template="cote.tx" x="0" y="0"/>
+  </objectgroup>
+ </tile>
+ <tile id="67">
+  <objectgroup draworder="index" id="2">
+   <object id="1" template="cote.tx" x="16" y="0"/>
+  </objectgroup>
+ </tile>
+ <tile id="68">
+  <objectgroup draworder="index" id="2">
+   <object id="1" template="demi_up.tx" x="16" y="0"/>
+  </objectgroup>
+ </tile>
+ <tile id="69">
+  <objectgroup draworder="index" id="3">
+   <object id="2" template="demi_up.tx" x="0" y="0"/>
+  </objectgroup>
+ </tile>
+ <tile id="70">
+  <objectgroup draworder="index" id="2">
+   <object id="1" template="cote.tx" x="0" y="0"/>
+  </objectgroup>
+ </tile>
+ <tile id="72">
+  <objectgroup draworder="index" id="2">
+   <object id="1" template="cote.tx" x="16" y="0"/>
+  </objectgroup>
+ </tile>
+ <tile id="80">
+  <objectgroup draworder="index" id="2">
+   <object id="1" template="up_all.tx" x="0" y="16"/>
+   <object id="2" template="demi_up.tx" x="0" y="0"/>
+  </objectgroup>
+ </tile>
+ <tile id="81">
+  <objectgroup draworder="index" id="2">
+   <object id="1" template="up_all.tx" x="0" y="16"/>
+  </objectgroup>
+ </tile>
+ <tile id="82">
+  <objectgroup draworder="index" id="2">
+   <object id="1" template="up_all.tx" x="0" y="16"/>
+   <object id="2" template="demi_up.tx" x="16" y="0"/>
+  </objectgroup>
+ </tile>
+ <tile id="83">
+  <objectgroup draworder="index" id="2">
+   <object id="1" template="demi_up.tx" x="16" y="0"/>
+   <object id="2" template="demi_up.tx" x="0" y="16"/>
+  </objectgroup>
+ </tile>
+ <tile id="84">
+  <objectgroup draworder="index" id="2">
+   <object id="1" template="demi_up.tx" x="0" y="0"/>
+   <object id="2" template="demi_up.tx" x="16" y="16"/>
+  </objectgroup>
+ </tile>
+ <tile id="85">
+  <objectgroup draworder="index" id="2">
+   <object id="1" template="up_all.tx" x="0" y="16"/>
+   <object id="2" template="demi_up.tx" x="0" y="0"/>
+  </objectgroup>
+ </tile>
+ <tile id="86">
+  <objectgroup draworder="index" id="2">
+   <object id="1" template="up_all.tx" x="0" y="16"/>
+  </objectgroup>
+ </tile>
+ <tile id="87">
+  <objectgroup draworder="index" id="2">
+   <object id="1" template="up_all.tx" x="0" y="16"/>
+   <object id="2" template="demi_up.tx" x="16" y="0"/>
+  </objectgroup>
+ </tile>
+ <tile id="88">
+  <objectgroup draworder="index" id="2">
+   <object id="1" template="demi_up.tx" x="16" y="0"/>
+   <object id="2" template="demi_up.tx" x="0" y="16"/>
+  </objectgroup>
+ </tile>
+ <tile id="89">
+  <objectgroup draworder="index" id="2">
+   <object id="1" template="demi_up.tx" x="0" y="0"/>
+   <object id="2" template="demi_up.tx" x="16" y="16"/>
+  </objectgroup>
+ </tile>
 </tileset>
