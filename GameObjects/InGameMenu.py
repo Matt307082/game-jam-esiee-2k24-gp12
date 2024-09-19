@@ -12,33 +12,31 @@ class Season(Enum):
 class InGameMenu:
     current_season = Season.SUMMER
     seasons_icons = pygame.transform.scale(pygame.image.load("data/Sprites/seasons.png"), (100,100))
+    season_counter = 0
     music_manager = MusicManager()
-    music_manager.load_files("autumn", "winter","spring","summer")
-    music_manager.play("summer")
+    music_manager.load_files("automne", "hiver", "printemps", "ete")
+    music_manager.play(current_season.value)
 
     def update(self, GAME_STATE):
+        print(self.season_counter)
         keyPressed = GAME_STATE["keyPressed"]
+
+        old_counter = self.season_counter
+        self.season_counter += 1
+        if keyPressed == pygame.K_1 and self.current_season != Season.WINTER:
+            self.current_season = Season.WINTER
+        elif keyPressed == pygame.K_2 and self.current_season != Season.SPRING:
+            self.current_season = Season.SPRING
+        elif keyPressed == pygame.K_3 and self.current_season != Season.SUMMER:
+            self.current_season = Season.SUMMER
+        elif keyPressed == pygame.K_4 and self.current_season != Season.AUTUMN:
+            self.current_season = Season.AUTUMN
+        else: self.season_counter -= 1
+
         GAME_STATE["saison"] = self.current_season
         GAME_STATE["active_layer"] = GAME_STATE["saison"].value
-
-        if keyPressed == pygame.K_1 :
-            self.current_season = Season.WINTER
-            GAME_STATE["saison"] = Season.WINTER
-            self.music_manager.play("winter")
-        elif keyPressed == pygame.K_2 :
-            self.current_season = Season.SPRING
-            GAME_STATE["saison"] = Season.SPRING
-            self.music_manager.play("spring")
-        elif keyPressed == pygame.K_3 :
-            self.current_season = Season.SUMMER
-            GAME_STATE["saison"] = Season.SUMMER
-            self.music_manager.play("summer")
-        elif keyPressed == pygame.K_4 :
-            self.current_season = Season.AUTUMN
-            GAME_STATE["saison"] = Season.AUTUMN
-            self.music_manager.play("autumn")
-
-        GAME_STATE["active_layer"] = GAME_STATE["saison"].value
+        if old_counter != self.season_counter:
+            self.music_manager.play(self.current_season.value)
 
     def draw(self, GAME_STATE):
         for season in Season:
