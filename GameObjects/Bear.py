@@ -29,7 +29,7 @@ class Bear:
                 if self.frame_counter >= self.animation_speed:
                     self.frame_counter = 0
                     self.animation_index += 1
-                    if self.animation_index >= len(self.current_anim)/2:
+                    if self.animation_index == len(self.current_anim)//2:
                         player.reset(GAME_STATE)
                     if self.animation_index >= len(self.current_anim):
                         self.animation_index = 0
