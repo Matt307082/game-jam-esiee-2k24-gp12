@@ -3,7 +3,7 @@
         "height": 4300,
         "width": 2
     },
-    "activeFile": "lvl2.tmx",
+    "activeFile": "lvl1.tmx",
     "expandedProjectPaths": [
         "."
     ],
@@ -12,61 +12,28 @@
             "scaleInDock": 1
         },
         "IceTileset.tsx": {
-            "dynamicWrapping": false,
-            "scaleInDock": 1,
-            "scaleInEditor": 1
-        },
-        "Other.tsx": {
-            "dynamicWrapping": true,
-            "scaleInDock": 1,
-            "scaleInEditor": 1
-        },
-        "RPG Nature Tileset Autumn.tsx": {
             "scaleInDock": 1,
             "scaleInEditor": 1
         },
         "RPG Nature Tileset.tsx": {
-            "dynamicWrapping": false,
-            "scaleInDock": 1,
-            "scaleInEditor": 1
-        },
-        "lianne.tsx": {
             "scaleInDock": 1,
             "scaleInEditor": 1
         },
         "lvl1.tmx": {
-            "scale": 1,
-            "selectedLayer": 7,
+            "scale": 0.75,
+            "selectedLayer": 2,
             "viewCenter": {
-                "x": 557.9999999999999,
-                "y": 319.33333333333326
+                "x": 432,
+                "y": 397.99999999999994
             }
         },
         "lvl2.tmx": {
-            "expandedObjectLayers": [
-                12
-            ],
             "scale": 0.9262499999999999,
-            "selectedLayer": 11,
+            "selectedLayer": 4,
             "viewCenter": {
-                "x": 491.7678812415655,
-                "y": 304.99325236167346
+                "x": 472.8744939271256,
+                "y": 320.1079622132254
             }
-        },
-        "lvl3.tmx": {
-            "expandedObjectLayers": [
-                9
-            ],
-            "scale": 1.0034374999999998,
-            "selectedLayer": 7,
-            "viewCenter": {
-                "x": 486.8265337900967,
-                "y": 320.39862971037076
-            }
-        },
-        "vines_flowered.tsx": {
-            "scaleInDock": 1,
-            "scaleInEditor": 1
         }
     },
     "last.imagePath": "C:/Users/zinee/Desktop/E4/cours/gam jam/git/game-jam-esiee-2k24-gp12/data/Sprites/ground",
@@ -74,22 +41,13 @@
     "openFiles": [
         "RPG Nature Tileset.tsx",
         "lvl1.tmx",
-        "IceTileset.tsx",
-        "lvl2.tmx",
-        "RPG Nature Tileset Autumn.tsx",
-        "vines_flowered.tsx",
-        "lvl3.tmx"
+        "IceTileset.tsx"
     ],
     "project": "LVL1.tiled-project",
     "recentFiles": [
         "RPG Nature Tileset.tsx",
-        "lvl1.tmx",
         "IceTileset.tsx",
-        "lvl3.tmx",
-        "vines_flowered.tsx",
-        "RPG Nature Tileset Autumn.tsx",
-        "lvl2.tmx",
-        "lianne.tsx"
+        "lvl1.tmx"
     ],
     "tileset.lastUsedFormat": "tsx",
     "tileset.tileSize": {

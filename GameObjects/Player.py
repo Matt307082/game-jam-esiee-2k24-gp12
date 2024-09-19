@@ -4,6 +4,8 @@ from Tools.utils import ChargeSerieSprites, WINDOW_SIZE
 class Player:
     def __init__(self, position, spritesheet, GAME_STATE):
         self.reset(GAME_STATE)
+        self.x = GAME_STATE["winAndStart"]['start']["rect"].x
+        self.y =GAME_STATE["winAndStart"]['start']["rect"].y
         self.vx = 1
         self.vy = 1
         self.spritesheet = spritesheet
@@ -43,7 +45,7 @@ class Player:
         print(test)
         print(active_layer)
         print(layer_obj)
-        if not self.check_collision(test, active_layer, layer_obj, GAME_STATE["winAndStart"]):
+        if not self.check_collision(test, active_layer, layer_obj):
             self.x = test.x
             self.y = test.y
 
@@ -60,30 +62,29 @@ class Player:
         ,(25,32)),(self.x,self.y))
 
     def reset(self, GAME_STATE):
-        self.x = GAME_STATE["winAndStart"]['start'][0]["rect"].x
-        self.y = GAME_STATE["winAndStart"]['start'][0]["rect"].y
+        self.x = GAME_STATE["winAndStart"]['start']["rect"].x
+        self.y = GAME_STATE["winAndStart"]['start']["rect"].y
 
     def getHitbox(self):
         return pygame.Rect(self.x,self.y,self.cell_width,self.cell_height)
     
-    def check_collision(self, new_player_pos, active_layer, layer_obj, winAndStart):
-        
-        for obj in winAndStart['win']:
-            if new_player_pos.colliderect(obj["rect"]):
-                print("win")
-                return True
-        
-        realActiveLayer = active_layer + "Obj"
-        if realActiveLayer in layer_obj:
-            collision_rects = layer_obj[realActiveLayer]
-            for obj in collision_rects:
-                if new_player_pos.colliderect(obj["rect"]):
-                    return True
-                
-        for obj in layer_obj['mapObj']:
-            if new_player_pos.colliderect(obj["rect"]):
-                return True
-        
+    
+    def check_collision(new_player_pos, active_layer, newColide):
+
+        def collides_with_layer(layer_name):
+            return any(new_player_pos.colliderect(obj["rect"]) for obj in newColide.get(layer_name, []))
+
+        if collides_with_layer(active_layer):
+            return True
+        if collides_with_layer(active_layer + "Decor"):
+            return True
+        if collides_with_layer(active_layer + "Obj"):
+            return True
+        if collides_with_layer("mapObj"):
+            return True
+        if "win" in newColide and new_player_pos.colliderect(newColide["win"]["rect"]):
+            print("win")
+            return True
         return False
 
 

@@ -1,45 +1,45 @@
 import pytmx
 import pygame
 
-def get_collision_objects_by_layer(tmx_data):
-        layers = {}
-        for layer in tmx_data.layers:
-            if isinstance(layer, pytmx.TiledObjectGroup):  # Si c'est un layer d'objets
-                collision_objects = []
-                for obj in layer:
-                    # On cherche les objets ayant la propriété 'class' == 'block' ou un type 'block'
-                    if obj.type == 'block' or obj.properties.get('class') == 'block':
-                        # Stocker le nom de l'objet et son rectangle
-                        collision_objects.append({
-                            "name": obj.name,
-                            "rect": pygame.Rect(obj.x, obj.y, obj.width, obj.height)
-                        })
-                layers[layer.name] = collision_objects
-        return layers
+def get_collision_data(tmx_data):
+    collision_data = {}
+    for layer in tmx_data.layers:
+        if isinstance(layer, pytmx.TiledObjectGroup):
+            collision_objects = []
+            for obj in layer:
+                if obj.type == 'block' or obj.properties.get('class') == 'block':
+                    collision_objects.append({
+                        "name": obj.name,
+                        "rect": pygame.Rect(obj.x, obj.y, obj.width, obj.height)
+                    })
+                elif obj.type == 'other' or obj.properties.get('class') == 'other':
+                    collision_data[obj.name] = {
+                        "name": obj.name,
+                        "rect": pygame.Rect(obj.x, obj.y, obj.width, obj.height)
+                    }
+            collision_data[layer.name] = collision_objects
 
-def getWinAndStart(tmx_data):
-        layers = {}
-        for layer in tmx_data.layers:
-            if isinstance(layer, pytmx.TiledObjectGroup):
-                collision_objects = []
-                for obj in layer:
-                    if obj.type == 'win' or obj.properties.get('class') == 'win':
-                        collision_objects.append({
-                            "name": obj.name,
-                            "rect": pygame.Rect(obj.x, obj.y, obj.width, obj.height)
-                        })
+        elif isinstance(layer, pytmx.TiledTileLayer):
+            layer_colliders = []
+            for x, y, gid in layer:
+                tile = tmx_data.get_tile_properties_by_gid(gid)
+                if tile:
+                    colliders = tile.get('colliders')
+                    if colliders:
+                        for collider in colliders:
+                            collision_rect = pygame.Rect(
+                                x * tmx_data.tilewidth + collider.x,
+                                y * tmx_data.tileheight + collider.y,
+                                collider.width,
+                                collider.height
+                            )
+                            layer_colliders.append({
+                                "name": tile.get('name', ''),
+                                "rect": collision_rect
+                            })
+            collision_data[layer.name] = layer_colliders  # Stocker les colliders pour chaque layer
 
-                layers['win'] = collision_objects
-                collision_objects = []
-                for obj in layer:
-                    if obj.type == 'start' or obj.properties.get('class') == 'start':
-                        collision_objects.append({
-                            "name": obj.name,
-                            "rect": pygame.Rect(obj.x, obj.y, obj.width, obj.height)
-                        })
-
-                layers['start'] = collision_objects
-        return layers
+    return collision_data
     
 
 class Level :
@@ -49,47 +49,67 @@ class Level :
 
     def __init__(self,level_path,GAME_STATE) :
         self.tmx_data = pytmx.load_pygame(level_path)
-        self.layer_obj = get_collision_objects_by_layer(self.tmx_data)
+        self.layer_obj = get_collision_data(self.tmx_data)
+        print(self.layer_obj)
         GAME_STATE["active_layer"] = "ete"
         GAME_STATE["layer_obj"] = self.layer_obj
-        GAME_STATE["winAndStart"] = getWinAndStart(self.tmx_data)
-
-
-    
-
-    def debugColide(self,active_layer,screen,name="COLLISION"):
-        font = pygame.font.Font(None, 24)
-        realActiveLayer = active_layer + "Obj"
-
-        debugText = {
-            "DEBUG": name,
-            "active_layer": active_layer,
-            "Object": realActiveLayer
+        GAME_STATE["winAndStart"] = {
+            "win" : self.layer_obj.win,
+            "start" : self.layer_obj.start
         }
-        pygame.draw.rect(screen, (255, 255, 255), (0, 0, 200, debugText.__len__() * 20))
+
+    def debugColide(active_layer, screen, newColide ,name="COLLISION"):
+        font = pygame.font.Font(None, 24)
+        debugText = {"DEBUG": name, "active_layer": active_layer}
+        debugColor = {"Layer": (0, 255, 0), "Decor": (212, 0, 255), "Obj": (0, 0, 255), "Map": (255, 0, 0)}
+        textColor = (0, 0, 0)
+
+        def draw_named_rects(objects, color):
+            for obj in objects:
+                pygame.draw.rect(screen, color, obj["rect"], 2)
+                if obj["name"]:
+                    text_surface = font.render(obj["name"], True, textColor)
+                    screen.blit(text_surface, (obj["rect"].x, obj["rect"].y - 20))
+
+        if active_layer in newColide:
+            draw_named_rects(newColide[active_layer], debugColor['Layer'])
+
+        if active_layer + "Decor" in newColide:
+            draw_named_rects(newColide[active_layer + "Decor"], debugColor['Decor'])
+
+        if active_layer + "Obj" in newColide:
+            draw_named_rects(newColide[active_layer + "Obj"], debugColor['Obj'])
+
+        if "mapObj" in newColide:
+            draw_named_rects(newColide["mapObj"], debugColor['Map'])
+
+        pygame.draw.rect(screen, (255, 255, 255), (0, 0, 200, (len(debugText) + len(debugColor)) * 20))
+
         debugTextY = 0
         for key, value in debugText.items():
-            textDebug = font.render(key + ": " + value, True, (0, 0, 0))
+            textDebug = font.render(f"{key}: {value}", True, textColor)
             screen.blit(textDebug, (0, debugTextY))
             debugTextY += 20
 
-        if realActiveLayer in self.layer_obj:
-            for obj in self.layer_obj[realActiveLayer]:
-                pygame.draw.rect(screen, (0, 255, 0), obj["rect"], 2)
-                if obj["name"]:
-                    text_surface = font.render(obj["name"], True, (0, 0, 0))
-                    screen.blit(text_surface, (obj["rect"].x, obj["rect"].y - 20))
+        for key, value in debugColor.items():
+            pygame.draw.rect(screen, value, (0, debugTextY, 20, 20))
+            textDebug = font.render(key, True, textColor)
+            screen.blit(textDebug, (25, debugTextY))
+            debugTextY += 20
 
-    def draw(self, GAME_STATE):
+    def draw(self,GAME_STATE):
+        def blit_tile(layer):
+            for x, y, gid in layer:
+                tile = self.tmx_data.get_tile_image_by_gid(gid)
+                if tile:
+                    GAME_STATE["screen"].blit(tile, (x * self.tmx_data.tilewidth, y * self.tmx_data.tileheight))
+
         for layer in self.tmx_data.layers:
-            if isinstance(layer, pytmx.TiledTileLayer) and (layer.name == GAME_STATE["active_layer"] or layer.name == (GAME_STATE["active_layer"] + 'Decor')):
-                for x, y, gid in layer:
-                    tile = self.tmx_data.get_tile_image_by_gid(gid)
-                    if tile:
-                        GAME_STATE["screen"].blit(tile, (x * self.tmx_data.tilewidth, y * self.tmx_data.tileheight))
-
-        self.debugColide(GAME_STATE["active_layer"],GAME_STATE["screen"])
-        self.debugColide('map',GAME_STATE["screen"])
+            if isinstance(layer, pytmx.TiledTileLayer):
+                if layer.name in [GAME_STATE["active_layer"], GAME_STATE["active_layer"] + 'Decor', 'mapDecor']:
+                    blit_tile(layer)
+        
+        self.debugColide(GAME_STATE["active_layer"],GAME_STATE["screen"],self.tmx_data.layers)
 
     def update(self,GAME_STATE):
         pass
