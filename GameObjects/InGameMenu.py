@@ -22,13 +22,13 @@ class InGameMenu:
             keyPressed = GAME_STATE["keyPressed"]
             old_counter = self.season_counter
             self.season_counter -= 1
-            if keyPressed == pygame.K_1 and self.current_season != Season.WINTER:
+            if (keyPressed == pygame.K_1 or keyPressed == pygame.K_KP1) and self.current_season != Season.WINTER:
                 self.current_season = Season.WINTER
-            elif keyPressed == pygame.K_2 and self.current_season != Season.SPRING:
+            elif (keyPressed == pygame.K_2 or keyPressed == pygame.K_KP2) and self.current_season != Season.SPRING:
                 self.current_season = Season.SPRING
-            elif keyPressed == pygame.K_3 and self.current_season != Season.SUMMER:
+            elif (keyPressed == pygame.K_3 or keyPressed == pygame.K_KP3) and self.current_season != Season.SUMMER:
                 self.current_season = Season.SUMMER
-            elif keyPressed == pygame.K_4 and self.current_season != Season.AUTUMN:
+            elif (keyPressed == pygame.K_4 or keyPressed == pygame.K_KP4) and self.current_season != Season.AUTUMN:
                 self.current_season = Season.AUTUMN
             else: self.season_counter += 1
 
