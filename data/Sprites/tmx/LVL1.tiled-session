@@ -11,6 +11,35 @@
         ":/automap-tiles.tsx": {
             "scaleInDock": 1
         },
+        "C:/Users/matte/Documents/ESIEE travail/E4FI/tmx/IceTileset.tsx": {
+            "scaleInDock": 1
+        },
+        "C:/Users/matte/Documents/ESIEE travail/E4FI/tmx/Other.tsx": {
+            "scaleInDock": 1
+        },
+        "C:/Users/matte/Documents/ESIEE travail/E4FI/tmx/RPG Nature Tileset Autumn.tsx": {
+            "scaleInDock": 1
+        },
+        "C:/Users/matte/Documents/ESIEE travail/E4FI/tmx/RPG Nature Tileset.tsx": {
+            "scaleInDock": 1
+        },
+        "C:/Users/matte/Documents/ESIEE travail/E4FI/tmx/Spring.tsx": {
+            "scaleInDock": 1
+        },
+        "C:/Users/matte/Documents/ESIEE travail/E4FI/tmx/fog.tsx": {
+            "scaleInDock": 1
+        },
+        "C:/Users/matte/Documents/ESIEE travail/E4FI/tmx/lvl5.tmx": {
+            "scale": 0.82828125,
+            "selectedLayer": 2,
+            "viewCenter": {
+                "x": 479.9094510469723,
+                "y": 320.5432937181664
+            }
+        },
+        "C:/Users/matte/Documents/ESIEE travail/E4FI/tmx/vines_flowered_wall.tsx": {
+            "scaleInDock": 1
+        },
         "Flowers.tsx": {
             "scaleInDock": 1
         },
@@ -82,16 +111,24 @@
             "scale": 1.0034374999999998,
             "selectedLayer": 1,
             "viewCenter": {
-                "x": 486.8265337900967,
-                "y": 320.39862971037076
+                "x": 524.6963562753037,
+                "y": 320.39862971037064
             }
         },
         "lvl4.tmx": {
             "scale": 1.0054166666666666,
             "selectedLayer": 7,
             "viewCenter": {
-                "x": 479.900538748446,
+                "x": 517.6958143389971,
                 "y": 319.7679237463738
+            }
+        },
+        "lvl5.tmx": {
+            "scale": 0.8352083333333333,
+            "selectedLayer": 2,
+            "viewCenter": {
+                "x": 479.52107757545525,
+                "y": 320.2793714143178
             }
         },
         "vines_flowered.tsx": {
@@ -116,6 +153,7 @@
     "project": "LVL1.tiled-project",
     "property.type": "bool",
     "recentFiles": [
+        "C:/Users/matte/Documents/ESIEE travail/E4FI/tmx/lvl5.tmx",
         "RPG Nature Tileset.tsx",
         "lvl1.tmx",
         "Spring.tsx",
