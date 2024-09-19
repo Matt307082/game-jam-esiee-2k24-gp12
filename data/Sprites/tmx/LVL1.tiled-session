@@ -3,7 +3,7 @@
         "height": 4300,
         "width": 2
     },
-    "activeFile": "lvl1.tmx",
+    "activeFile": "lvl2.tmx",
     "expandedProjectPaths": [
         "."
     ],
@@ -21,8 +21,16 @@
             "scaleInDock": 1,
             "scaleInEditor": 1
         },
+        "RPG Nature Tileset Autumn.tsx": {
+            "scaleInDock": 1,
+            "scaleInEditor": 1
+        },
         "RPG Nature Tileset.tsx": {
             "dynamicWrapping": false,
+            "scaleInDock": 1,
+            "scaleInEditor": 1
+        },
+        "lianne.tsx": {
             "scaleInDock": 1,
             "scaleInEditor": 1
         },
@@ -30,9 +38,35 @@
             "scale": 1,
             "selectedLayer": 7,
             "viewCenter": {
-                "x": 518.5,
-                "y": 223.5
+                "x": 557.9999999999999,
+                "y": 319.33333333333326
             }
+        },
+        "lvl2.tmx": {
+            "expandedObjectLayers": [
+                12
+            ],
+            "scale": 0.9262499999999999,
+            "selectedLayer": 11,
+            "viewCenter": {
+                "x": 491.7678812415655,
+                "y": 304.99325236167346
+            }
+        },
+        "lvl3.tmx": {
+            "expandedObjectLayers": [
+                9
+            ],
+            "scale": 1.0034374999999998,
+            "selectedLayer": 7,
+            "viewCenter": {
+                "x": 486.8265337900967,
+                "y": 320.39862971037076
+            }
+        },
+        "vines_flowered.tsx": {
+            "scaleInDock": 1,
+            "scaleInEditor": 1
         }
     },
     "last.imagePath": "C:/Users/zinee/Desktop/E4/cours/gam jam/git/game-jam-esiee-2k24-gp12/data/Sprites/ground",
@@ -41,14 +75,21 @@
         "RPG Nature Tileset.tsx",
         "lvl1.tmx",
         "IceTileset.tsx",
-        "Other.tsx"
+        "lvl2.tmx",
+        "RPG Nature Tileset Autumn.tsx",
+        "vines_flowered.tsx",
+        "lvl3.tmx"
     ],
     "project": "LVL1.tiled-project",
     "recentFiles": [
         "RPG Nature Tileset.tsx",
-        "Other.tsx",
+        "lvl1.tmx",
         "IceTileset.tsx",
-        "lvl1.tmx"
+        "lvl3.tmx",
+        "vines_flowered.tsx",
+        "RPG Nature Tileset Autumn.tsx",
+        "lvl2.tmx",
+        "lianne.tsx"
     ],
     "tileset.lastUsedFormat": "tsx",
     "tileset.tileSize": {
