@@ -9,6 +9,8 @@ class Bear:
         self.spritesheet = spritesheet
         self.width = 950 // 9
         self.height = 534 // 5.8
+        self.cell_width = 50
+        self.cell_height = 64
         self.sleep_anim = ChargeSerieSprites(4, spritesheet, (self.width,self.height),9)
         self.slash_anim = ChargeSerieSprites(2, spritesheet, (self.width,self.height),9)
         self.current_anim = self.sleep_anim # default value
@@ -20,7 +22,7 @@ class Bear:
     def update(self, GAME_STATE):
         if(GAME_STATE["saison"] != Season.WINTER):
             player = GAME_STATE["player"]
-            if (sqrt((self.x+self.width//2 - (player.x+player.cell_width//2))**2 + (self.y+self.height//2 - (player.y+player.cell_height//2))**2) <= 50):
+            if (sqrt((self.x+self.cell_width//2 - (player.x+player.cell_width//2))**2 + (self.y+self.cell_height//2 - (player.y+player.cell_height//2))**2) <= 50):
                 self.current_anim = self.slash_anim
                 self.animation_started = True
 
@@ -40,6 +42,6 @@ class Bear:
         if(GAME_STATE["saison"] != Season.WINTER):
             screen = GAME_STATE["screen"]
             if(self.current_anim == self.sleep_anim):
-                screen.blit(pygame.transform.scale(self.current_anim[7],(50,64)),(self.x,self.y))
+                screen.blit(pygame.transform.scale(self.current_anim[7],(self.cell_width,self.cell_height)),(self.x,self.y))
             else:
-                screen.blit(pygame.transform.scale(self.current_anim[self.animation_index], (50,64)),(self.x,self.y))
+                screen.blit(pygame.transform.scale(self.current_anim[self.animation_index], (self.cell_width,self.cell_height)),(self.x,self.y))
