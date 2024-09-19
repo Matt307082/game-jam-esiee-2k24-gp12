@@ -1,7 +1,7 @@
 import pygame
 from enum import Enum
 
-WINDOW_SIZE = [960, 640]
+WINDOW_SIZE = [1138, 640]
 
 # Etat courant du jeu
 class State(Enum):

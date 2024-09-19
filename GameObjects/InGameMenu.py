@@ -36,11 +36,15 @@ class InGameMenu:
             self.music_manager.play(self.current_season.value)
 
     def draw(self, GAME_STATE):
+        font = pygame.font.Font(None, 60)
+        pygame.draw.rect(GAME_STATE["screen"], (128, 128, 128), pygame.Rect(960, 0, 178, 640))
         for season in Season:
             index = ["hiver","printemps","ete","automne"].index(season.value)
             self.seasons_icons.set_alpha(255 if self.current_season.value==season.value else 100)
-            GAME_STATE["screen"].blit(self.seasons_icons, (60 * index + 25, 25), ((index%2) * 52, (index//2) * 52, 50, 50))
-            font = pygame.font.Font(None, 60)
-            textobj = font.render(str(self.season_counter), True, (255, 255, 255))
-            textrect = textobj.get_rect(midleft=(275, 50))
+            GAME_STATE["screen"].blit(self.seasons_icons, (1000, 100 * index + 25), ((index%2) * 52, (index//2) * 52, 50, 50))
+            textobj = font.render(str(index+1), True, (255, 255, 255))
+            textrect = textobj.get_rect(midleft=(1075, 100 * index + 50))
             GAME_STATE["screen"].blit(textobj, textrect)
+        textobj = font.render(str(self.season_counter), True, (255, 255, 255))
+        textrect = textobj.get_rect(center=(1050, 590))
+        GAME_STATE["screen"].blit(textobj, textrect)
