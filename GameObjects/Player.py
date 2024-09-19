@@ -2,7 +2,7 @@ import pygame
 from Tools.utils import ChargeSerieSprites, WINDOW_SIZE
 
 class Player:
-    def __init__(self, position, spritesheet, GAME_STATE):
+    def __init__(self, spritesheet, GAME_STATE):
         self.reset(GAME_STATE)
         self.x = GAME_STATE["winAndStart"]['start']["rect"].x
         self.y =GAME_STATE["winAndStart"]['start']["rect"].y

@@ -1,13 +1,6 @@
 import pygame
-from enum import Enum
 from Tools.MusicManager import MusicManager
-pygame.init()
-
-class Season(Enum):
-    WINTER = "hiver"
-    SPRING = "printemps"
-    SUMMER = "ete"
-    AUTUMN = "automne"
+from Tools.utils import Season
 
 class InGameMenu:
     current_season = Season.SUMMER
