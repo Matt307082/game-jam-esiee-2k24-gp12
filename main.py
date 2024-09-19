@@ -27,7 +27,7 @@ LEVELS = [{"levelFile": "data/Sprites/tmx/lvl1.tmx", "season": Season.SUMMER, "m
           {"levelFile": "data/Sprites/tmx/lvl2.tmx", "season": Season.SUMMER, "maxSeasons": 30},
           {"levelFile": "data/Sprites/tmx/lvl3.tmx", "season": Season.SUMMER, "maxSeasons": 30},
           {"levelFile": "data/Sprites/tmx/lvl4.tmx", "season": Season.SUMMER, "maxSeasons": 30},
-          {"levelFile": "data/Sprites/tmx/lvl5.tmx", "season": Season.AUTUMN, "maxSeasons": 9},
+          {"levelFile": "data/Sprites/tmx/lvl5.tmx", "season": Season.AUTUMN, "maxSeasons": 90},
         ]
 
 #Sprites

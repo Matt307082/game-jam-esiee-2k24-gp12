@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<map version="1.10" tiledversion="1.11.0" orientation="orthogonal" renderorder="right-down" width="30" height="20" tilewidth="32" tileheight="32" infinite="0" nextlayerid="24" nextobjectid="90">
+<map version="1.10" tiledversion="1.11.0" orientation="orthogonal" renderorder="right-down" width="30" height="20" tilewidth="32" tileheight="32" infinite="0" nextlayerid="24" nextobjectid="104">
  <tileset firstgid="1" source="RPG Nature Tileset.tsx"/>
  <tileset firstgid="181" source="RPG Nature Tileset Autumn.tsx"/>
  <tileset firstgid="316" source="IceTileset.tsx"/>
@@ -259,6 +259,12 @@
   <objectgroup id="21" name="mapObj">
    <object id="88" name="win" type="other" x="32" y="32" width="32" height="32"/>
    <object id="89" name="start" type="other" x="416.3" y="575.563" width="32" height="32"/>
+   <object id="98" type="block" x="0" y="0" width="1" height="640"/>
+   <object id="99" type="block" x="0" y="0" width="1" height="640"/>
+   <object id="100" type="block" x="0" y="0" width="960" height="1"/>
+   <object id="101" type="block" x="0" y="0" width="960" height="1"/>
+   <object id="102" type="block" x="959" y="0" width="1" height="640"/>
+   <object id="103" type="block" x="0" y="639" width="960" height="1"/>
   </objectgroup>
  </group>
 </map>
