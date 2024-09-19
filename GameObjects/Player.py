@@ -25,43 +25,43 @@ class Player:
         self.changeAlpha = False
         self.alpha = 255
         self.changeSpeed = 20
+        self.moved = False
 
     def update(self, GAME_STATE):
         # initialize KeyPressed
-        KeysPressed = GAME_STATE["keyPressed"]
+        KeysPressed = pygame.key.get_pressed()
         active_layer = GAME_STATE["active_layer"]
         layer_obj = GAME_STATE["layer_obj"]
-        moove = False
 
+        self.moved = True
         test = self.getHitbox()
-        if(KeysPressed == pygame.K_DOWN and self.y<WINDOW_SIZE[1]-self.cell_height):
-            moove = True
+        if(KeysPressed[pygame.K_DOWN] and self.y<WINDOW_SIZE[1]-self.cell_height):
             test.y += self.vy
             self.current_anim = self.down_anim
-        elif(KeysPressed == pygame.K_UP and self.y>0):
-            moove = True
+        elif(KeysPressed[pygame.K_UP] and self.y>0):
             test.y -= self.vy
             self.current_anim = self.up_anim
-        elif(KeysPressed == pygame.K_LEFT and self.x>0):
-            moove = True
+        elif(KeysPressed[pygame.K_LEFT] and self.x>0):
             test.x -= self.vx
             self.current_anim = self.left_anim
-        elif(KeysPressed == pygame.K_RIGHT and self.x<WINDOW_SIZE[0]-self.cell_width):
-            moove = True
+        elif(KeysPressed[pygame.K_RIGHT] and self.x<WINDOW_SIZE[0]-self.cell_width):
             test.x += self.vx
             self.current_anim = self.right_anim
+        else: self.moved = False
 
         if not self.check_collision(test, active_layer, layer_obj, GAME_STATE):
             self.x = test.x
             self.y = test.y
 
-        if moove :
+        if self.moved :
             self.frame_counter += 1
             if self.frame_counter >= self.animation_speed:
                 self.frame_counter = 0
                 self.animation_index += 1
                 if self.animation_index >= len(self.current_anim):
                     self.animation_index = 0
+        else:
+            self.animation_index = 0 if self.current_anim == self.left_anim else 1
 
         if self.changeAlpha :
             if self.inFog :
@@ -81,7 +81,7 @@ class Player:
 
     def draw(self, GAME_STATE):
         GAME_STATE["screen"].blit(pygame.transform.scale(
-            self.current_anim[self.animation_index if GAME_STATE["keyPressed"] != None else (0 if self.current_anim == self.left_anim else 1)]
+            self.current_anim[self.animation_index]
         ,(25,32)),(self.x,self.y))
 
     def reset(self, GAME_STATE):
