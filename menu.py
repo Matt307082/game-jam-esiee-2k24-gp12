@@ -52,7 +52,6 @@ def main_menu(background_image,GAME_STATE):
 
     # Création des rectangles des options
     button_1 = pygame.Rect(WINDOW_SIZE[0] // 2 - 350, WINDOW_SIZE[1] // 2 +225, 200, 50)
-    button_2 = pygame.Rect(WINDOW_SIZE[0] // 2 -100, WINDOW_SIZE[1] // 2 + 225, 200, 50)
     button_3 = pygame.Rect(WINDOW_SIZE[0] // 2 + 150, WINDOW_SIZE[1] // 2+ 225, 200, 50)
 
     # Vérification si le curseur est sur un bouton
@@ -63,23 +62,16 @@ def main_menu(background_image,GAME_STATE):
     else:
         pygame.draw.rect(screen,LIGHT_GREEN, button_1)
 
-    if button_2.collidepoint((mx, my)):
-        pygame.draw.rect(screen, GRAY, button_2)
-        if click:
-            print("Options are comming soon")
-    else:
-        pygame.draw.rect(screen, LIGHT_BLUE, button_2)
-
     if button_3.collidepoint((mx, my)):
         pygame.draw.rect(screen, GRAY, button_3)
         if click:
             pygame.quit()
+            exit(0)
     else:
         pygame.draw.rect(screen, MEDIUM_RED, button_3)
 
     # Affichage du texte sur les boutons
     draw_text('Jouer', font, DEEP_GREEN, screen, WINDOW_SIZE[0] // 2-250, WINDOW_SIZE[1] // 2 +250)
-    draw_text('Options', font,DEEP_BLUE, screen, WINDOW_SIZE[0] // 2, WINDOW_SIZE[1] // 2 + 250)
     draw_text('Quitter', font, DEEP_RED, screen, WINDOW_SIZE[0] // 2+250, WINDOW_SIZE[1] // 2 + 250)
 
 
@@ -117,6 +109,7 @@ def draw_selection_screen(background_image, GAME_STATE):
         pygame.draw.rect(screen, GRAY, button_3)
         if click:
             pygame.quit()
+            exit(0)
     else:
         pygame.draw.rect(screen, MEDIUM_RED, button_3)
 
