@@ -60,7 +60,7 @@
 </data>
   </layer>
  </group>
- <group id="23" name="automne" visible="0">
+ <group id="23" name="automne">
   <layer id="14" name="automne" width="30" height="20">
    <data encoding="csv">
 606,607,607,607,607,607,607,607,607,607,607,607,607,607,607,607,607,607,607,607,607,607,607,607,607,607,607,607,607,608,
