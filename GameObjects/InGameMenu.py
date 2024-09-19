@@ -42,5 +42,5 @@ class InGameMenu:
             GAME_STATE["screen"].blit(self.seasons_icons, (60 * index + 25, 25), ((index%2) * 52, (index//2) * 52, 50, 50))
             font = pygame.font.Font(None, 60)
             textobj = font.render(str(self.season_counter), True, (255, 255, 255))
-            textrect = textobj.get_rect(center=(300, 50))
+            textrect = textobj.get_rect(midleft=(275, 50))
             GAME_STATE["screen"].blit(textobj, textrect)
