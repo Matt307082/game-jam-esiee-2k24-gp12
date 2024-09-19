@@ -30,9 +30,9 @@ class InGameMenu:
             self.current_season = Season.AUTUMN
         else: self.season_counter -= 1
 
-        GAME_STATE["saison"] = self.current_season
-        GAME_STATE["active_layer"] = GAME_STATE["saison"].value
         if old_counter != self.season_counter:
+            GAME_STATE["saison"] = self.current_season
+            GAME_STATE["active_layer"] = GAME_STATE["saison"].value
             self.music_manager.play(self.current_season.value)
 
     def draw(self, GAME_STATE):
