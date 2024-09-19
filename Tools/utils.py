@@ -9,6 +9,13 @@ class State(Enum):
     Play = 1
     Pause = 2
 
+# Saison courante 
+class Season(Enum):
+    WINTER = "hiver"
+    SPRING = "printemps"
+    SUMMER = "ete"
+    AUTUMN = "automne"
+
 def ChargeSerieSprites(id, spritesheet, sprite_dimensions, p_range):
    # Taille d'un sprite
     LARG = sprite_dimensions[0] # Largeur d'un sprite
