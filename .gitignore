@@ -6,4 +6,4 @@ pyvenv.cfg
 __pycache__/
 GameObjects/__pycache__/
 Tools/__pycache__/
-LVL1.tiled-session
+*LVL1.tiled-session*

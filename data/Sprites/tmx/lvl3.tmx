@@ -1,12 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<map version="1.10" tiledversion="1.11.0" orientation="orthogonal" renderorder="right-down" width="30" height="20" tilewidth="32" tileheight="32" infinite="0" nextlayerid="14" nextobjectid="66">
+<map version="1.10" tiledversion="1.11.0" orientation="orthogonal" renderorder="right-down" width="30" height="20" tilewidth="32" tileheight="32" infinite="0" nextlayerid="20" nextobjectid="66">
  <tileset firstgid="1" source="RPG Nature Tileset.tsx"/>
  <tileset firstgid="181" source="RPG Nature Tileset Autumn.tsx"/>
  <tileset firstgid="316" source="IceTileset.tsx"/>
  <tileset firstgid="496" source="Spring.tsx"/>
  <tileset firstgid="676" source="Other.tsx"/>
- <layer id="1" name="ete" width="30" height="20">
-  <data encoding="csv">
+ <group id="14" name="ete" visible="0">
+  <layer id="1" name="ete" width="30" height="20">
+   <data encoding="csv">
 82,82,82,82,82,82,82,82,82,82,82,82,82,82,82,82,82,82,82,82,82,82,82,82,82,82,82,82,82,82,
 82,82,82,82,82,82,82,82,82,82,82,82,82,82,82,82,82,82,82,82,82,82,82,82,82,82,82,82,82,82,
 82,82,82,82,82,82,82,82,82,82,82,82,147,147,147,147,147,82,82,82,82,82,82,82,82,82,82,82,82,82,
@@ -28,9 +29,9 @@
 82,82,82,82,82,82,82,82,82,82,82,82,82,82,82,82,82,82,82,82,82,82,82,82,82,82,82,82,82,82,
 82,82,82,82,82,82,82,82,82,82,82,82,82,82,82,82,82,82,82,82,82,82,82,82,82,82,82,82,82,82
 </data>
- </layer>
- <layer id="8" name="eteDecor" width="30" height="20">
-  <data encoding="csv">
+  </layer>
+  <layer id="8" name="eteDecor" width="30" height="20">
+   <data encoding="csv">
 0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,
 0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,21,0,0,0,0,0,1,0,0,
 0,0,24,0,21,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,24,21,0,0,
@@ -52,13 +53,14 @@
 0,0,0,21,0,0,0,0,0,23,0,0,0,0,0,0,0,0,0,0,0,23,0,0,0,0,24,0,1,0,
 0,0,0,0,0,0,0,0,0,0,0,24,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,21,0
 </data>
- </layer>
- <objectgroup id="13" name="eteObj">
-  <object id="64" name="eau" type="block" x="384.678" y="125.568" width="158.455" height="32.887"/>
-  <object id="65" name="eau" type="block" x="412.582" y="157.459" width="99.6574" height="32.887"/>
- </objectgroup>
- <layer id="2" name="automne" width="30" height="20">
-  <data encoding="csv">
+  </layer>
+  <objectgroup id="13" name="eteObj">
+   <object id="65" name="win" type="other" x="447.092" y="95.3415" width="32" height="32"/>
+  </objectgroup>
+ </group>
+ <group id="15" name="automne" visible="0">
+  <layer id="2" name="automne" width="30" height="20">
+   <data encoding="csv">
 247,247,247,247,247,247,247,247,247,247,247,247,247,247,247,247,247,247,247,247,247,247,247,247,247,247,247,247,247,247,
 247,247,247,247,247,247,247,247,247,247,247,247,247,247,247,247,247,247,247,247,247,247,247,247,247,247,247,247,247,247,
 247,247,247,247,247,247,247,247,247,247,247,247,152,152,152,152,152,247,247,247,247,247,247,247,247,247,247,247,247,247,
@@ -80,9 +82,9 @@
 247,247,247,247,247,247,247,247,247,247,247,247,247,247,247,247,247,247,247,247,247,247,247,247,247,247,247,247,247,247,
 247,247,247,247,247,247,247,247,247,247,247,247,247,247,247,247,247,247,247,247,247,247,247,247,247,247,247,247,247,247
 </data>
- </layer>
- <layer id="7" name="automneDecor" width="30" height="20">
-  <data encoding="csv">
+  </layer>
+  <layer id="7" name="automneDecor" width="30" height="20">
+   <data encoding="csv">
 0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,181,0,0,0,0,0,0,0,0,
 0,0,0,0,181,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,196,0,0,0,0,0,181,0,0,
 0,0,24,0,196,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,24,196,0,0,
@@ -104,25 +106,27 @@
 0,0,0,196,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,24,0,181,0,
 0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,196,0
 </data>
- </layer>
- <objectgroup id="12" name="automneObj">
-  <object id="50" name="glace" type="block" x="-0.996574" y="477.359" width="969.667" height="66.7705"/>
-  <object id="51" name="glace_petit" type="block" x="30.8938" y="445.469" width="65.7739" height="36.8732"/>
-  <object id="52" name="glace_petit" type="block" x="126.565" y="446.465" width="65.7739" height="36.8732"/>
-  <object id="53" name="glace_petit" type="block" x="222.236" y="447.462" width="65.7739" height="36.8732"/>
-  <object id="54" name="glace_petit" type="block" x="319.9" y="445.469" width="65.7739" height="36.8732"/>
-  <object id="55" name="glace_petit" type="block" x="415.571" y="449.455" width="65.7739" height="36.8732"/>
-  <object id="56" name="glace_petit" type="block" x="509.249" y="449.455" width="65.7739" height="36.8732"/>
-  <object id="57" name="glace_petit" type="block" x="606.914" y="446.465" width="65.7739" height="36.8732"/>
-  <object id="58" name="glace_petit" type="block" x="702.585" y="445.469" width="65.7739" height="36.8732"/>
-  <object id="59" name="glace_petit" type="block" x="799.253" y="444.472" width="65.7739" height="36.8732"/>
-  <object id="60" name="glace_petit" type="block" x="894.924" y="445.469" width="65.7739" height="36.8732"/>
-  <object id="61" name="eau" type="block" x="384.678" y="63.7808">
-   <polygon points="0,0 160.448,0 159.452,29.8972 222.236,30.8938 224.229,61.7876 255.123,61.7876 254.126,127.562 224.229,126.565 222.236,159.452 157.459,160.448 159.452,190.346 -1.99315,190.346 -1.99315,160.448 -65.7739,160.448 -65.7739,127.562 -96.6677,127.562 -98.6609,63.7808 -65.7739,63.7808 -65.7739,31.8904 -1.99315,31.8904"/>
-  </object>
- </objectgroup>
- <layer id="3" name="hiver" width="30" height="20" visible="0">
-  <data encoding="csv">
+  </layer>
+  <objectgroup id="12" name="automneObj">
+   <object id="50" name="glace" type="block" x="-0.996574" y="477.359" width="969.667" height="66.7705"/>
+   <object id="51" name="glace_petit" type="block" x="30.8938" y="445.469" width="65.7739" height="36.8732"/>
+   <object id="52" name="glace_petit" type="block" x="126.565" y="446.465" width="65.7739" height="36.8732"/>
+   <object id="53" name="glace_petit" type="block" x="222.236" y="447.462" width="65.7739" height="36.8732"/>
+   <object id="54" name="glace_petit" type="block" x="319.9" y="445.469" width="65.7739" height="36.8732"/>
+   <object id="55" name="glace_petit" type="block" x="415.571" y="449.455" width="65.7739" height="36.8732"/>
+   <object id="56" name="glace_petit" type="block" x="509.249" y="449.455" width="65.7739" height="36.8732"/>
+   <object id="57" name="glace_petit" type="block" x="606.914" y="446.465" width="65.7739" height="36.8732"/>
+   <object id="58" name="glace_petit" type="block" x="702.585" y="445.469" width="65.7739" height="36.8732"/>
+   <object id="59" name="glace_petit" type="block" x="799.253" y="444.472" width="65.7739" height="36.8732"/>
+   <object id="60" name="glace_petit" type="block" x="894.924" y="445.469" width="65.7739" height="36.8732"/>
+   <object id="61" name="eau" type="block" x="384.678" y="63.7808">
+    <polygon points="0,0 160.448,0 159.452,29.8972 222.236,30.8938 224.229,61.7876 255.123,61.7876 254.126,127.562 224.229,126.565 222.236,159.452 157.459,160.448 159.452,190.346 -1.99315,190.346 -1.99315,160.448 -65.7739,160.448 -65.7739,127.562 -96.6677,127.562 -98.6609,63.7808 -65.7739,63.7808 -65.7739,31.8904 -1.99315,31.8904"/>
+   </object>
+  </objectgroup>
+ </group>
+ <group id="16" name="hiver" visible="0">
+  <layer id="3" name="hiver" width="30" height="20" visible="0">
+   <data encoding="csv">
 397,397,397,397,397,397,397,397,397,397,397,397,397,397,397,397,397,397,397,397,397,397,397,397,397,397,397,397,397,397,
 397,397,397,397,397,397,397,397,397,397,397,397,397,397,397,397,397,397,397,397,397,397,397,397,397,397,397,397,397,397,
 397,397,397,397,397,397,397,397,397,397,397,397,357,357,357,357,357,397,397,397,397,397,397,397,397,397,397,397,397,397,
@@ -144,9 +148,9 @@
 397,397,397,397,397,397,397,397,397,397,397,397,397,397,397,397,397,397,397,397,397,397,397,397,397,397,397,397,397,397,
 397,397,397,397,397,397,397,397,397,397,397,397,397,397,397,397,397,397,397,397,397,397,397,397,397,397,397,397,397,397
 </data>
- </layer>
- <layer id="6" name="hiverDecor" width="30" height="20">
-  <data encoding="csv">
+  </layer>
+  <layer id="6" name="hiverDecor" width="30" height="20">
+   <data encoding="csv">
 0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,316,0,0,0,0,0,0,0,0,
 0,0,0,0,316,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,336,0,0,0,0,0,316,0,0,
 0,0,0,0,336,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,336,0,0,
@@ -168,25 +172,27 @@
 0,0,0,336,0,0,0,0,0,338,0,0,0,0,0,0,0,0,0,0,0,338,0,0,0,0,0,0,316,0,
 0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,336,0
 </data>
- </layer>
- <objectgroup id="11" name="hiverObj">
-  <object id="38" name="glace" type="block" x="-0.996574" y="477.359" width="969.667" height="66.7705"/>
-  <object id="39" name="glace_petit" type="block" x="30.8938" y="445.469" width="65.7739" height="36.8732"/>
-  <object id="40" name="glace_petit" type="block" x="126.565" y="446.465" width="65.7739" height="36.8732"/>
-  <object id="41" name="glace_petit" type="block" x="222.236" y="447.462" width="65.7739" height="36.8732"/>
-  <object id="42" name="glace_petit" type="block" x="319.9" y="445.469" width="65.7739" height="36.8732"/>
-  <object id="43" name="glace_petit" type="block" x="415.571" y="449.455" width="65.7739" height="36.8732"/>
-  <object id="44" name="glace_petit" type="block" x="509.249" y="449.455" width="65.7739" height="36.8732"/>
-  <object id="45" name="glace_petit" type="block" x="606.914" y="446.465" width="65.7739" height="36.8732"/>
-  <object id="46" name="glace_petit" type="block" x="702.585" y="445.469" width="65.7739" height="36.8732"/>
-  <object id="47" name="glace_petit" type="block" x="799.253" y="444.472" width="65.7739" height="36.8732"/>
-  <object id="48" name="glace_petit" type="block" x="894.924" y="445.469" width="65.7739" height="36.8732"/>
-  <object id="49" name="eau" type="block" x="384.678" y="63.7808">
-   <polygon points="0,0 160.448,0 159.452,29.8972 222.236,30.8938 224.229,61.7876 255.123,61.7876 254.126,127.562 224.229,126.565 222.236,159.452 157.459,160.448 159.452,190.346 -1.99315,190.346 -1.99315,160.448 -65.7739,160.448 -65.7739,127.562 -96.6677,127.562 -98.6609,63.7808 -65.7739,63.7808 -65.7739,31.8904 -1.99315,31.8904"/>
-  </object>
- </objectgroup>
- <layer id="4" name="printemps" width="30" height="20" visible="0">
-  <data encoding="csv">
+  </layer>
+  <objectgroup id="11" name="hiverObj">
+   <object id="38" name="glace" type="block" x="-0.996574" y="477.359" width="969.667" height="66.7705"/>
+   <object id="39" name="glace_petit" type="block" x="30.8938" y="445.469" width="65.7739" height="36.8732"/>
+   <object id="40" name="glace_petit" type="block" x="126.565" y="446.465" width="65.7739" height="36.8732"/>
+   <object id="41" name="glace_petit" type="block" x="222.236" y="447.462" width="65.7739" height="36.8732"/>
+   <object id="42" name="glace_petit" type="block" x="319.9" y="445.469" width="65.7739" height="36.8732"/>
+   <object id="43" name="glace_petit" type="block" x="415.571" y="449.455" width="65.7739" height="36.8732"/>
+   <object id="44" name="glace_petit" type="block" x="509.249" y="449.455" width="65.7739" height="36.8732"/>
+   <object id="45" name="glace_petit" type="block" x="606.914" y="446.465" width="65.7739" height="36.8732"/>
+   <object id="46" name="glace_petit" type="block" x="702.585" y="445.469" width="65.7739" height="36.8732"/>
+   <object id="47" name="glace_petit" type="block" x="799.253" y="444.472" width="65.7739" height="36.8732"/>
+   <object id="48" name="glace_petit" type="block" x="894.924" y="445.469" width="65.7739" height="36.8732"/>
+   <object id="49" name="eau" type="block" x="384.678" y="63.7808">
+    <polygon points="0,0 160.448,0 159.452,29.8972 222.236,30.8938 224.229,61.7876 255.123,61.7876 254.126,127.562 224.229,126.565 222.236,159.452 157.459,160.448 159.452,190.346 -1.99315,190.346 -1.99315,160.448 -65.7739,160.448 -65.7739,127.562 -96.6677,127.562 -98.6609,63.7808 -65.7739,63.7808 -65.7739,31.8904 -1.99315,31.8904"/>
+   </object>
+  </objectgroup>
+ </group>
+ <group id="17" name="printemps" visible="0">
+  <layer id="4" name="printemps" width="30" height="20" visible="0">
+   <data encoding="csv">
 82,82,82,82,82,82,82,82,82,82,82,82,82,82,82,82,82,82,82,82,82,82,82,82,82,82,82,82,82,82,
 82,82,82,82,82,82,82,82,82,82,82,82,82,82,82,82,82,82,82,82,82,82,82,82,82,82,82,82,82,82,
 82,82,82,82,82,82,82,82,82,82,82,82,152,152,152,152,152,82,82,82,82,82,82,82,82,82,82,82,82,82,
@@ -208,9 +214,9 @@
 82,82,82,82,82,82,82,82,82,82,82,82,82,82,82,82,82,82,82,82,82,82,82,82,82,82,82,82,82,82,
 82,82,82,82,82,82,82,82,82,82,82,82,82,82,82,82,82,82,82,82,82,82,82,82,82,82,82,82,82,82
 </data>
- </layer>
- <layer id="5" name="printempsDecor" width="30" height="20">
-  <data encoding="csv">
+  </layer>
+  <layer id="5" name="printempsDecor" width="30" height="20">
+   <data encoding="csv">
 0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,496,0,0,0,0,0,0,0,0,
 0,0,0,0,496,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,516,0,0,0,0,0,496,0,0,
 0,0,24,0,516,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,24,516,0,0,
@@ -232,46 +238,54 @@
 0,0,0,516,0,0,0,0,0,23,0,0,0,0,0,0,0,0,0,0,0,23,0,0,0,0,24,0,496,0,
 0,0,0,0,0,0,0,0,0,0,0,24,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,516,0
 </data>
- </layer>
- <objectgroup id="10" name="printempsObj">
-  <object id="25" name="glace" type="block" x="-0.996574" y="477.359" width="969.667" height="66.7705"/>
-  <object id="26" name="glace_petit" type="block" x="30.8938" y="445.469" width="65.7739" height="36.8732"/>
-  <object id="27" name="glace_petit" type="block" x="126.565" y="446.465" width="65.7739" height="36.8732"/>
-  <object id="28" name="glace_petit" type="block" x="222.236" y="447.462" width="65.7739" height="36.8732"/>
-  <object id="29" name="glace_petit" type="block" x="319.9" y="445.469" width="65.7739" height="36.8732"/>
-  <object id="30" name="glace_petit" type="block" x="415.571" y="449.455" width="65.7739" height="36.8732"/>
-  <object id="31" name="glace_petit" type="block" x="509.249" y="449.455" width="65.7739" height="36.8732"/>
-  <object id="32" name="glace_petit" type="block" x="606.914" y="446.465" width="65.7739" height="36.8732"/>
-  <object id="33" name="glace_petit" type="block" x="702.585" y="445.469" width="65.7739" height="36.8732"/>
-  <object id="34" name="glace_petit" type="block" x="799.253" y="444.472" width="65.7739" height="36.8732"/>
-  <object id="35" name="glace_petit" type="block" x="894.924" y="445.469" width="65.7739" height="36.8732"/>
-  <object id="37" name="eau" type="block" x="384.678" y="63.7808">
-   <polygon points="0,0 160.448,0 159.452,29.8972 222.236,30.8938 224.229,61.7876 255.123,61.7876 254.126,127.562 224.229,126.565 222.236,159.452 157.459,160.448 159.452,190.346 -1.99315,190.346 -1.99315,160.448 -65.7739,160.448 -65.7739,127.562 -96.6677,127.562 -98.6609,63.7808 -65.7739,63.7808 -65.7739,31.8904 -1.99315,31.8904"/>
-  </object>
- </objectgroup>
- <objectgroup id="9" name="MapObj">
-  <object id="1" name="bordure_gauche" type="block" x="0" y="0" width="1" height="650"/>
-  <object id="3" name="bordure_haut" type="block" x="0" y="0" width="956" height="1"/>
-  <object id="4" name="bordure_bas" type="block" x="0" y="636.048" width="956" height="1"/>
-  <object id="2" name="bordure_droite" type="block" x="956" y="0" width="1" height="650"/>
-  <object id="5" name="arbre" type="block" x="129.555" y="29.8972" width="31.8904" height="64.7773"/>
-  <object id="7" name="arbre" type="block" x="670.694" y="0" width="31.8904" height="64.7773"/>
-  <object id="8" name="arbre" type="block" x="864.03" y="30.8938" width="31.8904" height="64.7773"/>
-  <object id="9" name="arbre" type="block" x="798.256" y="192.339" width="31.8904" height="64.7773"/>
-  <object id="10" name="arbre" type="block" x="925.818" y="289.007" width="31.8904" height="64.7773"/>
-  <object id="11" name="arbre" type="block" x="703.581" y="287.013" width="31.8904" height="64.7773"/>
-  <object id="12" name="arbre" type="block" x="893.927" y="576.02" width="31.8904" height="64.7773"/>
-  <object id="13" name="arbre" type="block" x="96.6677" y="542.136" width="31.8904" height="64.7773"/>
-  <object id="14" name="arbre" type="block" x="61.7876" y="349.798" width="31.8904" height="64.7773"/>
-  <object id="15" name="arbre" type="block" x="227.219" y="317.907" width="31.8904" height="64.7773"/>
-  <object id="16" name="arbre" type="block" x="32.887" y="193.335" width="31.8904" height="64.7773"/>
-  <object id="17" name="roche" type="block" x="161.445" y="159.452" width="32.887" height="33.8835"/>
-  <object id="18" name="roche" type="block" x="702.585" y="130.551" width="32.887" height="33.8835"/>
-  <object id="19" name="roche" type="block" x="896.917" y="159.452" width="32.887" height="33.8835"/>
-  <object id="20" name="roche" type="block" x="768.359" y="353.784" width="32.887" height="33.8835"/>
-  <object id="21" name="roche" type="block" x="543.133" y="354.78" width="32.887" height="33.8835"/>
-  <object id="22" name="roche" type="block" x="672.688" y="578.013" width="32.887" height="33.8835"/>
-  <object id="23" name="roche" type="block" x="286.017" y="579.01" width="32.887" height="33.8835"/>
-  <object id="24" name="roche" type="block" x="156.462" y="351.791" width="32.887" height="33.8835"/>
- </objectgroup>
+  </layer>
+  <objectgroup id="10" name="printempsObj">
+   <object id="25" name="glace" type="block" x="-0.996574" y="477.359" width="969.667" height="66.7705"/>
+   <object id="26" name="glace_petit" type="block" x="30.8938" y="445.469" width="65.7739" height="36.8732"/>
+   <object id="27" name="glace_petit" type="block" x="126.565" y="446.465" width="65.7739" height="36.8732"/>
+   <object id="28" name="glace_petit" type="block" x="222.236" y="447.462" width="65.7739" height="36.8732"/>
+   <object id="29" name="glace_petit" type="block" x="319.9" y="445.469" width="65.7739" height="36.8732"/>
+   <object id="30" name="glace_petit" type="block" x="415.571" y="449.455" width="65.7739" height="36.8732"/>
+   <object id="31" name="glace_petit" type="block" x="509.249" y="449.455" width="65.7739" height="36.8732"/>
+   <object id="32" name="glace_petit" type="block" x="606.914" y="446.465" width="65.7739" height="36.8732"/>
+   <object id="33" name="glace_petit" type="block" x="702.585" y="445.469" width="65.7739" height="36.8732"/>
+   <object id="34" name="glace_petit" type="block" x="799.253" y="444.472" width="65.7739" height="36.8732"/>
+   <object id="35" name="glace_petit" type="block" x="894.924" y="445.469" width="65.7739" height="36.8732"/>
+   <object id="37" name="eau" type="block" x="384.678" y="63.7808">
+    <polygon points="0,0 160.448,0 159.452,29.8972 222.236,30.8938 224.229,61.7876 255.123,61.7876 254.126,127.562 224.229,126.565 222.236,159.452 157.459,160.448 159.452,190.346 -1.99315,190.346 -1.99315,160.448 -65.7739,160.448 -65.7739,127.562 -96.6677,127.562 -98.6609,63.7808 -65.7739,63.7808 -65.7739,31.8904 -1.99315,31.8904"/>
+   </object>
+  </objectgroup>
+ </group>
+ <group id="19" name="map">
+  <layer id="18" name="mapObj" width="30" height="20">
+   <data encoding="csv">
+0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
+0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
+0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
+0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
+0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
+0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
+0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
+0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
+0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
+0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
+0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
+0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
+0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
+0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
+0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
+0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
+0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
+0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
+0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
+0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+</data>
+  </layer>
+  <objectgroup id="9" name="mapObj">
+   <object id="1" name="bordure_gauche" type="block" x="0" y="0" width="1" height="650"/>
+   <object id="3" name="bordure_haut" type="block" x="0" y="0" width="956" height="1"/>
+   <object id="4" name="bordure_bas" type="block" x="0" y="636.048" width="956" height="1"/>
+   <object id="2" name="bordure_droite" type="block" x="956" y="0" width="1" height="650"/>
+  </objectgroup>
+ </group>
 </map>

@@ -134,7 +134,7 @@
 </data>
   </layer>
  </group>
- <group id="12" name="ete" visible="0">
+ <group id="12" name="ete">
   <layer id="7" name="ete" width="30" height="20">
    <data encoding="csv">
 66,67,67,67,67,67,67,67,67,67,67,67,67,67,67,67,67,67,67,67,67,67,67,67,67,67,67,67,67,68,
@@ -185,7 +185,7 @@
   </layer>
   <objectgroup id="10" name="eteObj"/>
  </group>
- <group id="15" name="hiver" visible="0">
+ <group id="15" name="hiver">
   <layer id="25" name="hiver" width="30" height="20">
    <data encoding="csv">
 246,247,247,247,247,247,247,247,247,247,247,247,247,247,247,247,247,247,247,247,247,247,247,247,247,247,247,247,247,248,
