@@ -70,7 +70,7 @@ for gameObject in GAMES_OBJECTS: #premier draw
 
 while not done:
 
-    if(GAME_STATE["state"] == State.Menu):
+    if(GAME_STATE["state"] != State.Play):
         event = pygame.event.Event(pygame.USEREVENT)    # Remise à zero de la variable event
         for event in pygame.event.get():  
             if event.type == pygame.QUIT:
@@ -79,20 +79,12 @@ while not done:
                 if event.button == 1:
                     GAME_STATE["click"] = True
         
-        main_menu(MENU_SPRITE, GAME_STATE)
-
-    if(GAME_STATE["state"] == State.Pause):
-        event = pygame.event.Event(pygame.USEREVENT)    # Remise à zero de la variable event
-        for event in pygame.event.get():  
-            if event.type == pygame.QUIT:
-                pygame.quit()
-            if event.type == pygame.MOUSEBUTTONDOWN:
-                if event.button == 1:
-                    GAME_STATE["click"] = True
-        
-        draw_selection_screen(MENU_SPRITE, GAME_STATE)
+        if (GAME_STATE["state"] == State.Menu):
+            main_menu(MENU_SPRITE, GAME_STATE)
+        if (GAME_STATE["state"] == State.Pause):
+            draw_selection_screen(MENU_SPRITE, GAME_STATE)
     
-    if(GAME_STATE["state"] == State.Play):
+    elif(GAME_STATE["state"] == State.Play):
         event = pygame.event.Event(pygame.USEREVENT)    # Remise à zero de la variable event
         for event in pygame.event.get():  
             if event.type == pygame.QUIT:
