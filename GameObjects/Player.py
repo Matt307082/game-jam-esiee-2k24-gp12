@@ -6,11 +6,11 @@ class Player:
     def __init__(self, spritesheet, GAME_STATE):
         self.x = GAME_STATE["winAndStart"]['start']["rect"].x
         self.y = GAME_STATE["winAndStart"]['start']["rect"].y
-        self.vx = 1
-        self.vy = 1
+        self.vx = 2
+        self.vy = 2
         self.spritesheet = spritesheet
         self.width = 200 // 4
-        self.height = 261 // 4
+        self.height = 285 // 4
         self.cell_width = 25
         self.cell_height = 32
         self.down_anim = ChargeSerieSprites(0, spritesheet, (self.width,self.height), 4)
