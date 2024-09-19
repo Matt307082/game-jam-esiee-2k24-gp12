@@ -21,24 +21,33 @@ class Player:
         self.animation_index = 0         
         self.animation_speed = 10
         self.frame_counter = 0
+        self.inFog = False
+        self.changeAlpha = False
+        self.alpha = 255
+        self.changeSpeed = 20
 
     def update(self, GAME_STATE):
         # initialize KeyPressed
         KeysPressed = GAME_STATE["keyPressed"]
         active_layer = GAME_STATE["active_layer"]
         layer_obj = GAME_STATE["layer_obj"]
+        moove = False
 
         test = self.getHitbox()
         if(KeysPressed == pygame.K_DOWN and self.y<WINDOW_SIZE[1]-self.cell_height):
+            moove = True
             test.y += self.vy
             self.current_anim = self.down_anim
         elif(KeysPressed == pygame.K_UP and self.y>0):
+            moove = True
             test.y -= self.vy
             self.current_anim = self.up_anim
         elif(KeysPressed == pygame.K_LEFT and self.x>0):
+            moove = True
             test.x -= self.vx
             self.current_anim = self.left_anim
         elif(KeysPressed == pygame.K_RIGHT and self.x<WINDOW_SIZE[0]-self.cell_width):
+            moove = True
             test.x += self.vx
             self.current_anim = self.right_anim
 
@@ -46,12 +55,29 @@ class Player:
             self.x = test.x
             self.y = test.y
 
-        self.frame_counter += 1
-        if self.frame_counter >= self.animation_speed:
-            self.frame_counter = 0
-            self.animation_index += 1
-            if self.animation_index >= len(self.current_anim):
-                self.animation_index = 0
+        if moove :
+            self.frame_counter += 1
+            if self.frame_counter >= self.animation_speed:
+                self.frame_counter = 0
+                self.animation_index += 1
+                if self.animation_index >= len(self.current_anim):
+                    self.animation_index = 0
+
+        if self.changeAlpha :
+            if self.inFog :
+                if self.alpha <= 0 :
+                    self.changeAlpha = False
+                else :
+                    self.alpha -= self.changeSpeed
+                    self.changeAlphaPlayer(self.alpha)
+            else :
+                if self.alpha >= 255 :
+                    self.changeAlpha = False
+                else :
+                    self.alpha += self.changeSpeed
+                    self.changeAlphaPlayer(self.alpha)
+
+
 
     def draw(self, GAME_STATE):
         GAME_STATE["screen"].blit(pygame.transform.scale(
@@ -67,30 +93,42 @@ class Player:
     def getHitbox(self):
         return pygame.Rect(self.x,self.y,self.cell_width,self.cell_height)
     
+    def changeAlphaPlayer(self, alpha):
+        anims = [self.down_anim,self.up_anim,self.left_anim,self.right_anim]
+        for anim in anims :
+            for img in  anim :
+                img.set_alpha(alpha)
     
     def check_collision(self,new_player_pos, active_layer, newColide, GAME_STATE):
+        
+        inFogNow = False
+        collide = False
 
         def collides_with_layer(layer_name):
             return any(new_player_pos.colliderect(obj["rect"]) for obj in newColide.get(layer_name, []))
 
         if collides_with_layer(active_layer):
-            return True
-        if collides_with_layer(active_layer + "Decor"):
-            return True
-        if collides_with_layer(active_layer + "Obj"):
-            return True
-        if collides_with_layer("mapObj"):
-            return True
-        if "win" in newColide:
+            collide = True
+        elif collides_with_layer(active_layer + "Decor"):
+            collide =  True
+        elif collides_with_layer(active_layer + "Obj"):
+            collide = True
+        elif collides_with_layer("mapObj"):
+            collide = True
+        elif "win" in newColide:
             for win_rect in newColide["win"]:
                 if new_player_pos.colliderect(win_rect["rect"]):
                     GAME_STATE["nextLevel"] = True
-                    return True
+                    collide = True
 
         if collides_with_layer(active_layer + "Decor1"):
-            print("decor")
-            return False
-        return False
+            inFogNow = True
+            
+        if self.inFog != inFogNow :
+            self.changeAlpha = True
+            self.inFog = inFogNow
+        
+        return collide
 
 
 
