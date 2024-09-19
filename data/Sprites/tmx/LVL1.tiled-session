@@ -14,34 +14,24 @@
         ":/automap-tiles.tsx": {
             "scaleInDock": 1
         },
-        "Flowers.tsx": {
+        "IceTileset.tsx": {
             "dynamicWrapping": false,
-            "scaleInDock": 1,
-            "scaleInEditor": 1.5843
-        },
-        "IceTileset.json": {
             "scaleInDock": 1,
             "scaleInEditor": 1
         },
-        "IceTileset.tsx": {
-            "dynamicWrapping": false,
-            "scaleInDock": 1.0001,
-            "scaleInEditor": 3.2108
-        },
         "Other.tsx": {
             "dynamicWrapping": true,
-            "scaleInDock": 1,
-            "scaleInEditor": 0.92
+            "scaleInDock": 1
         },
         "RPG Nature Tileset Autumn.tsx": {
             "dynamicWrapping": false,
-            "scaleInDock": 0.988,
-            "scaleInEditor": 1.7278
+            "scaleInDock": 1,
+            "scaleInEditor": 1
         },
         "RPG Nature Tileset.tsx": {
             "dynamicWrapping": false,
-            "scaleInDock": 1.172,
-            "scaleInEditor": 0.92
+            "scaleInDock": 1,
+            "scaleInEditor": 1
         },
         "Spring.tsx": {
             "dynamicWrapping": false,
@@ -73,7 +63,8 @@
         },
         "lvl2.tmx": {
             "expandedGroupLayers": [
-                18
+                18,
+                21
             ],
             "expandedObjectLayers": [
                 16,
@@ -84,11 +75,11 @@
                 11,
                 17
             ],
-            "scale": 0.8078,
-            "selectedLayer": 16,
+            "scale": 0.9262499999999999,
+            "selectedLayer": 17,
             "viewCenter": {
-                "x": 314.4342659074029,
-                "y": 303.2928942807626
+                "x": 491.7678812415655,
+                "y": 304.99325236167346
             }
         },
         "lvl2.tmx#IceTileset": {
@@ -117,31 +108,22 @@
             "scale": 1.2896,
             "selectedLayer": 0,
             "viewCenter": {
-                "x": 309.39826302729523,
-                "y": 143.84305210918114
+                "x": 486.8265337900967,
+                "y": 320.39862971037076
             }
         },
-        "test.tmx#IceTileset": {
-            "scaleInDock": 1
-        },
-        "test.tmx#RPG Nature Tileset": {
-            "scaleInDock": 1
-        },
-        "test.tsx": {
-            "dynamicWrapping": true,
-            "scaleInDock": 1,
-            "scaleInEditor": 1
-        },
-        "test24.tsx": {
-            "scaleInDock": 1,
-            "scaleInEditor": 1
+        "lvl4.tmx": {
+            "expandedObjectLayers": [
+                9
+            ],
+            "scale": 1.0054166666666666,
+            "selectedLayer": 8,
+            "viewCenter": {
+                "x": 479.900538748446,
+                "y": 319.7679237463738
+            }
         },
         "vines_flowered.tsx": {
-            "dynamicWrapping": false,
-            "scaleInDock": 1,
-            "scaleInEditor": 0.92
-        },
-        "vines_flowered_wall.tsx": {
             "scaleInDock": 1,
             "scaleInEditor": 1
         }
