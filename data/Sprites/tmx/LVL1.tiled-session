@@ -3,14 +3,11 @@
         "height": 4300,
         "width": 2
     },
-    "activeFile": "lvl2.tmx",
+    "activeFile": "lvl3.tmx",
     "expandedProjectPaths": [
         "."
     ],
     "fileStates": {
-        "": {
-            "scaleInDock": 1
-        },
         ":/automap-tiles.tsx": {
             "scaleInDock": 1
         },
@@ -44,31 +41,24 @@
             "scaleInEditor": 0.92
         },
         "Spring.tsx": {
-            "dynamicWrapping": false,
-            "scaleInDock": 0.9394,
-            "scaleInEditor": 0.92
+            "scaleInDock": 1
         },
         "fog.tsx": {
+            "scaleInDock": 1
+        },
+        "lianne.tsx": {
             "scaleInDock": 1,
-            "scaleInEditor": 0.92
+            "scaleInEditor": 1
         },
         "lvl1.tmx": {
             "expandedGroupLayers": [
-                15,
-                12,
-                17
+                12
             ],
-            "expandedObjectLayers": [
-                9,
-                15,
-                19,
-                17
-            ],
-            "scale": 0.9311,
-            "selectedLayer": 6,
+            "scale": 0.75,
+            "selectedLayer": 0,
             "viewCenter": {
-                "x": 475.7813339061325,
-                "y": 394.15744817957255
+                "x": 559.3333333333333,
+                "y": 116.66666666666663
             }
         },
         "lvl2.tmx": {
@@ -76,15 +66,9 @@
                 18
             ],
             "expandedObjectLayers": [
-                16,
-                15,
-                12,
-                14,
-                13,
-                11,
-                17
+                12
             ],
-            "scale": 0.8078,
+            "scale": 0.9262499999999999,
             "selectedLayer": 16,
             "viewCenter": {
                 "x": 488.9824213914336,
@@ -92,49 +76,35 @@
             }
         },
         "lvl2.tmx#IceTileset": {
-            "dynamicWrapping": false,
             "scaleInDock": 1
         },
         "lvl2.tmx#Other": {
-            "dynamicWrapping": true,
-            "scaleInDock": 1,
-            "scaleInEditor": 1
+            "scaleInDock": 1
         },
         "lvl2.tmx#RPG Nature Tileset": {
             "scaleInDock": 1
         },
         "lvl2.tmx#RPG Nature Tileset Autumn": {
-            "scaleInDock": 1,
-            "scaleInEditor": 1
+            "scaleInDock": 1
         },
         "lvl2.tmx#vines_flowered": {
             "scaleInDock": 1
         },
-        "test.tmx": {
-            "expandedObjectLayers": [
-                2
-            ],
-            "scale": 1.2896,
-            "selectedLayer": 0,
+        "lvl3.tmx": {
+            "scale": 1.0034374999999998,
+            "selectedLayer": 1,
             "viewCenter": {
                 "x": 309.39826302729523,
                 "y": 143.84305210918114
             }
         },
-        "test.tmx#IceTileset": {
-            "scaleInDock": 1
-        },
-        "test.tmx#RPG Nature Tileset": {
-            "scaleInDock": 1
-        },
-        "test.tsx": {
-            "dynamicWrapping": true,
-            "scaleInDock": 1,
-            "scaleInEditor": 1
-        },
-        "test24.tsx": {
-            "scaleInDock": 1,
-            "scaleInEditor": 1
+        "lvl4.tmx": {
+            "scale": 1.0054166666666666,
+            "selectedLayer": 1,
+            "viewCenter": {
+                "x": 479.900538748446,
+                "y": 319.7679237463738
+            }
         },
         "vines_flowered.tsx": {
             "dynamicWrapping": false,
@@ -155,24 +125,25 @@
     "openFiles": [
         "RPG Nature Tileset.tsx",
         "lvl1.tmx",
+        "IceTileset.tsx",
         "lvl2.tmx",
-        "Spring.tsx"
+        "RPG Nature Tileset Autumn.tsx",
+        "vines_flowered.tsx",
+        "lvl3.tmx",
+        "lvl4.tmx"
     ],
     "project": "LVL1.tiled-project",
     "property.type": "bool",
     "recentFiles": [
-        "Spring.tsx",
         "RPG Nature Tileset.tsx",
         "lvl1.tmx",
-        "lvl2.tmx",
-        "vines_flowered_wall.tsx",
-        "fog.tsx",
-        "vines_flowered.tsx",
-        "test.tmx",
-        "Flowers.tsx",
-        "Other.tsx",
         "IceTileset.tsx",
-        "RPG Nature Tileset Autumn.tsx"
+        "lvl2.tmx",
+        "RPG Nature Tileset Autumn.tsx",
+        "vines_flowered.tsx",
+        "lvl4.tmx",
+        "lvl3.tmx",
+        "lianne.tsx"
     ],
     "tileset.lastUsedFormat": "tsx",
     "tileset.tileSize": {
