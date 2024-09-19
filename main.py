@@ -26,8 +26,8 @@ SCREEN = pygame.display.set_mode(WINDOW_SIZE)
 LEVELS = [{"levelFile": "data/Sprites/tmx/lvl1.tmx", "season": Season.SUMMER, "maxSeasons": 3},
           {"levelFile": "data/Sprites/tmx/lvl2.tmx", "season": Season.SUMMER, "maxSeasons": 30},
           {"levelFile": "data/Sprites/tmx/lvl3.tmx", "season": Season.SUMMER, "maxSeasons": 30},
-          # {"levelFile": "data/Sprites/tmx/lvl4.tmx", "season": Season.SUMMER, "maxSeasons": 3},
-          # {"levelFile": "data/Sprites/tmx/lvl5.tmx", "season": Season.AUTUMN, "maxSeasons": 9},
+          {"levelFile": "data/Sprites/tmx/lvl4.tmx", "season": Season.SUMMER, "maxSeasons": 30},
+          {"levelFile": "data/Sprites/tmx/lvl5.tmx", "season": Season.AUTUMN, "maxSeasons": 9},
         ]
 
 #Sprites
