@@ -49,7 +49,7 @@ def loadNextLevel(GAMES_OBJECTS):
     GAMES_OBJECTS.append(Level("data/Sprites/tmx/lvl1.tmx",GAME_STATE))
     GAME_STATE["player"] = Player(PLAYER_SPRITE,GAME_STATE)
     GAMES_OBJECTS.append(GAME_STATE["player"])
-    GAMES_OBJECTS.append(InGameMenu())
+    GAMES_OBJECTS.append(InGameMenu(Season.SUMMER, GAME_STATE))
     GAMES_OBJECTS.append(Bear((100,100), BEAR_SPRITE))
     return
 

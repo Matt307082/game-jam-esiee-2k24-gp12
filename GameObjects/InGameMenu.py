@@ -7,8 +7,12 @@ class InGameMenu:
     seasons_icons = pygame.transform.scale(pygame.image.load("data/Sprites/seasons.png"), (100,100))
     season_counter = 0
     music_manager = MusicManager()
-    music_manager.load_files("automne", "hiver", "printemps", "ete")
-    music_manager.play(current_season.value)
+
+    def __init__(self, season, GAME_STATE):
+        self.current_season = season
+        GAME_STATE["saison"] = season
+        GAME_STATE["active_layer"] = GAME_STATE["saison"].value
+        self.music_manager.play(self.current_season.value)
 
     def update(self, GAME_STATE):
         print(self.season_counter)
