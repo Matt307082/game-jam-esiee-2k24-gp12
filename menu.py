@@ -1,4 +1,5 @@
 import pygame
+import sys
 from Tools.utils import WINDOW_SIZE, State
 
 # Couleurs
@@ -66,7 +67,7 @@ def main_menu(background_image,GAME_STATE):
         pygame.draw.rect(screen, GRAY, button_3)
         if click:
             pygame.quit()
-            exit(0)
+            sys.exit()
     else:
         pygame.draw.rect(screen, MEDIUM_RED, button_3)
 
@@ -109,6 +110,7 @@ def draw_selection_screen(background_image, GAME_STATE):
         pygame.draw.rect(screen, GRAY, button_3)
         if click:
             pygame.quit()
+            sys.exit()
             exit(0)
     else:
         pygame.draw.rect(screen, MEDIUM_RED, button_3)

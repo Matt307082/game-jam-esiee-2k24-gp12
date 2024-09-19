@@ -1,5 +1,5 @@
 import pygame
-import os, inspect, ctypes
+import os, inspect, sys
 from GameObjects.Player import Player
 from GameObjects.Bear import Bear
 from Tools.MusicManager import MusicManager
@@ -88,6 +88,7 @@ while not done:
         for event in pygame.event.get():  
             if event.type == pygame.QUIT:
                 pygame.quit()
+                sys.exit()
             if event.type == pygame.MOUSEBUTTONDOWN:
                 if event.button == 1:
                     GAME_STATE["click"] = True
