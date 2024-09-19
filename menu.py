@@ -108,7 +108,6 @@ def draw_selection_screen(background_image, GAME_STATE):
     if button_2.collidepoint((mx, my)):
         pygame.draw.rect(screen, GRAY, button_2)
         if click:
-            GAME_STATE["player"].reset(GAME_STATE)
             GAME_STATE["click"] = False
             GAME_STATE["state"] = State.Menu
     else:

@@ -1,16 +1,16 @@
 import pygame
 from Tools.utils import ChargeSerieSprites, WINDOW_SIZE
+from GameObjects.Skull import Skull
 
 class Player:
     def __init__(self, spritesheet, GAME_STATE):
-        self.reset(GAME_STATE)
         self.x = GAME_STATE["winAndStart"]['start'][0]["rect"].x
-        self.y =GAME_STATE["winAndStart"]['start'][0]["rect"].y
-        self.vx = 1
-        self.vy = 1
+        self.y = GAME_STATE["winAndStart"]['start'][0]["rect"].y
+        self.vx = 2
+        self.vy = 2
         self.spritesheet = spritesheet
         self.width = 200 // 4
-        self.height = 261 // 4
+        self.height = 285 // 4
         self.cell_width = 25
         self.cell_height = 32
         self.down_anim = ChargeSerieSprites(0, spritesheet, (self.width,self.height), 4)
@@ -42,7 +42,7 @@ class Player:
             test.x += self.vx
             self.current_anim = self.right_anim
 
-        if not self.check_collision(test, active_layer, layer_obj):
+        if not self.check_collision(test, active_layer, layer_obj, GAME_STATE):
             self.x = test.x
             self.y = test.y
 
@@ -59,14 +59,16 @@ class Player:
         ,(25,32)),(self.x,self.y))
 
     def reset(self, GAME_STATE):
+        GAME_STATE["gameObject"].append(Skull((self.x,self.y),GAME_STATE["skullSprite"]))
         self.x = GAME_STATE["winAndStart"]['start'][0]["rect"].x
         self.y = GAME_STATE["winAndStart"]['start'][0]["rect"].y
+
 
     def getHitbox(self):
         return pygame.Rect(self.x,self.y,self.cell_width,self.cell_height)
     
     
-    def check_collision(self,new_player_pos, active_layer, newColide):
+    def check_collision(self,new_player_pos, active_layer, newColide, GAME_STATE):
 
         def collides_with_layer(layer_name):
             return any(new_player_pos.colliderect(obj["rect"]) for obj in newColide.get(layer_name, []))
@@ -82,13 +84,12 @@ class Player:
         if "win" in newColide:
             for win_rect in newColide["win"]:
                 if new_player_pos.colliderect(win_rect["rect"]):
-                    print("win")
+                    GAME_STATE["nextLevel"] = True
                     return True
 
         if collides_with_layer(active_layer + "Decor1"):
             print("decor")
             return False
-
         return False
 
 

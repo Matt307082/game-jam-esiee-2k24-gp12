@@ -6,6 +6,7 @@ from Tools.MusicManager import MusicManager
 from Tools.utils import *
 from GameObjects.InGameMenu import InGameMenu
 from GameObjects.Level import Level
+from GameObjects.Skull import Skull
 from menu import *
 
 # Initialize pygame
@@ -22,15 +23,18 @@ assets = os.path.join(scriptDIR,"data")
 #Variables 
 #FOND = pygame.image.load(os.path.join(assets, "placeholder.png"))
 SCREEN = pygame.display.set_mode(WINDOW_SIZE)
-LEVELS = ["data/Sprites/tmx/lvl1.tmx"]
+LEVELS = [{"levelFile": "data/Sprites/tmx/lvl1.tmx", "season": Season.SUMMER},
+          {"levelFile": "data/Sprites/tmx/lvl2.tmx", "season": Season.SUMMER}]
 
 #Sprites
 MENU_SPRITE = pygame.image.load(os.path.join(assets, "Sprites/menu.png"))
 MENU_SPRITE = pygame.transform.scale(MENU_SPRITE, WINDOW_SIZE)
 PLAYER_SPRITE = pygame.image.load(os.path.join(assets, "Sprites/player.png"))
 BEAR_SPRITE = pygame.image.load(os.path.join(assets, "Sprites/bear.png"))
+SKULL_SPRITE = pygame.image.load(os.path.join(assets,"Sprites/skull.png"))
 
 #etat du jeu global
+GAMES_OBJECTS = []
 GAME_STATE = dict()
 GAME_STATE["state"] = State.Menu
 GAME_STATE["nextLevel"] = False
@@ -38,7 +42,9 @@ GAME_STATE["click"] = False
 GAME_STATE["keyPressed"] = None
 GAME_STATE["screen"] = SCREEN
 GAME_STATE["debug"] = False
-GAMES_OBJECTS = []
+GAME_STATE["skullSprite"] = SKULL_SPRITE
+GAME_STATE["gameObject"] = GAMES_OBJECTS
+
  
 #titre de la fenetre
 pygame.display.set_caption("Nom de code  : Vivaldi")
@@ -46,12 +52,14 @@ pygame.display.set_caption("Nom de code  : Vivaldi")
 def loadNextLevel(GAMES_OBJECTS):
     GAMES_OBJECTS.clear() #vidange de game object
 
-    pathNextLevel = LEVELS.pop()
-    GAMES_OBJECTS.append(Level("data/Sprites/tmx/lvl1.tmx",GAME_STATE))
+    nextLevel = LEVELS.pop(0)
+    GAMES_OBJECTS.append(Level(nextLevel["levelFile"],GAME_STATE))
     GAME_STATE["player"] = Player(PLAYER_SPRITE,GAME_STATE)
     GAMES_OBJECTS.append(GAME_STATE["player"])
-    GAMES_OBJECTS.append(InGameMenu(Season.SUMMER, GAME_STATE))
+    GAMES_OBJECTS.append(InGameMenu(nextLevel["season"], GAME_STATE))
     GAMES_OBJECTS.append(Bear((100,100), BEAR_SPRITE))
+    LEVELS.append(nextLevel)
+
     return
 
 #chargement du premier niveau
@@ -62,7 +70,7 @@ for gameObject in GAMES_OBJECTS: #premier draw
 
 while not done:
 
-    if(GAME_STATE["state"] == State.Menu):
+    if(GAME_STATE["state"] != State.Play):
         event = pygame.event.Event(pygame.USEREVENT)    # Remise à zero de la variable event
         for event in pygame.event.get():  
             if event.type == pygame.QUIT:
@@ -71,20 +79,12 @@ while not done:
                 if event.button == 1:
                     GAME_STATE["click"] = True
         
-        main_menu(MENU_SPRITE, GAME_STATE)
-
-    if(GAME_STATE["state"] == State.Pause):
-        event = pygame.event.Event(pygame.USEREVENT)    # Remise à zero de la variable event
-        for event in pygame.event.get():  
-            if event.type == pygame.QUIT:
-                pygame.quit()
-            if event.type == pygame.MOUSEBUTTONDOWN:
-                if event.button == 1:
-                    GAME_STATE["click"] = True
-        
-        draw_selection_screen(MENU_SPRITE, GAME_STATE)
+        if (GAME_STATE["state"] == State.Menu):
+            main_menu(MENU_SPRITE, GAME_STATE)
+        if (GAME_STATE["state"] == State.Pause):
+            draw_selection_screen(MENU_SPRITE, GAME_STATE)
     
-    if(GAME_STATE["state"] == State.Play):
+    elif(GAME_STATE["state"] == State.Play):
         event = pygame.event.Event(pygame.USEREVENT)    # Remise à zero de la variable event
         for event in pygame.event.get():  
             if event.type == pygame.QUIT:
@@ -100,9 +100,11 @@ while not done:
                     GAME_STATE["state"] = State.Pause
                 if event.key == pygame.K_d :
                     GAME_STATE["debug"] = not GAME_STATE["debug"]
+                if event.key == pygame.K_w :
+                    GAME_STATE["nextLevel"] = True
                 if event.key == pygame.K_SPACE :
                     print(GAME_STATE['layer_obj'])
-            
+
             #vidange de la clef stocké
             if event.type == pygame.KEYUP:
                 GAME_STATE["keyPressed"] = None
@@ -119,7 +121,7 @@ while not done:
         #passage du niveau si besoin
         if GAME_STATE["nextLevel"]:
             GAME_STATE["nextLevel"] = False
-            loadNextLevel()
+            loadNextLevel(GAMES_OBJECTS)
 
     #affichage de l'ecran
     pygame.display.flip()
