@@ -3,15 +3,15 @@
         "height": 4300,
         "width": 2
     },
-    "activeFile": "lvl2.tmx",
+    "activeFile": "Spring.tsx",
     "expandedProjectPaths": [
         "."
     ],
     "fileStates": {
-        "": {
+        ":/automap-tiles.tsx": {
             "scaleInDock": 1
         },
-        ":/automap-tiles.tsx": {
+        "Flowers.tsx": {
             "scaleInDock": 1
         },
         "IceTileset.tsx": {
@@ -34,90 +34,61 @@
             "scaleInEditor": 1
         },
         "Spring.tsx": {
-            "dynamicWrapping": false,
-            "scaleInDock": 0.9394,
-            "scaleInEditor": 0.92
+            "scaleInDock": 1,
+            "scaleInEditor": 1
         },
         "fog.tsx": {
+            "scaleInDock": 1
+        },
+        "lianne.tsx": {
             "scaleInDock": 1,
-            "scaleInEditor": 0.92
+            "scaleInEditor": 1
         },
         "lvl1.tmx": {
             "expandedGroupLayers": [
-                15,
-                12,
-                17
+                12
             ],
-            "expandedObjectLayers": [
-                9,
-                15,
-                19,
-                17
-            ],
-            "scale": 0.9311,
-            "selectedLayer": 6,
+            "scale": 0.75,
+            "selectedLayer": 7,
             "viewCenter": {
-                "x": 475.7813339061325,
-                "y": 394.15744817957255
+                "x": 480.66666666666663,
+                "y": 319.33333333333326
             }
         },
         "lvl2.tmx": {
-            "expandedGroupLayers": [
-                18,
-                21
-            ],
-            "expandedObjectLayers": [
-                16,
-                15,
-                12,
-                14,
-                13,
-                11,
-                17
-            ],
-            "scale": 0.9262499999999999,
-            "selectedLayer": 17,
+            "scale": 1.0054166666666666,
+            "selectedLayer": 3,
             "viewCenter": {
-                "x": 491.7678812415655,
-                "y": 304.99325236167346
+                "x": 479.900538748446,
+                "y": 319.7679237463738
             }
         },
         "lvl2.tmx#IceTileset": {
-            "dynamicWrapping": false,
             "scaleInDock": 1
         },
         "lvl2.tmx#Other": {
-            "dynamicWrapping": true,
-            "scaleInDock": 1,
-            "scaleInEditor": 1
+            "scaleInDock": 1
         },
         "lvl2.tmx#RPG Nature Tileset": {
             "scaleInDock": 1
         },
         "lvl2.tmx#RPG Nature Tileset Autumn": {
-            "scaleInDock": 1,
-            "scaleInEditor": 1
+            "scaleInDock": 1
         },
         "lvl2.tmx#vines_flowered": {
             "scaleInDock": 1
         },
-        "test.tmx": {
-            "expandedObjectLayers": [
-                2
-            ],
-            "scale": 1.2896,
-            "selectedLayer": 0,
+        "lvl3.tmx": {
+            "scale": 1.0034374999999998,
+            "selectedLayer": 1,
             "viewCenter": {
                 "x": 486.8265337900967,
                 "y": 320.39862971037076
             }
         },
         "lvl4.tmx": {
-            "expandedObjectLayers": [
-                9
-            ],
             "scale": 1.0054166666666666,
-            "selectedLayer": 8,
+            "selectedLayer": 4,
             "viewCenter": {
                 "x": 479.900538748446,
                 "y": 319.7679237463738
@@ -126,6 +97,9 @@
         "vines_flowered.tsx": {
             "scaleInDock": 1,
             "scaleInEditor": 1
+        },
+        "vines_flowered_wall.tsx": {
+            "scaleInDock": 1
         }
     },
     "last.exportedFilePath": "/home/sportday/Bureau/school/inge/2024-2025/game-jam-esiee-2k24-gp12/data/Sprites/tmx",
@@ -137,24 +111,21 @@
     "openFiles": [
         "RPG Nature Tileset.tsx",
         "lvl1.tmx",
-        "lvl2.tmx",
         "Spring.tsx"
     ],
     "project": "LVL1.tiled-project",
     "property.type": "bool",
     "recentFiles": [
-        "Spring.tsx",
         "RPG Nature Tileset.tsx",
         "lvl1.tmx",
-        "lvl2.tmx",
-        "vines_flowered_wall.tsx",
-        "fog.tsx",
-        "vines_flowered.tsx",
-        "test.tmx",
-        "Flowers.tsx",
-        "Other.tsx",
+        "Spring.tsx",
         "IceTileset.tsx",
-        "RPG Nature Tileset Autumn.tsx"
+        "lvl2.tmx",
+        "RPG Nature Tileset Autumn.tsx",
+        "vines_flowered.tsx",
+        "lvl3.tmx",
+        "lvl4.tmx",
+        "lianne.tsx"
     ],
     "tileset.lastUsedFormat": "tsx",
     "tileset.tileSize": {
