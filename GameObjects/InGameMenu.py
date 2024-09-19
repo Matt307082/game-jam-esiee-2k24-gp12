@@ -7,35 +7,38 @@ class InGameMenu:
     seasons_icons = pygame.transform.scale(pygame.image.load("data/Sprites/seasons.png"), (100,100))
     keyboard_icons = pygame.transform.scale(pygame.image.load("data/Sprites/keyboard.png"), (512, 162))
     side_image = pygame.transform.scale(pygame.image.load("data/Sprites/side.png"), (200, 660))
-    season_counter = 0
+    
     music_manager = MusicManager()
     music_manager.load_files("hiver","printemps","ete","automne")
 
-    def __init__(self, season, GAME_STATE):
+    def __init__(self, season, season_counter, GAME_STATE):
         self.current_season = season
-        GAME_STATE["saison"] = season
-        GAME_STATE["active_layer"] = GAME_STATE["saison"].value
-        self.music_manager.play(self.current_season.value)
+        self.change_season(GAME_STATE)
+        self.season_counter = season_counter
+        self.total_counter = season_counter
 
     def update(self, GAME_STATE):
-        keyPressed = GAME_STATE["keyPressed"]
+        if self.season_counter != 0:
+            keyPressed = GAME_STATE["keyPressed"]
+            old_counter = self.season_counter
+            self.season_counter -= 1
+            if keyPressed == pygame.K_1 and self.current_season != Season.WINTER:
+                self.current_season = Season.WINTER
+            elif keyPressed == pygame.K_2 and self.current_season != Season.SPRING:
+                self.current_season = Season.SPRING
+            elif keyPressed == pygame.K_3 and self.current_season != Season.SUMMER:
+                self.current_season = Season.SUMMER
+            elif keyPressed == pygame.K_4 and self.current_season != Season.AUTUMN:
+                self.current_season = Season.AUTUMN
+            else: self.season_counter += 1
 
-        old_counter = self.season_counter
-        self.season_counter += 1
-        if keyPressed == pygame.K_1 and self.current_season != Season.WINTER:
-            self.current_season = Season.WINTER
-        elif keyPressed == pygame.K_2 and self.current_season != Season.SPRING:
-            self.current_season = Season.SPRING
-        elif keyPressed == pygame.K_3 and self.current_season != Season.SUMMER:
-            self.current_season = Season.SUMMER
-        elif keyPressed == pygame.K_4 and self.current_season != Season.AUTUMN:
-            self.current_season = Season.AUTUMN
-        else: self.season_counter -= 1
+            if old_counter != self.season_counter:
+                self.change_season(GAME_STATE)
 
-        if old_counter != self.season_counter:
-            GAME_STATE["saison"] = self.current_season
-            GAME_STATE["active_layer"] = GAME_STATE["saison"].value
-            self.music_manager.play(self.current_season.value)
+    def change_season(self, GAME_STATE):
+        GAME_STATE["saison"] = self.current_season
+        GAME_STATE["active_layer"] = GAME_STATE["saison"].value
+        self.music_manager.play(self.current_season.value)
 
     def draw(self, GAME_STATE):
         font = pygame.font.Font(None, 60)

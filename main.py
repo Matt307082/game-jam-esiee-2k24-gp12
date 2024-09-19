@@ -23,8 +23,8 @@ assets = os.path.join(scriptDIR,"data")
 #Variables 
 #FOND = pygame.image.load(os.path.join(assets, "placeholder.png"))
 SCREEN = pygame.display.set_mode(WINDOW_SIZE)
-LEVELS = [{"levelFile": "data/Sprites/tmx/lvl1.tmx", "season": Season.SUMMER},
-          {"levelFile": "data/Sprites/tmx/lvl2.tmx", "season": Season.SUMMER},
+LEVELS = [{"levelFile": "data/Sprites/tmx/lvl1.tmx", "season": Season.SUMMER, "maxSeasons": 3},
+          {"levelFile": "data/Sprites/tmx/lvl2.tmx", "season": Season.SUMMER, "maxSeasons": 3},
         ]
 
 #Sprites
@@ -61,7 +61,9 @@ def loadNextLevel(GAMES_OBJECTS):
     GAMES_OBJECTS.append(Level(nextLevel["levelFile"],GAME_STATE))
     GAME_STATE["player"] = Player(PLAYER_SPRITE,GAME_STATE)
     GAMES_OBJECTS.append(GAME_STATE["player"])
-    GAMES_OBJECTS.append(InGameMenu(nextLevel["season"], GAME_STATE))
+    GAME_STATE["startingSeason"] = nextLevel["season"]
+    GAME_STATE["menu"] = InGameMenu(nextLevel["season"], nextLevel["maxSeasons"], GAME_STATE)
+    GAMES_OBJECTS.append(GAME_STATE["menu"])
 
     if 'bear' in GAME_STATE['layer_obj']:
         for bear_position in GAME_STATE['layer_obj']['bear']:
