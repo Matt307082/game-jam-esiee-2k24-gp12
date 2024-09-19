@@ -24,7 +24,8 @@ assets = os.path.join(scriptDIR,"data")
 #FOND = pygame.image.load(os.path.join(assets, "placeholder.png"))
 SCREEN = pygame.display.set_mode(WINDOW_SIZE)
 LEVELS = [{"levelFile": "data/Sprites/tmx/lvl1.tmx", "season": Season.SUMMER},
-          {"levelFile": "data/Sprites/tmx/lvl2.tmx", "season": Season.SUMMER}]
+          {"levelFile": "data/Sprites/tmx/lvl2.tmx", "season": Season.SUMMER},
+        ]
 
 #Sprites
 ICON = pygame.image.load(os.path.join(assets, "Sprites/menu.png"))
