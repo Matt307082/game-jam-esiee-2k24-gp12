@@ -8,6 +8,9 @@
         "."
     ],
     "fileStates": {
+        "": {
+            "scaleInDock": 1
+        },
         ":/automap-tiles.tsx": {
             "scaleInDock": 1
         },
@@ -37,15 +40,13 @@
         },
         "lvl1.tmx": {
             "expandedGroupLayers": [
-                12,
-                17,
-                15
+                17
             ],
-            "scale": 1.0359,
-            "selectedLayer": 8,
+            "scale": 0.6506,
+            "selectedLayer": 7,
             "viewCenter": {
-                "x": 234.09595520803165,
-                "y": 297.8086687904238
+                "x": 474.17768213956344,
+                "y": 441.89978481401783
             }
         },
         "lvl2.tmx": {
@@ -53,22 +54,29 @@
                 18
             ],
             "expandedObjectLayers": [
-                11,
-                15,
-                12,
-                16,
-                14,
-                13,
-                17,
-                18,
-                19
+                12
             ],
             "scale": 1.0961,
-            "selectedLayer": 13,
+            "selectedLayer": 16,
             "viewCenter": {
-                "x": 405.98485539640535,
-                "y": 337.1042788066782
+                "x": 479.88322233372867,
+                "y": 319.7700939695283
             }
+        },
+        "lvl2.tmx#IceTileset": {
+            "scaleInDock": 1
+        },
+        "lvl2.tmx#Other": {
+            "scaleInDock": 1
+        },
+        "lvl2.tmx#RPG Nature Tileset": {
+            "scaleInDock": 1
+        },
+        "lvl2.tmx#RPG Nature Tileset Autumn": {
+            "scaleInDock": 1
+        },
+        "lvl2.tmx#vines_flowered": {
+            "scaleInDock": 1
         },
         "test.tmx": {
             "scale": 1.2896,
@@ -100,7 +108,7 @@
         }
     },
     "last.exportedFilePath": "/home/sportday/Bureau/school/inge/2024-2025/game-jam-esiee-2k24-gp12/data/Sprites/tmx",
-    "last.imagePath": "/home/sportday/Bureau/school/inge/2024-2025/game-jam-esiee-2k24-gp12/data/Sprites/ground/Harmonious Seasons - A Seasons Based 2D Pixel Art Pack/Autumn/A_Bushes",
+    "last.imagePath": "/home/sportday/Bureau/school/inge/2024-2025/game-jam-esiee-2k24-gp12/data/Sprites/ground",
     "last.objectTemplatePath": "/home/sportday/Bureau/school/inge/2024-2025/game-jam-esiee-2k24-gp12/data/Sprites/tmx",
     "lastUsedTilesetExportFilter": "Fichiers de jeu de tuiles Tiled (*.tsx *.xml)",
     "map.lastUsedExportFilter": "Fichiers de carte Tiled (*.tmx *.xml)",
@@ -111,12 +119,14 @@
         "IceTileset.tsx",
         "Other.tsx",
         "test.tmx",
-        "RPG Nature Tileset Autumn.tsx"
+        "RPG Nature Tileset Autumn.tsx",
+        "lvl2.tmx"
     ],
     "project": "LVL1.tiled-project",
     "property.type": "bool",
     "recentFiles": [
         "RPG Nature Tileset.tsx",
+        "lvl2.tmx",
         "RPG Nature Tileset Autumn.tsx",
         "test.tmx",
         "Other.tsx",
@@ -132,5 +142,5 @@
         "height": 32,
         "width": 32
     },
-    "tileset.type": 1
+    "tileset.type": 0
 }
