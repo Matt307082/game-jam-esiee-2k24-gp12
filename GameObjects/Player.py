@@ -122,7 +122,9 @@ class Player:
             collide = True
         elif collides_with_layer("mapObj"):
             collide = True
-        elif "win" in newColide:
+        elif "win" in newColide and (
+                    any(win_rect["layer"] == active_layer + "Obj" for win_rect in newColide["win"]) or any(
+                win_rect["layer"] == "mapObj" for win_rect in newColide["win"])):
             for win_rect in newColide["win"]:
                 if new_player_pos.colliderect(win_rect["rect"]):
                     GAME_STATE["nextLevel"] = True

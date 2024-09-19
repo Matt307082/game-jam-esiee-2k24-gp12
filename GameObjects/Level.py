@@ -11,6 +11,7 @@ def get_collision_data(tmx_data):
                     collision_objects.append({
                         "name": obj.name,
                         "rect": pygame.Rect(obj.x, obj.y, obj.width, obj.height),
+                        "layer": layer.name,
                         "other": False
                     })
                 elif obj.type == 'other' or obj.properties.get('class') == 'other':
@@ -19,6 +20,7 @@ def get_collision_data(tmx_data):
                     collision_data[obj.name].append({
                         "name": obj.name,
                         "rect": pygame.Rect(obj.x, obj.y, obj.width, obj.height),
+                        "layer": layer.name,
                         "other": True
                     })
             collision_data[layer.name] = collision_objects
@@ -41,6 +43,7 @@ def get_collision_data(tmx_data):
                             layer_colliders.append({
                                 "name": tile.get('name', ''),
                                 "rect": collision_rect,
+                                "layer": layer.name,
                                 "other": False
                             })
             collision_data[layer.name] = layer_colliders  # Stocker les colliders pour chaque layer
