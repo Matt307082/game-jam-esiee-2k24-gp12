@@ -26,6 +26,7 @@ SCREEN = pygame.display.set_mode(WINDOW_SIZE)
 LEVELS = [{"levelFile": "data/Sprites/tmx/lvl1.tmx", "season": Season.SUMMER, "maxSeasons": 3},
           {"levelFile": "data/Sprites/tmx/lvl3.tmx", "season": Season.SUMMER, "maxSeasons": 3},
           {"levelFile": "data/Sprites/tmx/lvl4.tmx", "season": Season.SUMMER, "maxSeasons": 3},
+          {"levelFile": "data/Sprites/tmx/lvl5.tmx", "season": Season.AUTUMN, "maxSeasons": 9},
         ]
 
 #Sprites
@@ -58,7 +59,7 @@ pygame.display.set_icon(ICON)
 def loadNextLevel(GAMES_OBJECTS):
     GAMES_OBJECTS.clear() #vidange de game object
 
-    nextLevel = LEVELS.pop(0)
+    nextLevel = LEVELS.pop()
     GAMES_OBJECTS.append(Level(nextLevel["levelFile"],GAME_STATE))
     GAME_STATE["player"] = Player(PLAYER_SPRITE,GAME_STATE)
     GAMES_OBJECTS.append(GAME_STATE["player"])

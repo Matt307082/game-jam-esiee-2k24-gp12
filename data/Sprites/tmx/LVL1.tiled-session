@@ -3,7 +3,7 @@
         "height": 4300,
         "width": 2
     },
-    "activeFile": "Spring.tsx",
+    "activeFile": "lvl3.tmx",
     "expandedProjectPaths": [
         "."
     ],
@@ -88,7 +88,7 @@
             "scale": 1.0054166666666666,
             "selectedLayer": 3,
             "viewCenter": {
-                "x": 479.900538748446,
+                "x": 479.90053874844597,
                 "y": 319.7679237463738
             }
         },
@@ -109,10 +109,10 @@
         },
         "lvl3.tmx": {
             "scale": 1.0034374999999998,
-            "selectedLayer": 1,
+            "selectedLayer": 3,
             "viewCenter": {
-                "x": 524.6963562753037,
-                "y": 320.39862971037064
+                "x": 601.4325755216446,
+                "y": 571.5353472438494
             }
         },
         "lvl4.tmx": {
@@ -124,8 +124,11 @@
             }
         },
         "lvl5.tmx": {
+            "expandedGroupLayers": [
+                12
+            ],
             "scale": 0.8352083333333333,
-            "selectedLayer": 2,
+            "selectedLayer": 0,
             "viewCenter": {
                 "x": 479.52107757545525,
                 "y": 320.2793714143178
@@ -148,21 +151,25 @@
     "openFiles": [
         "RPG Nature Tileset.tsx",
         "lvl1.tmx",
-        "Spring.tsx"
+        "Spring.tsx",
+        "lvl3.tmx",
+        "lvl4.tmx",
+        "lvl5.tmx"
     ],
     "project": "LVL1.tiled-project",
     "property.type": "bool",
     "recentFiles": [
-        "C:/Users/matte/Documents/ESIEE travail/E4FI/tmx/lvl5.tmx",
         "RPG Nature Tileset.tsx",
         "lvl1.tmx",
         "Spring.tsx",
+        "lvl5.tmx",
+        "lvl4.tmx",
+        "lvl3.tmx",
+        "C:/Users/matte/Documents/ESIEE travail/E4FI/tmx/lvl5.tmx",
         "IceTileset.tsx",
         "lvl2.tmx",
         "RPG Nature Tileset Autumn.tsx",
         "vines_flowered.tsx",
-        "lvl3.tmx",
-        "lvl4.tmx",
         "lianne.tsx"
     ],
     "tileset.lastUsedFormat": "tsx",
