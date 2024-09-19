@@ -25,7 +25,7 @@
         },
         "IceTileset.tsx": {
             "dynamicWrapping": false,
-            "scaleInDock": 0.5295,
+            "scaleInDock": 1.0001,
             "scaleInEditor": 3.2108
         },
         "Other.tsx": {
@@ -40,7 +40,7 @@
         },
         "RPG Nature Tileset.tsx": {
             "dynamicWrapping": false,
-            "scaleInDock": 0.7118,
+            "scaleInDock": 1.172,
             "scaleInEditor": 0.92
         },
         "Spring.tsx": {
@@ -49,6 +49,7 @@
             "scaleInEditor": 0.92
         },
         "fog.tsx": {
+            "dynamicWrapping": false,
             "scaleInDock": 1,
             "scaleInEditor": 0.92
         },
@@ -65,7 +66,7 @@
                 17
             ],
             "scale": 0.9311,
-            "selectedLayer": 6,
+            "selectedLayer": 0,
             "viewCenter": {
                 "x": 475.7813339061325,
                 "y": 394.15744817957255
@@ -73,21 +74,12 @@
         },
         "lvl2.tmx": {
             "expandedGroupLayers": [
-                18
-            ],
-            "expandedObjectLayers": [
-                16,
-                15,
-                12,
-                14,
-                13,
-                11,
-                17
+                21
             ],
             "scale": 0.8078,
-            "selectedLayer": 16,
+            "selectedLayer": 17,
             "viewCenter": {
-                "x": 488.9824213914336,
+                "x": 314.4342659074029,
                 "y": 303.2928942807626
             }
         },
