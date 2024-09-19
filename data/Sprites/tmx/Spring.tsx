@@ -1,5 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <tileset version="1.10" tiledversion="1.11.0" name="Spring" tilewidth="32" tileheight="32" tilecount="180" columns="20">
+ <editorsettings>
+  <export target="Spring.tsx" format="tsx"/>
+ </editorsettings>
  <image source="../ground/RPG_Nature_Tileset_Spring.png" width="641" height="288"/>
  <tile id="0">
   <objectgroup draworder="index" id="2">

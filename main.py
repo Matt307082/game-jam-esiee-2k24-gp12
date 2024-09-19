@@ -61,7 +61,11 @@ def loadNextLevel(GAMES_OBJECTS):
     GAME_STATE["player"] = Player(PLAYER_SPRITE,GAME_STATE)
     GAMES_OBJECTS.append(GAME_STATE["player"])
     GAMES_OBJECTS.append(InGameMenu(nextLevel["season"], GAME_STATE))
-    GAMES_OBJECTS.append(Bear((100,100), BEAR_SPRITE))
+
+    if 'bear' in GAME_STATE['layer_obj']:
+        for bear_position in GAME_STATE['layer_obj']['bear']:
+            print(bear_position)
+            GAMES_OBJECTS.append(Bear((bear_position['rect'].x, bear_position['rect'].y), BEAR_SPRITE))
     LEVELS.append(nextLevel)
 
     return
@@ -108,6 +112,7 @@ while not done:
                     GAME_STATE["nextLevel"] = True
                 if event.key == pygame.K_SPACE :
                     print(GAME_STATE['layer_obj'])
+                    print(GAME_STATE['layer_obj']['bear'])
 
             #vidange de la clef stocké
             if event.type == pygame.KEYUP:
