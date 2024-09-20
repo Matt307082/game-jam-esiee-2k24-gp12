@@ -119,7 +119,7 @@ while not done:
                 GAME_STATE["keyPressed"] = event.key
                 if event.key == pygame.K_r:
                     GAME_STATE["player"].reset(GAME_STATE)
-                if event.key == pygame.K_ESCAPE:
+                if event.key == pygame.K_p:
                     GAME_STATE["click"] = False
                     GAME_STATE["state"] = State.Pause
                     SCREEN.blit(FOND_PAUSE,(0,0))
