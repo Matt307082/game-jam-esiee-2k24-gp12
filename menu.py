@@ -127,4 +127,5 @@ def end_menu(GAME_STATE) :
         if click:
             GAME_STATE["click"] = False
             GAME_STATE["state"] = State.Menu
+            GAME_STATE["nextLevel"] = True
 
