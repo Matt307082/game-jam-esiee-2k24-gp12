@@ -31,6 +31,7 @@ LEVELS = [{"levelFile": "data/Sprites/tmx/lvl1.tmx", "season": Season.SUMMER, "m
           {"levelFile": "data/Sprites/tmx/lvl4.tmx", "season": Season.AUTUMN, "maxSeasons": 3},
           {"levelFile": "data/Sprites/tmx/lvl5.tmx", "season": Season.AUTUMN, "maxSeasons": 9},
         ]
+INDEX = 0
 
 #Sprites
 ICON = pygame.image.load(os.path.join(assets, "Sprites/menu.png"))
@@ -62,10 +63,16 @@ pygame.display.set_caption("Orchestral Seasons")
 #icone
 pygame.display.set_icon(ICON)
  
-def loadNextLevel(GAMES_OBJECTS):
+def loadNextLevel(GAMES_OBJECTS,INDEX):
+
+    if len(LEVELS) == (INDEX) :
+        GAME_STATE["state"] = State.End
+        return
+
     GAMES_OBJECTS.clear() #vidange de game object
 
-    nextLevel = LEVELS.pop(0)
+    nextLevel = LEVELS[INDEX]
+    INDEX+=1
     GAMES_OBJECTS.append(Level(nextLevel["levelFile"],GAME_STATE))
     GAME_STATE["player"] = Player(PLAYER_SPRITE,GAME_STATE)
     GAMES_OBJECTS.append(GAME_STATE["player"])
@@ -77,12 +84,13 @@ def loadNextLevel(GAMES_OBJECTS):
         for bear_position in GAME_STATE['layer_obj']['bear']:
             print(bear_position)
             GAMES_OBJECTS.append(Bear((bear_position['rect'].x-16, bear_position['rect'].y-32), BEAR_SPRITE))
-    LEVELS.append(nextLevel)
+    
 
     return
 
 #chargement du premier niveau
-loadNextLevel(GAMES_OBJECTS)
+loadNextLevel(GAMES_OBJECTS,INDEX)
+INDEX+=1
 print(GAMES_OBJECTS)
 for gameObject in GAMES_OBJECTS: #premier draw
     gameObject.draw(GAME_STATE)
@@ -90,6 +98,7 @@ for gameObject in GAMES_OBJECTS: #premier draw
 while not done:
 
     if(GAME_STATE["state"] != State.Play):
+        GAME_STATE["click"] = False #vidange de l'event click
         event = pygame.event.Event(pygame.USEREVENT)    # Remise à zero de la variable event
         for event in pygame.event.get():  
             if event.type == pygame.QUIT:
@@ -107,6 +116,9 @@ while not done:
             main_menu(MENU_SPRITE, GAME_STATE)
         elif (GAME_STATE["state"] == State.Pause):
             draw_pause_menu(GAME_STATE)
+        elif GAME_STATE["state"] == State.End :
+            end_menu(GAME_STATE)
+            INDEX=0
     
     elif(GAME_STATE["state"] == State.Play):
         event = pygame.event.Event(pygame.USEREVENT)    # Remise à zero de la variable event
@@ -152,7 +164,8 @@ while not done:
         #passage du niveau si besoin
         if GAME_STATE["nextLevel"]:
             GAME_STATE["nextLevel"] = False
-            loadNextLevel(GAMES_OBJECTS)
+            loadNextLevel(GAMES_OBJECTS,INDEX)
+            INDEX+=1
 
     #affichage de l'ecran
     pygame.display.flip()

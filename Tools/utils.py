@@ -8,6 +8,7 @@ class State(Enum):
     Menu = 0
     Play = 1
     Pause = 2
+    End = 3
 
 # Saison courante 
 class Season(Enum):
