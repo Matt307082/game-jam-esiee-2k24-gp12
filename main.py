@@ -114,11 +114,11 @@ while not done:
         
         if (GAME_STATE["state"] == State.Menu):
             main_menu(MENU_SPRITE, GAME_STATE)
+            INDEX = 0
         elif (GAME_STATE["state"] == State.Pause):
             draw_pause_menu(GAME_STATE)
         elif GAME_STATE["state"] == State.End :
             end_menu(GAME_STATE)
-            INDEX=0
     
     elif(GAME_STATE["state"] == State.Play):
         event = pygame.event.Event(pygame.USEREVENT)    # Remise à zero de la variable event

@@ -70,6 +70,8 @@ def main_menu(background_image,GAME_STATE):
 
         if click:
             GAME_STATE["state"] = State.Play
+            GAME_STATE["nextLevel"] = True
+            
 
 
     if button_3.collidepoint((mx, my)):
