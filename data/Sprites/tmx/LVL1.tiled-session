@@ -150,6 +150,9 @@
         },
         "vines_flowered_wall.tsx": {
             "scaleInDock": 1
+        },
+        "vines_flowered_wall_2.tsx": {
+            "scaleInDock": 1
         }
     },
     "last.exportedFilePath": "/home/sportday/Bureau/school/inge/2024-2025/game-jam-esiee-2k24-gp12/data/Sprites/tmx",

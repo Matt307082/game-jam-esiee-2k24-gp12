@@ -18,15 +18,11 @@ class Fader:
 
     def update(self, GAME_STATE):
         if(GAME_STATE["fading"]):
-            print("START FADING")
             self.alpha = 255
-            print(self.alpha)
             GAME_STATE["fading"] = False
             self.isFading = True
         
         if self.isFading :
-            print("IM FADING")
-            print(self.alpha)
             self.alpha -= 10
             if self.alpha <= 0:
                 self.alpha = 0
