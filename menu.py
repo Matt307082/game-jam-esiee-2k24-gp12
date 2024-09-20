@@ -55,34 +55,29 @@ def main_menu(background_image,GAME_STATE):
     click = GAME_STATE["click"]
     # Afficher l'image de fond
     screen.blit(background_image, (0, 0))
-    font = pygame.font.Font(pygame.font.match_font('papyrus'), 70)
-    draw_text('Orchestral Seasons', font, DEEP_BLUE, screen, WINDOW_SIZE[0] // 2, WINDOW_SIZE[1] // 9-15)
+    
     font = pygame.font.Font(None, 50)
     mx, my = pygame.mouse.get_pos()
 
     # Création des rectangles des options
-    button_1 = pygame.Rect(WINDOW_SIZE[0] // 2 - 350, WINDOW_SIZE[1] // 2 +240, 200, 50)
-    button_3 = pygame.Rect(WINDOW_SIZE[0] // 2 + 150, WINDOW_SIZE[1] // 2+ 240, 200, 50)
+
+
+    button_1 = pygame.Rect(WINDOW_SIZE[0] // 2 - 90, WINDOW_SIZE[1] // 2 +20, 180, 30)
+    button_3 = pygame.Rect(WINDOW_SIZE[0] // 2  -70 , WINDOW_SIZE[1] // 2+ 90, 140, 30)
 
     # Vérification si le curseur est sur un bouton
     if button_1.collidepoint((mx, my)):
-        pygame.draw.rect(screen, GRAY, button_1)
+
         if click:
             GAME_STATE["state"] = State.Play
-    else:
-        pygame.draw.rect(screen,LIGHT_GREEN, button_1)
+
 
     if button_3.collidepoint((mx, my)):
-        pygame.draw.rect(screen, GRAY, button_3)
+        
         if click:
             pygame.quit()
             sys.exit()
-    else:
-        pygame.draw.rect(screen, MEDIUM_RED, button_3)
 
-    # Affichage du texte sur les boutons
-    draw_text('Jouer', font, DEEP_GREEN, screen, WINDOW_SIZE[0] // 2-250, WINDOW_SIZE[1] // 2 +265)
-    draw_text('Quitter', font, DEEP_RED, screen, WINDOW_SIZE[0] // 2+250, WINDOW_SIZE[1] // 2 + 265)
 
 
 def draw_pause_menu(GAME_STATE):
