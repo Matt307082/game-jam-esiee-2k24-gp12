@@ -135,7 +135,7 @@ while not done:
                     GAME_STATE["click"] = False
                     GAME_STATE["state"] = State.Pause
                     SCREEN.blit(FOND_PAUSE,(0,0))
-                elif event.key == pygame.K_d :
+                elif event.key == pygame.K_F12 :
                     GAME_STATE["debug"] = not GAME_STATE["debug"]
                 elif event.key == pygame.K_w :
                     GAME_STATE["nextLevel"] = True
