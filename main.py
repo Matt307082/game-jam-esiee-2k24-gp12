@@ -24,11 +24,11 @@ assets = os.path.join(scriptDIR,"data")
 #Variables 
 #FOND = pygame.image.load(os.path.join(assets, "placeholder.png"))
 SCREEN = pygame.display.set_mode(WINDOW_SIZE)
-LEVELS = [{"levelFile": "data/Sprites/tmx/lvl1.tmx", "season": Season.SUMMER, "maxSeasons": 3},
-          {"levelFile": "data/Sprites/tmx/lvl2.tmx", "season": Season.SUMMER, "maxSeasons": 3},
-          {"levelFile": "data/Sprites/tmx/lvl3.tmx", "season": Season.WINTER, "maxSeasons": 3},
-          {"levelFile": "data/Sprites/tmx/lvl4.tmx", "season": Season.SPRING, "maxSeasons": 3},
-          {"levelFile": "data/Sprites/tmx/lvl5.tmx", "season": Season.AUTUMN, "maxSeasons": 9},
+LEVELS = [{"levelFile": "data/Sprites/tmx/lvl1.tmx", "season": Season.SUMMER, "optimalCount": 1},
+          {"levelFile": "data/Sprites/tmx/lvl2.tmx", "season": Season.SUMMER, "optimalCount": 1},
+          {"levelFile": "data/Sprites/tmx/lvl3.tmx", "season": Season.WINTER, "optimalCount": 1},
+          {"levelFile": "data/Sprites/tmx/lvl4.tmx", "season": Season.SPRING, "optimalCount": 1},
+          {"levelFile": "data/Sprites/tmx/lvl5.tmx", "season": Season.AUTUMN, "optimalCount": 8},
         ]
 INDEX = 0
 
@@ -77,7 +77,7 @@ def loadNextLevel(GAMES_OBJECTS,INDEX):
     GAME_STATE["player"] = Player(PLAYER_SPRITE,GAME_STATE)
     GAMES_OBJECTS.append(GAME_STATE["player"])
     GAME_STATE["startingSeason"] = nextLevel["season"]
-    GAME_STATE["menu"] = InGameMenu(nextLevel["season"], nextLevel["maxSeasons"], GAME_STATE)
+    GAME_STATE["menu"] = InGameMenu(nextLevel["season"], nextLevel["optimalCount"], GAME_STATE)
     GAMES_OBJECTS.append(GAME_STATE["menu"])
 
     if 'bear' in GAME_STATE['layer_obj']:

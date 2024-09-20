@@ -100,7 +100,7 @@ class Player:
 
         GAME_STATE["menu"].current_season = GAME_STATE["startingSeason"]
         GAME_STATE["menu"].change_season(GAME_STATE)
-        GAME_STATE["menu"].season_counter = GAME_STATE["menu"].total_counter
+        GAME_STATE["menu"].season_counter = 0
 
     def getHitbox(self):
         return pygame.Rect(self.x,self.y,self.cell_width,self.cell_height)

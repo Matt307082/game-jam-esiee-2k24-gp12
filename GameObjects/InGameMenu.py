@@ -3,7 +3,7 @@ from Tools.MusicManager import MusicManager
 from Tools.utils import Season
 
 class InGameMenu:
-    current_season = Season.SUMMER
+    season_counter = 0
     seasons_icons = pygame.transform.scale(pygame.image.load("data/Sprites/seasons.png"), (100,100))
     keyboard_icons = pygame.transform.scale(pygame.image.load("data/Sprites/keyboard.png"), (512, 162))
     side_image = pygame.transform.scale(pygame.image.load("data/Sprites/side.png"), (200, 660))
@@ -11,33 +11,27 @@ class InGameMenu:
     music_manager = MusicManager()
     music_manager.load_files("hiver","printemps","ete","automne")
 
-    def __init__(self, season, season_counter, GAME_STATE):
+    def __init__(self, season, optimal_count, GAME_STATE):
         self.current_season = season
         self.change_season(GAME_STATE)
-        self.season_counter = season_counter
-        self.total_counter = season_counter
+        self.optimal_count = optimal_count
 
     def update(self, GAME_STATE):
-        if self.season_counter != 0:
-            keyPressed = GAME_STATE["keyPressed"]
-            old_counter = self.season_counter
-            self.season_counter -= 1
-            if (keyPressed == pygame.K_1 or keyPressed == pygame.K_KP1) and self.current_season != Season.WINTER:
-                self.current_season = Season.WINTER
-                GAME_STATE["fading"] = True
-            elif (keyPressed == pygame.K_2 or keyPressed == pygame.K_KP2) and self.current_season != Season.SPRING:
-                self.current_season = Season.SPRING
-                GAME_STATE["fading"] = True
-            elif (keyPressed == pygame.K_3 or keyPressed == pygame.K_KP3) and self.current_season != Season.SUMMER:
-                self.current_season = Season.SUMMER
-                GAME_STATE["fading"] = True
-            elif (keyPressed == pygame.K_4 or keyPressed == pygame.K_KP4) and self.current_season != Season.AUTUMN:
-                self.current_season = Season.AUTUMN
-                GAME_STATE["fading"] = True
-            else: self.season_counter += 1
+        keyPressed = GAME_STATE["keyPressed"]
+        old_counter = self.season_counter
+        self.season_counter += 1
+        if (keyPressed == pygame.K_1 or keyPressed == pygame.K_KP1) and self.current_season != Season.WINTER:
+            self.current_season = Season.WINTER
+        elif (keyPressed == pygame.K_2 or keyPressed == pygame.K_KP2) and self.current_season != Season.SPRING:
+            self.current_season = Season.SPRING
+        elif (keyPressed == pygame.K_3 or keyPressed == pygame.K_KP3) and self.current_season != Season.SUMMER:
+            self.current_season = Season.SUMMER
+        elif (keyPressed == pygame.K_4 or keyPressed == pygame.K_KP4) and self.current_season != Season.AUTUMN:
+            self.current_season = Season.AUTUMN
+        else: self.season_counter -= 1
 
-            if old_counter != self.season_counter:
-                self.change_season(GAME_STATE)
+        if old_counter != self.season_counter:
+            self.change_season(GAME_STATE)
 
     def change_season(self, GAME_STATE):
         GAME_STATE["saison"] = self.current_season
@@ -66,14 +60,15 @@ class InGameMenu:
         textrect = textobj.get_rect(center=(1068, 480))
         GAME_STATE["screen"].blit(textobj, textrect)
         GAME_STATE["screen"].blit(self.keyboard_icons, (1033, 495), (182*2,38*2,26*3,26*2))
-        font = pygame.font.Font(None, 60)
-        textobj = font.render(str(self.season_counter) if self.season_counter<100 else "+99", True, (255, 255, 255))
-        textrect = textobj.get_rect(center=(1070, 580))
+
+        font = pygame.font.Font(None, 48)
+        textobj = font.render(str(self.season_counter) if self.season_counter<100 else "+99", True, (255, 255, 255) if self.season_counter!=self.optimal_count else (255, 200, 0))
+        textrect = textobj.get_rect(midright=(1075, 578))
         GAME_STATE["screen"].blit(textobj, textrect)
         font = pygame.font.Font(None, 20)
-        textobj = font.render("changements", True, (255, 255, 255))
-        textrect = textobj.get_rect(center=(1070, 610))
+        textobj = font.render("changes made", True, (255, 255, 255))
+        textrect = textobj.get_rect(center=(1070, 605))
         GAME_STATE["screen"].blit(textobj, textrect)
-        textobj = font.render("autorisés", True, (255, 255, 255))
-        textrect = textobj.get_rect(center=(1070, 630))
+        textobj = font.render(f"/{self.optimal_count}", True, (255, 255, 255))
+        textrect = textobj.get_rect(midright=(1090, 582))
         GAME_STATE["screen"].blit(textobj, textrect)
