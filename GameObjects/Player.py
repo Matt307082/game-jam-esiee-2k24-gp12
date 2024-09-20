@@ -138,7 +138,6 @@ class Player:
                     collide = True
 
         if collides_with_layer(active_layer + "Decor1"):
-            GAME_STATE['music_manager'].use_effect("criWilhelm")
             inFogNow = True
             
         if check_fog and self.inFog != inFogNow :
