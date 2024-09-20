@@ -80,11 +80,14 @@
             "scale": 0.75,
             "selectedLayer": 7,
             "viewCenter": {
-                "x": 480.66666666666663,
-                "y": 319.33333333333326
+                "x": 480.6666666666666,
+                "y": 319.33333333333337
             }
         },
         "lvl2.tmx": {
+            "expandedGroupLayers": [
+                12
+            ],
             "scale": 1.0054166666666666,
             "selectedLayer": 3,
             "viewCenter": {
@@ -108,33 +111,37 @@
             "scaleInDock": 1
         },
         "lvl3.tmx": {
-            "scale": 1.0034374999999998,
+            "scale": 0.75,
             "selectedLayer": 3,
             "viewCenter": {
-                "x": 601.4325755216446,
-                "y": 571.5353472438494
+                "x": 496.6666666666666,
+                "y": 368.6666666666667
             }
         },
         "lvl4.tmx": {
             "expandedGroupLayers": [
+                19,
                 18
             ],
             "scale": 1.0054166666666666,
-            "selectedLayer": 7,
+            "selectedLayer": 11,
             "viewCenter": {
-                "x": 479.90053874844597,
-                "y": 319.76792374637387
+                "x": 420.2237878159967,
+                "y": 445.08910070451725
             }
         },
         "lvl5.tmx": {
             "expandedGroupLayers": [
-                12
+                12,
+                9,
+                6,
+                2
             ],
             "scale": 0.8352083333333333,
-            "selectedLayer": 0,
+            "selectedLayer": 1,
             "viewCenter": {
-                "x": 478.92242454477434,
-                "y": 320.27937141431784
+                "x": 479.52107757545525,
+                "y": 320.2793714143178
             }
         },
         "vines_flowered.tsx": {

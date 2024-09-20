@@ -38,6 +38,7 @@ class InGameMenu:
     def change_season(self, GAME_STATE):
         GAME_STATE["saison"] = self.current_season
         GAME_STATE["active_layer"] = GAME_STATE["saison"].value
+        #GAME_STATE["fading"] = True
         self.music_manager.play(self.current_season.value)
 
     def draw(self, GAME_STATE):

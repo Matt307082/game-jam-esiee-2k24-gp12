@@ -7,13 +7,11 @@ from Tools.utils import *
 from GameObjects.InGameMenu import InGameMenu
 from GameObjects.Level import Level
 from GameObjects.Skull import Skull
+from GameObjects.Fader import Fader
 from menu import *
 
 # Initialize pygame
 pygame.init()
-# SIZE = SCREEN_WIDTH, SCREEN_HEIGHT = pygame.display.Info().current_w, pygame.display.Info().current_h
-# SCREEN = pygame.display.set_mode(SIZE)
-# pygame.display.toggle_fullscreen()
 
 # Loop until the user clicks the close button.
 done = False
@@ -27,8 +25,9 @@ assets = os.path.join(scriptDIR,"data")
 #FOND = pygame.image.load(os.path.join(assets, "placeholder.png"))
 SCREEN = pygame.display.set_mode(WINDOW_SIZE)
 LEVELS = [{"levelFile": "data/Sprites/tmx/lvl1.tmx", "season": Season.SUMMER, "maxSeasons": 3},
+          {"levelFile": "data/Sprites/tmx/lvl2.tmx", "season": Season.SUMMER, "maxSeasons": 3},
           {"levelFile": "data/Sprites/tmx/lvl3.tmx", "season": Season.WINTER, "maxSeasons": 3},
-          {"levelFile": "data/Sprites/tmx/lvl4.tmx", "season": Season.AUTUMN, "maxSeasons": 3},
+          {"levelFile": "data/Sprites/tmx/lvl4.tmx", "season": Season.SPRING, "maxSeasons": 3},
           {"levelFile": "data/Sprites/tmx/lvl5.tmx", "season": Season.AUTUMN, "maxSeasons": 9},
         ]
 
@@ -79,8 +78,8 @@ def loadNextLevel(GAMES_OBJECTS):
             GAMES_OBJECTS.append(Bear((bear_position['rect'].x-16, bear_position['rect'].y-32), BEAR_SPRITE))
     LEVELS.append(nextLevel)
 
-    return
-
+    #GAMES_OBJECTS.append(Fader())
+    
 #chargement du premier niveau
 loadNextLevel(GAMES_OBJECTS)
 print(GAMES_OBJECTS)

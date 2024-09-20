@@ -59,7 +59,7 @@
    <object id="65" name="win" type="other" x="447.092" y="63.1135" width="32" height="32"/>
   </objectgroup>
  </group>
- <group id="15" name="automne" visible="0">
+ <group id="15" name="automne">
   <layer id="2" name="automne" width="30" height="20">
    <data encoding="csv">
 247,247,247,247,247,247,247,247,247,247,247,247,247,247,247,247,247,247,247,247,247,247,247,247,247,247,247,247,247,247,
@@ -109,7 +109,7 @@
 </data>
   </layer>
  </group>
- <group id="16" name="hiver" visible="0">
+ <group id="16" name="hiver">
   <layer id="3" name="hiver" width="30" height="20">
    <data encoding="csv">
 397,397,397,397,397,397,397,397,397,397,397,397,397,397,397,397,397,397,397,397,397,397,397,397,397,397,397,397,397,397,
@@ -159,7 +159,7 @@
 </data>
   </layer>
  </group>
- <group id="17" name="printemps" visible="0">
+ <group id="17" name="printemps">
   <layer id="4" name="printemps" width="30" height="20">
    <data encoding="csv">
 582,582,582,582,582,582,582,582,582,582,582,582,582,582,582,582,582,582,582,582,582,582,582,582,582,582,582,582,582,582,

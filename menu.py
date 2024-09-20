@@ -61,8 +61,8 @@ def main_menu(background_image,GAME_STATE):
     mx, my = pygame.mouse.get_pos()
 
     # Création des rectangles des options
-    button_1 = pygame.Rect(WINDOW_SIZE[0] // 2 - 350, WINDOW_SIZE[1] // 2 +225, 200, 50)
-    button_3 = pygame.Rect(WINDOW_SIZE[0] // 2 + 150, WINDOW_SIZE[1] // 2+ 225, 200, 50)
+    button_1 = pygame.Rect(WINDOW_SIZE[0] // 2 - 350, WINDOW_SIZE[1] // 2 +240, 200, 50)
+    button_3 = pygame.Rect(WINDOW_SIZE[0] // 2 + 150, WINDOW_SIZE[1] // 2+ 240, 200, 50)
 
     # Vérification si le curseur est sur un bouton
     if button_1.collidepoint((mx, my)):
@@ -81,8 +81,8 @@ def main_menu(background_image,GAME_STATE):
         pygame.draw.rect(screen, MEDIUM_RED, button_3)
 
     # Affichage du texte sur les boutons
-    draw_text('Jouer', font, DEEP_GREEN, screen, WINDOW_SIZE[0] // 2-250, WINDOW_SIZE[1] // 2 +250)
-    draw_text('Quitter', font, DEEP_RED, screen, WINDOW_SIZE[0] // 2+250, WINDOW_SIZE[1] // 2 + 250)
+    draw_text('Jouer', font, DEEP_GREEN, screen, WINDOW_SIZE[0] // 2-250, WINDOW_SIZE[1] // 2 +265)
+    draw_text('Quitter', font, DEEP_RED, screen, WINDOW_SIZE[0] // 2+250, WINDOW_SIZE[1] // 2 + 265)
 
 
 def draw_pause_menu(GAME_STATE):
