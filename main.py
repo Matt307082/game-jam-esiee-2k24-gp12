@@ -108,7 +108,7 @@ while not done:
             elif event.type == pygame.MOUSEBUTTONDOWN:
                 if event.button == 1:
                     GAME_STATE["click"] = True
-            elif event.type == pygame.KEYDOWN and event.key == pygame.K_RETURN:
+            elif event.type == pygame.KEYDOWN and event.key == pygame.K_p:
                  GAME_STATE["state"] = State.Play
                  break
         
