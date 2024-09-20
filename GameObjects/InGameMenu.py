@@ -4,7 +4,7 @@ from Tools.utils import Season
 
 class InGameMenu:
     season_counter = 0
-    seasons_icons = pygame.transform.scale(pygame.image.load("data/Sprites/seasons.png"), (100,100))
+    seasons_icons = pygame.transform.scale(pygame.image.load("data/Sprites/seasons.png"), (140,140))
     keyboard_icons = pygame.transform.scale(pygame.image.load("data/Sprites/keyboard.png"), (512, 162))
     side_image = pygame.transform.scale(pygame.image.load("data/Sprites/side.png"), (200, 660))
     
@@ -46,8 +46,8 @@ class InGameMenu:
         for season in Season:
             index = ["hiver","printemps","ete","automne"].index(season.value)
             self.seasons_icons.set_alpha(255 if self.current_season.value==season.value else 100)
-            GAME_STATE["screen"].blit(self.seasons_icons, (1030, 100 * index + 25), ((index%2) * 52, (index//2) * 52, 50, 50))
-            GAME_STATE["screen"].blit(self.keyboard_icons, (1080, 100 * index + 37), (index*26 + 118, 26, 24, 24))
+            GAME_STATE["screen"].blit(self.seasons_icons, (1010, 100 * index + 15), ((index%2) * 74, (index//2) * 74, 70, 70))
+            GAME_STATE["screen"].blit(self.keyboard_icons, (1100, 100 * index + 40), (index*26 + 118, 26, 24, 24))
         font = pygame.font.Font("data/Daydream.ttf", 12)
         textobj = font.render("Pause", True, (255, 255, 255))
         textrect = textobj.get_rect(center=(1050, 410))
