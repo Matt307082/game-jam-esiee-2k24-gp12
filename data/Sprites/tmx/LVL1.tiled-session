@@ -3,7 +3,7 @@
         "height": 4300,
         "width": 2
     },
-    "activeFile": "lvl3.tmx",
+    "activeFile": "lvl5.tmx",
     "expandedProjectPaths": [
         "."
     ],
@@ -167,7 +167,8 @@
         "Spring.tsx",
         "lvl3.tmx",
         "lvl4.tmx",
-        "lvl5.tmx"
+        "lvl5.tmx",
+        "lvl2.tmx"
     ],
     "project": "LVL1.tiled-project",
     "property.type": "bool",
@@ -175,12 +176,12 @@
         "RPG Nature Tileset.tsx",
         "lvl1.tmx",
         "Spring.tsx",
-        "lvl5.tmx",
-        "lvl4.tmx",
         "lvl3.tmx",
+        "lvl4.tmx",
+        "lvl2.tmx",
+        "lvl5.tmx",
         "C:/Users/matte/Documents/ESIEE travail/E4FI/tmx/lvl5.tmx",
         "IceTileset.tsx",
-        "lvl2.tmx",
         "RPG Nature Tileset Autumn.tsx",
         "vines_flowered.tsx",
         "lianne.tsx"
