@@ -138,7 +138,7 @@ while not done:
                     SCREEN.blit(FOND_PAUSE,(0,0))
                 elif event.key == pygame.K_F12 :
                     GAME_STATE["debug"] = not GAME_STATE["debug"]
-                elif event.key == pygame.K_w :
+                elif event.key == pygame.K_F11 :
                     GAME_STATE["nextLevel"] = True
                 elif event.key == pygame.K_SPACE :
                     print(GAME_STATE['layer_obj'])

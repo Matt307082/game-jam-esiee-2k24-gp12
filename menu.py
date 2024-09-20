@@ -67,18 +67,24 @@ def main_menu(background_image,GAME_STATE):
 
     # Vérification si le curseur est sur un bouton
     if button_1.collidepoint((mx, my)):
-
         if click:
+            pygame.mouse.set_cursor(*pygame.cursors.arrow)
             GAME_STATE["state"] = State.Play
             GAME_STATE["nextLevel"] = True
+        else:
+            pygame.mouse.set_cursor(*pygame.cursors.tri_left)
             
 
 
-    if button_3.collidepoint((mx, my)):
-        
+    elif button_3.collidepoint((mx, my)):
         if click:
+            pygame.mouse.set_cursor(*pygame.cursors.arrow)
             pygame.quit()
             sys.exit()
+        else:
+            pygame.mouse.set_cursor(*pygame.cursors.tri_left)
+
+    else: pygame.mouse.set_cursor(*pygame.cursors.arrow)
 
 
 
@@ -96,19 +102,29 @@ def draw_pause_menu(GAME_STATE):
     mx, my = pygame.mouse.get_pos()
     if button_1.collidepoint((mx, my)):
         if click:
+            pygame.mouse.set_cursor(*pygame.cursors.arrow)
             GAME_STATE["player"].reset(GAME_STATE)
             GAME_STATE["state"] = State.Play
+        else:
+            pygame.mouse.set_cursor(*pygame.cursors.tri_left)
 
-    if button_2.collidepoint((mx, my)):
+    elif button_2.collidepoint((mx, my)):
         if click:
+            pygame.mouse.set_cursor(*pygame.cursors.arrow)
             GAME_STATE["click"] = False
             GAME_STATE["state"] = State.Menu
+        else:
+            pygame.mouse.set_cursor(*pygame.cursors.tri_left)
 
-    if button_3.collidepoint((mx, my)):
+    elif button_3.collidepoint((mx, my)):
         if click:
+            pygame.mouse.set_cursor(*pygame.cursors.arrow)
             pygame.quit()
             sys.exit()
             exit(0)
+        else:
+            pygame.mouse.set_cursor(*pygame.cursors.tri_left)
+    else: pygame.mouse.set_cursor(*pygame.cursors.arrow)
 
 def end_menu(GAME_STATE) :
     screen = GAME_STATE["screen"]
@@ -122,7 +138,12 @@ def end_menu(GAME_STATE) :
     mx, my = pygame.mouse.get_pos()
     if button.collidepoint((mx, my)):
         if click:
+            pygame.mouse.set_cursor(*pygame.cursors.arrow)
             GAME_STATE["click"] = False
             GAME_STATE["state"] = State.Menu
             GAME_STATE["nextLevel"] = True
+        else:
+            pygame.mouse.set_cursor(*pygame.cursors.tri_left)
+    else:
+        pygame.mouse.set_cursor(*pygame.cursors.arrow)
 
