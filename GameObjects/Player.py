@@ -95,7 +95,7 @@ class Player:
 
     def reset(self, GAME_STATE):
         GAME_STATE["gameObject"].append(Skull((self.x,self.y),GAME_STATE["skullSprite"]))
-        GAME_STATE['music_manager'].play("criWilhelm")
+        GAME_STATE['music_manager'].use_effect("criWilhelm")
         self.x = GAME_STATE["winAndStart"]['start'][0]["rect"].x
         self.y = GAME_STATE["winAndStart"]['start'][0]["rect"].y
 
@@ -133,13 +133,11 @@ class Player:
                 win_rect["layer"] == "mapObj" for win_rect in newColide["win"])):
             for win_rect in newColide["win"]:
                 if new_player_pos.colliderect(win_rect["rect"]):
-                    GAME_STATE['music_manager'].play("success")
+                    GAME_STATE['music_manager'].use_effect("success")
                     GAME_STATE["nextLevel"] = True
                     collide = True
 
         if collides_with_layer(active_layer + "Decor1"):
-            if GAME_STATE['debug']:
-                GAME_STATE['music_manager'].play("criWilhelm")
             inFogNow = True
             
         if check_fog and self.inFog != inFogNow :
