@@ -33,7 +33,12 @@ class Player:
         active_layer = GAME_STATE["active_layer"]
         layer_obj = GAME_STATE["layer_obj"]
 
-        if self.check_collision(self.getHitbox(),False,active_layer, layer_obj, GAME_STATE) :
+        hitbox = self.getHitbox()
+        hitbox.y += 5
+        hitbox.x += 5
+        hitbox.width -= 10
+        hitbox.height -= 10
+        if self.check_collision(hitbox,False,active_layer, layer_obj, GAME_STATE) :
             self.reset(GAME_STATE)
             return
 
