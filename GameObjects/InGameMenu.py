@@ -9,12 +9,13 @@ class InGameMenu:
     side_image = pygame.transform.scale(pygame.image.load("data/Sprites/side.png"), (200, 660))
     
     music_manager = MusicManager()
-    music_manager.load_files("hiver","printemps","ete","automne")
+    music_manager.load_files("hiver","printemps","ete","automne","success", "criWilhelm")
 
     def __init__(self, season, optimal_count, GAME_STATE):
         self.current_season = season
         self.change_season(GAME_STATE)
         self.optimal_count = optimal_count
+        GAME_STATE['music_manager'] = self.music_manager
 
     def update(self, GAME_STATE):
         keyPressed = GAME_STATE["keyPressed"]
