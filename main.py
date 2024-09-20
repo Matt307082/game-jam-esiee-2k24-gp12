@@ -27,8 +27,8 @@ assets = os.path.join(scriptDIR,"data")
 #FOND = pygame.image.load(os.path.join(assets, "placeholder.png"))
 SCREEN = pygame.display.set_mode(WINDOW_SIZE)
 LEVELS = [{"levelFile": "data/Sprites/tmx/lvl1.tmx", "season": Season.SUMMER, "maxSeasons": 3},
-          {"levelFile": "data/Sprites/tmx/lvl3.tmx", "season": Season.SUMMER, "maxSeasons": 3},
-          {"levelFile": "data/Sprites/tmx/lvl4.tmx", "season": Season.SUMMER, "maxSeasons": 3},
+          {"levelFile": "data/Sprites/tmx/lvl3.tmx", "season": Season.WINTER, "maxSeasons": 3},
+          {"levelFile": "data/Sprites/tmx/lvl4.tmx", "season": Season.AUTUMN, "maxSeasons": 3},
           {"levelFile": "data/Sprites/tmx/lvl5.tmx", "season": Season.AUTUMN, "maxSeasons": 9},
         ]
 
@@ -120,7 +120,7 @@ while not done:
                 GAME_STATE["keyPressed"] = event.key
                 if event.key == pygame.K_r:
                     GAME_STATE["player"].reset(GAME_STATE)
-                elif event.key == pygame.K_RETURN:
+                if event.key == pygame.K_ESCAPE:
                     GAME_STATE["click"] = False
                     GAME_STATE["state"] = State.Pause
                     SCREEN.blit(FOND_PAUSE,(0,0))
