@@ -1,5 +1,9 @@
 # game-jam-esiee-2k24-gp12
 
+## Setup 
+
+To run the game you should have python 3.xx and pip installed and the run the following command `python -m pip install -r requirements.txt`
+
 ## Sources
 
 - Sprites : 
