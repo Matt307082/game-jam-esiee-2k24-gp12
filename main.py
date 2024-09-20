@@ -54,6 +54,7 @@ GAME_STATE["screen"] = SCREEN
 GAME_STATE["debug"] = False
 GAME_STATE["skullSprite"] = SKULL_SPRITE
 GAME_STATE["gameObject"] = GAMES_OBJECTS
+GAME_STATE["fading"] = False
 
  
 #titre de la fenetre
@@ -85,7 +86,7 @@ def loadNextLevel(GAMES_OBJECTS,INDEX):
             GAMES_OBJECTS.append(Bear((bear_position['rect'].x-16, bear_position['rect'].y-32), BEAR_SPRITE))
     
 
-    #GAMES_OBJECTS.append(Fader())
+    GAMES_OBJECTS.append(Fader())
     
 #chargement du premier niveau
 loadNextLevel(GAMES_OBJECTS,INDEX)
