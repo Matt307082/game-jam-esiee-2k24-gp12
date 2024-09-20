@@ -24,12 +24,16 @@ class InGameMenu:
             self.season_counter -= 1
             if (keyPressed == pygame.K_1 or keyPressed == pygame.K_KP1) and self.current_season != Season.WINTER:
                 self.current_season = Season.WINTER
+                GAME_STATE["fading"] = True
             elif (keyPressed == pygame.K_2 or keyPressed == pygame.K_KP2) and self.current_season != Season.SPRING:
                 self.current_season = Season.SPRING
+                GAME_STATE["fading"] = True
             elif (keyPressed == pygame.K_3 or keyPressed == pygame.K_KP3) and self.current_season != Season.SUMMER:
                 self.current_season = Season.SUMMER
+                GAME_STATE["fading"] = True
             elif (keyPressed == pygame.K_4 or keyPressed == pygame.K_KP4) and self.current_season != Season.AUTUMN:
                 self.current_season = Season.AUTUMN
+                GAME_STATE["fading"] = True
             else: self.season_counter += 1
 
             if old_counter != self.season_counter:
