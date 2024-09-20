@@ -36,6 +36,18 @@
    <object id="2" x="9.19209" y="16" width="14.1127" height="11.2797"/>
   </objectgroup>
  </tile>
+ <tile id="16">
+  <objectgroup draworder="index" id="2">
+   <object id="1" x="5.1105" y="17.8867" width="22.7901" height="9.87569"/>
+   <object id="8" x="11.8094" y="27.2099" width="9.18508" height="1.9337"/>
+   <object id="2" x="6.14641" y="14.779" width="19.8895" height="3.1768"/>
+   <object id="3" x="7.80387" y="12.0856" width="16.0912" height="2.83149"/>
+   <object id="4" x="12.9144" y="5.93923" width="6.07735" height="6.21547"/>
+   <object id="5" x="10.1519" y="8.90884" width="3.45304" height="3.10773"/>
+   <object id="6" x="18.3702" y="8.9779" width="3.45304" height="3.10773"/>
+   <object id="7" x="11.1188" y="7.94199" width="9.80663" height="1.5884"/>
+  </objectgroup>
+ </tile>
  <tile id="17">
   <objectgroup draworder="index" id="2">
    <object id="1" x="9.93739" y="-0.49687" width="11.1796" height="27.4521"/>
