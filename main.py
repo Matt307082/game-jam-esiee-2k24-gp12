@@ -11,6 +11,9 @@ from menu import *
 
 # Initialize pygame
 pygame.init()
+# SIZE = SCREEN_WIDTH, SCREEN_HEIGHT = pygame.display.Info().current_w, pygame.display.Info().current_h
+# SCREEN = pygame.display.set_mode(SIZE)
+# pygame.display.toggle_fullscreen()
 
 # Loop until the user clicks the close button.
 done = False
@@ -24,10 +27,9 @@ assets = os.path.join(scriptDIR,"data")
 #FOND = pygame.image.load(os.path.join(assets, "placeholder.png"))
 SCREEN = pygame.display.set_mode(WINDOW_SIZE)
 LEVELS = [{"levelFile": "data/Sprites/tmx/lvl1.tmx", "season": Season.SUMMER, "maxSeasons": 3},
-          {"levelFile": "data/Sprites/tmx/lvl2.tmx", "season": Season.SUMMER, "maxSeasons": 30},
-          {"levelFile": "data/Sprites/tmx/lvl3.tmx", "season": Season.SUMMER, "maxSeasons": 30},
-          {"levelFile": "data/Sprites/tmx/lvl4.tmx", "season": Season.SUMMER, "maxSeasons": 30},
-          {"levelFile": "data/Sprites/tmx/lvl5.tmx", "season": Season.AUTUMN, "maxSeasons": 90},
+          {"levelFile": "data/Sprites/tmx/lvl3.tmx", "season": Season.SUMMER, "maxSeasons": 3},
+          {"levelFile": "data/Sprites/tmx/lvl4.tmx", "season": Season.SUMMER, "maxSeasons": 3},
+          {"levelFile": "data/Sprites/tmx/lvl5.tmx", "season": Season.AUTUMN, "maxSeasons": 9},
         ]
 
 #Sprites
@@ -104,6 +106,7 @@ while not done:
         for event in pygame.event.get():  
             if event.type == pygame.QUIT:
                 pygame.quit()
+                sys.exit()
     
             #recuperation de la key_down (pas d'action continue si on maintien la touche)
             if event.type == pygame.KEYDOWN and GAME_STATE["keyPressed"] != event.key:
