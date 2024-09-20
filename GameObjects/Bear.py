@@ -24,6 +24,8 @@ class Bear:
             player = GAME_STATE["player"]
             if (sqrt((self.x+self.cell_width//2 - (player.x+player.cell_width//2))**2 + (self.y+self.cell_height//2 - (player.y+player.cell_height//2))**2) <= 50):
                 self.current_anim = self.slash_anim
+                if(not self.animation_started):
+                    GAME_STATE['music_manager'].use_effect("bear", 0.25)
                 self.animation_started = True
 
             if(self.animation_started):
