@@ -39,6 +39,9 @@ MENU_SPRITE = pygame.transform.scale(MENU_SPRITE, WINDOW_SIZE)
 PLAYER_SPRITE = pygame.image.load(os.path.join(assets, "Sprites/player.png"))
 BEAR_SPRITE = pygame.image.load(os.path.join(assets, "Sprites/bear.png"))
 SKULL_SPRITE = pygame.image.load(os.path.join(assets,"Sprites/skull.png"))
+FOND_PAUSE = pygame.image.load(os.path.join(assets,"Sprites/carreBlanc.jpg"))
+FOND_PAUSE = pygame.transform.scale(FOND_PAUSE,(1138,640))
+FOND_PAUSE.set_alpha(128)
 
 #etat du jeu global
 GAMES_OBJECTS = []
@@ -62,7 +65,7 @@ pygame.display.set_icon(ICON)
 def loadNextLevel(GAMES_OBJECTS):
     GAMES_OBJECTS.clear() #vidange de game object
 
-    nextLevel = LEVELS.pop()
+    nextLevel = LEVELS.pop(0)
     GAMES_OBJECTS.append(Level(nextLevel["levelFile"],GAME_STATE))
     GAME_STATE["player"] = Player(PLAYER_SPRITE,GAME_STATE)
     GAMES_OBJECTS.append(GAME_STATE["player"])
@@ -92,14 +95,18 @@ while not done:
             if event.type == pygame.QUIT:
                 pygame.quit()
                 sys.exit()
-            if event.type == pygame.MOUSEBUTTONDOWN:
+                
+            elif event.type == pygame.MOUSEBUTTONDOWN:
                 if event.button == 1:
                     GAME_STATE["click"] = True
+            elif event.type == pygame.KEYDOWN and event.key == pygame.K_RETURN:
+                 GAME_STATE["state"] = State.Play
+                 break
         
         if (GAME_STATE["state"] == State.Menu):
             main_menu(MENU_SPRITE, GAME_STATE)
-        if (GAME_STATE["state"] == State.Pause):
-            draw_selection_screen(MENU_SPRITE, GAME_STATE)
+        elif (GAME_STATE["state"] == State.Pause):
+            draw_pause_menu(GAME_STATE)
     
     elif(GAME_STATE["state"] == State.Play):
         event = pygame.event.Event(pygame.USEREVENT)    # Remise à zero de la variable event
@@ -113,19 +120,25 @@ while not done:
                 GAME_STATE["keyPressed"] = event.key
                 if event.key == pygame.K_r:
                     GAME_STATE["player"].reset(GAME_STATE)
-                if event.key == pygame.K_RETURN:
+                elif event.key == pygame.K_RETURN:
                     GAME_STATE["click"] = False
                     GAME_STATE["state"] = State.Pause
-                if event.key == pygame.K_d :
+                    SCREEN.blit(FOND_PAUSE,(0,0))
+                elif event.key == pygame.K_d :
                     GAME_STATE["debug"] = not GAME_STATE["debug"]
-                if event.key == pygame.K_w :
+                elif event.key == pygame.K_w :
                     GAME_STATE["nextLevel"] = True
-                if event.key == pygame.K_SPACE :
+                elif event.key == pygame.K_SPACE :
                     print(GAME_STATE['layer_obj'])
 
             #vidange de la clef stocké
             if event.type == pygame.KEYUP:
                 GAME_STATE["keyPressed"] = None
+
+        #si jamais la gestion des keys a changé l'état du jeu on passe au tour suivant
+        #(pas d'update et de draw)
+        if GAME_STATE["state"] != State.Play :
+            continue
 
         #update des objets
         for gameObject in GAMES_OBJECTS:
