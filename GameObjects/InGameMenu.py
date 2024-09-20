@@ -40,14 +40,14 @@ class InGameMenu:
         self.music_manager.play(self.current_season.value)
 
     def draw(self, GAME_STATE):
-        font = pygame.font.Font(None, 60)
+        font = pygame.font.Font("data/Daydream.ttf", 24)
         GAME_STATE["screen"].blit(self.side_image, (950, -10))
         for season in Season:
             index = ["hiver","printemps","ete","automne"].index(season.value)
             self.seasons_icons.set_alpha(255 if self.current_season.value==season.value else 100)
             GAME_STATE["screen"].blit(self.seasons_icons, (1030, 100 * index + 25), ((index%2) * 52, (index//2) * 52, 50, 50))
             GAME_STATE["screen"].blit(self.keyboard_icons, (1080, 100 * index + 37), (index*26 + 118, 26, 24, 24))
-        font = pygame.font.Font(None, 30)
+        font = pygame.font.Font("data/Daydream.ttf", 12)
         textobj = font.render("Pause", True, (255, 255, 255))
         textrect = textobj.get_rect(center=(1050, 410))
         GAME_STATE["screen"].blit(textobj, textrect)
@@ -61,11 +61,11 @@ class InGameMenu:
         GAME_STATE["screen"].blit(textobj, textrect)
         GAME_STATE["screen"].blit(self.keyboard_icons, (1033, 495), (182*2,38*2,26*3,26*2))
 
-        font = pygame.font.Font(None, 48)
+        font = pygame.font.Font("data/Daydream.ttf", 20)
         textobj = font.render(str(self.season_counter) if self.season_counter<100 else "+99", True, (255, 255, 255) if self.season_counter!=self.optimal_count else (255, 200, 0))
         textrect = textobj.get_rect(midright=(1075, 578))
         GAME_STATE["screen"].blit(textobj, textrect)
-        font = pygame.font.Font(None, 20)
+        font = pygame.font.Font("data/Daydream.ttf", 8)
         textobj = font.render("changes made", True, (255, 255, 255))
         textrect = textobj.get_rect(center=(1070, 605))
         GAME_STATE["screen"].blit(textobj, textrect)
