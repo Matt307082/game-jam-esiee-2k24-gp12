@@ -58,7 +58,7 @@
 </data>
   </layer>
  </group>
- <group id="12" name="automne">
+ <group id="12" name="automne" visible="0">
   <layer id="3" name="automne" width="30" height="20">
    <data encoding="csv">
 242,242,242,242,242,242,242,242,242,242,242,242,242,242,242,242,242,242,242,242,242,242,242,242,242,242,242,242,242,242,
@@ -108,7 +108,7 @@
 </data>
   </layer>
  </group>
- <group id="13" name="hiver">
+ <group id="13" name="hiver" visible="0">
   <layer id="4" name="hiver" width="30" height="20">
    <data encoding="csv">
 397,397,397,397,397,397,397,397,397,397,397,397,397,397,397,397,397,397,397,397,397,397,397,397,397,397,397,397,397,397,
@@ -158,7 +158,7 @@
 </data>
   </layer>
  </group>
- <group id="14" name="printemps">
+ <group id="14" name="printemps" visible="0">
   <layer id="1" name="printemps" width="30" height="20">
    <data encoding="csv">
 606,606,606,606,606,606,606,606,606,606,606,606,606,606,606,606,606,606,606,606,606,606,606,606,606,606,606,606,606,606,
