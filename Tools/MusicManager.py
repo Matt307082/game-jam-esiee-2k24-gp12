@@ -17,6 +17,8 @@ class MusicManager:
         pygame.mixer.music.play(-1, random.uniform(0, 300))
         self.load_files(music_name)
 
-    def use_effect(self, effect_name):
-        pygame.mixer.Sound(self.files[effect_name]).play()
+    def use_effect(self, effect_name, volume = 1):
+        sound = pygame.mixer.Sound(self.files[effect_name])
+        sound.set_volume(volume)
+        sound.play()
         self.load_files(effect_name)
