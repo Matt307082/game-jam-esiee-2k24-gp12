@@ -41,7 +41,7 @@ scriptPATH = os.path.abspath(inspect.getsourcefile(lambda:0)) # compatible inter
 scriptDIR  = os.path.dirname(scriptPATH)
 assets = os.path.join(scriptDIR,"data")
 PAUSE_SPRITE = pygame.image.load(os.path.join(assets, "Sprites/PauseMenu.png"))
-
+MENU_FIN = pygame.image.load(os.path.join(assets, "Sprites/ecranFin.png"))
 
 # Fonctions pour afficher les options du menu
 def draw_text(text, font, color, surface, x, y):
@@ -112,3 +112,20 @@ def draw_pause_menu(GAME_STATE):
             pygame.quit()
             sys.exit()
             exit(0)
+
+def end_menu(GAME_STATE) :
+    screen = GAME_STATE["screen"]
+    click = GAME_STATE["click"]
+    GAME_STATE["keyPressed"] = None
+    
+    button = pygame.Rect(387, 544, 380, 61)
+
+    screen.blit(MENU_FIN,(0,0))
+
+    mx, my = pygame.mouse.get_pos()
+    if button.collidepoint((mx, my)):
+        if click:
+            GAME_STATE["click"] = False
+            GAME_STATE["state"] = State.Menu
+            GAME_STATE["nextLevel"] = True
+
