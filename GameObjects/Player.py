@@ -47,13 +47,13 @@ class Player:
         if((KeysPressed[pygame.K_DOWN] or KeysPressed[pygame.K_s]) and self.y<WINDOW_SIZE[1]-self.cell_height):
             test.y += self.vy
             self.current_anim = self.down_anim
-        elif((KeysPressed[pygame.K_UP] or KeysPressed[pygame.K_z]) and self.y>0):
+        if((KeysPressed[pygame.K_UP] or KeysPressed[pygame.K_z]) and self.y>0):
             test.y -= self.vy
             self.current_anim = self.up_anim
-        elif((KeysPressed[pygame.K_LEFT] or KeysPressed[pygame.K_q]) and self.x>0):
+        if((KeysPressed[pygame.K_LEFT] or KeysPressed[pygame.K_q]) and self.x>0):
             test.x -= self.vx
             self.current_anim = self.left_anim
-        elif((KeysPressed[pygame.K_RIGHT] or KeysPressed[pygame.K_d]) and self.x<WINDOW_SIZE[0]-self.cell_width):
+        if((KeysPressed[pygame.K_RIGHT] or KeysPressed[pygame.K_d]) and self.x<WINDOW_SIZE[0]-self.cell_width):
             test.x += self.vx
             self.current_anim = self.right_anim
         else: self.moved = False
