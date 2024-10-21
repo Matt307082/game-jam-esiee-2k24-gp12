@@ -3,7 +3,7 @@
         "height": 4300,
         "width": 2
     },
-    "activeFile": "lvl5.tmx",
+    "activeFile": "lvl3.tmx",
     "expandedProjectPaths": [
         "."
     ],
@@ -80,8 +80,8 @@
             "scale": 0.75,
             "selectedLayer": 7,
             "viewCenter": {
-                "x": 480.66666666666663,
-                "y": 319.33333333333326
+                "x": 480.6666666666666,
+                "y": 319.33333333333337
             }
         },
         "lvl2.tmx": {
@@ -114,14 +114,14 @@
             "scale": 0.75,
             "selectedLayer": 3,
             "viewCenter": {
-                "x": 480.66666666666663,
-                "y": 319.33333333333326
+                "x": 480.6666666666666,
+                "y": 319.33333333333337
             }
         },
         "lvl4.tmx": {
             "expandedGroupLayers": [
-                18,
-                19
+                19,
+                18
             ],
             "scale": 1.0054166666666666,
             "selectedLayer": 11,
@@ -133,9 +133,9 @@
         "lvl5.tmx": {
             "expandedGroupLayers": [
                 12,
-                9,
                 6,
-                2
+                2,
+                9
             ],
             "scale": 0.8352083333333333,
             "selectedLayer": 8,
@@ -176,10 +176,10 @@
         "RPG Nature Tileset.tsx",
         "lvl1.tmx",
         "Spring.tsx",
-        "lvl3.tmx",
-        "lvl4.tmx",
         "lvl2.tmx",
         "lvl5.tmx",
+        "lvl4.tmx",
+        "lvl3.tmx",
         "C:/Users/matte/Documents/ESIEE travail/E4FI/tmx/lvl5.tmx",
         "IceTileset.tsx",
         "RPG Nature Tileset Autumn.tsx",

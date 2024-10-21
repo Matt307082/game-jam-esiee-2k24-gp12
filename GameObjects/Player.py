@@ -6,8 +6,8 @@ class Player:
     def __init__(self, spritesheet, GAME_STATE):
         self.x = GAME_STATE["winAndStart"]['start'][0]["rect"].x
         self.y = GAME_STATE["winAndStart"]['start'][0]["rect"].y
-        self.vx = 2
-        self.vy = 2
+        self.vx = 1
+        self.vy = 1
         self.spritesheet = spritesheet
         self.width = 200 // 4
         self.height = 285 // 4
@@ -44,19 +44,28 @@ class Player:
 
         self.moved = True
         test = self.getHitbox()
-        if((KeysPressed[pygame.K_DOWN] or KeysPressed[pygame.K_s]) and self.y<WINDOW_SIZE[1]-self.cell_height):
-            test.y += self.vy
-            self.current_anim = self.down_anim
-        if((KeysPressed[pygame.K_UP] or KeysPressed[pygame.K_z]) and self.y>0):
+
+        # update position
+        if (KeysPressed[pygame.K_UP] or KeysPressed[pygame.K_z]) and self.y > 0:
             test.y -= self.vy
-            self.current_anim = self.up_anim
-        if((KeysPressed[pygame.K_LEFT] or KeysPressed[pygame.K_q]) and self.x>0):
+        if (KeysPressed[pygame.K_DOWN] or KeysPressed[pygame.K_s]) and self.y < WINDOW_SIZE[1] - self.cell_height:
+            test.y += self.vy
+        if (KeysPressed[pygame.K_LEFT] or KeysPressed[pygame.K_q]) and self.x > 0:
             test.x -= self.vx
-            self.current_anim = self.left_anim
-        if((KeysPressed[pygame.K_RIGHT] or KeysPressed[pygame.K_d]) and self.x<WINDOW_SIZE[0]-self.cell_width):
+        if (KeysPressed[pygame.K_RIGHT] or KeysPressed[pygame.K_d]) and self.x < WINDOW_SIZE[0] - self.cell_width:
             test.x += self.vx
+
+        # update animation
+        if KeysPressed[pygame.K_UP] or KeysPressed[pygame.K_z]:
+            self.current_anim = self.up_anim
+        elif KeysPressed[pygame.K_DOWN] or KeysPressed[pygame.K_s]:
+            self.current_anim = self.down_anim
+        elif KeysPressed[pygame.K_LEFT] or KeysPressed[pygame.K_q]:
+            self.current_anim = self.left_anim
+        elif KeysPressed[pygame.K_RIGHT] or KeysPressed[pygame.K_d]:
             self.current_anim = self.right_anim
-        else: self.moved = False
+        else :
+            self.moved = False
 
         if not self.check_collision(test, True, active_layer, layer_obj, GAME_STATE):
             self.x = test.x
